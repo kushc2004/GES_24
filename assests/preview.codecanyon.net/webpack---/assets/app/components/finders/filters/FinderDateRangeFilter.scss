@@ -1,0 +1,56 @@
+@use 'typography';
+@import '../../../../common/scss/variables';
+@import '../sieves/FinderFilterHelpers';
+
+.radio-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  .radio-tip {
+    margin-left: 4px;
+    margin-right: 16px;
+
+    //margin-top: 6px;
+  }
+}
+
+.relative-time {
+  display: flex;
+  flex-wrap: wrap;
+
+  .relative-number {
+    width: 70px;
+
+    //margin-left: 8px;
+  }
+
+  .relative-unit {
+    width: 70px;
+    margin-left: 8px;
+  }
+
+  .relative-comparator {
+    width: 60px;
+    margin-left: 8px;
+  }
+
+  .relative-label {
+    margin-top: 10px;
+    width: 40px;
+  }
+}
+
+.error {
+  @include typography.helper-1-medium;
+  color: var(--color-ui-negative-hover);
+}
+
+.mdash {
+  display: flex;
+  align-items: center;
+  max-width: 10px;
+  margin-right: 6px;
+  margin-left: 6px;
+  overflow: hidden;
+  color: var(--color-neutral-30);
+}

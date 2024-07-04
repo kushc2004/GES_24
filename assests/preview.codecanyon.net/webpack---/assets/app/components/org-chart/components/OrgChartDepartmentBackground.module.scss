@@ -1,0 +1,31 @@
+@use 'typography';
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  background: var(--color-neutral-30);
+  border-radius: var(--border-radius-16);
+  padding: 8px 16px;
+  text-transform: capitalize;
+  cursor: default;
+
+  .contentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: max-content;
+  }
+
+  @include typography.body-2-bold;
+
+  .departmentSize {
+    margin-left: 8px;
+    color: var(--color-neutral-50);
+  }
+
+  .closeButton {
+    height: 24px;
+    width: 24px;
+  }
+}

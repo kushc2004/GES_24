@@ -1,0 +1,36 @@
+@use 'typography';
+
+.zpUserActionContainer {
+  background-color: var(--color-bg-main);
+  margin-bottom: 16px;
+  border: 1px solid var(--color-border-light);
+}
+
+.container {
+  &.hasMarginBottom {
+    margin-bottom: 25px;
+  }
+
+  &.usageInfo {
+    margin-bottom: 0;
+    box-shadow: none !important;
+  }
+}
+
+.rounded {
+  border-radius: var(--border-radius-4);
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.header {
+  @include typography.heading-3;
+  padding: 20px 14px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.usageContainer {
+  margin-bottom: 16px;
+}

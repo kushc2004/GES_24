@@ -1,0 +1,55 @@
+@use 'typography';
+
+.toggle {
+  position: absolute;
+  bottom: 62px;
+  right: 32px;
+  width: fit-content;
+}
+
+.overlayContainer {
+  padding: 16px;
+  height: 100%;
+  overflow-y: scroll;
+
+  :global {
+    .suggestionsContainer {
+      overflow: auto;
+    }
+  }
+}
+
+.popover {
+  width: 350px !important;
+  margin: 10px 0;
+  border: none;
+
+  :global {
+    .popover-header {
+      padding: 10px 15px;
+      height: 40px;
+      background-color: var(--color-bg-main);
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 2px -2px var(--color-neutral-40);
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+    }
+
+    .popover-content {
+      margin-top: 0;
+      height: 400px;
+    }
+
+    .popover-title {
+      @include typography.subheader-1;
+      line-height: 14px;
+    }
+
+    .popover-close-button {
+      @include typography.body-2;
+      line-height: 14px !important;
+      height: 14px !important;
+    }
+  }
+}

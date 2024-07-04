@@ -1,0 +1,185 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  display: flex;
+  flex-direction: column; /** undo parent component's property **/
+  align-items: center;
+  padding: 0 8px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  & > * {
+    width: 100%;
+    max-width: 1280px;
+  }
+}
+
+.reactiveSequenceBanner {
+  padding: 8px 20px;
+}
+
+.card {
+  @include typography.body-2;
+  display: flex;
+  flex-direction: column;
+  box-shadow: $shadow-1;
+  border-radius: var(--border-radius-4);
+  background-color: white;
+  overflow: hidden;
+  color: var(--color-text-secondary);
+
+  [data-card-header] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    min-height: 56px;
+    position: relative;
+
+    & + [data-card-content] {
+      border-top: 1px solid var(--color-border-light);
+    }
+
+    [data-card-heading] {
+      @include typography.heading-3;
+      color: var(--color-text-primary);
+    }
+
+    [data-card-description] {
+      @include typography.helper-1;
+      color: var(--color-text-secondary);
+    }
+
+    [data-card-header-left],
+    [data-card-header-right] {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 4px;
+      column-gap: 4px;
+    }
+  }
+
+  [data-card-content] {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px;
+  }
+
+  .footerActions {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.dailyThresholdWarning {
+  --background-color: var(--color-bg-secondary);
+  --shared-color: var(--color-ui-primary);
+  border-radius: var(--border-radius-4);
+
+  [data-notification-content] {
+    color: var(--color-text-body);
+    @include typography.body-2;
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+      color: var(--color-text-header);
+      @include typography.subheader-1;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  .heading {
+    @include typography.heading-1;
+    color: var(--color-text-primary);
+  }
+}
+
+.settingsCard {
+  @extend .card;
+
+  & > * {
+    transition: opacity 0.2s;
+  }
+
+  &.loading > * {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  --select-margin-bottom: 0;
+
+  .grid {
+    display: grid;
+    gap: 24px 16px;
+    grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+  }
+}
+
+.signatureLabelBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 4px;
+
+  .buttons {
+    margin-left: auto;
+  }
+}
+
+.tip,
+.fieldError {
+  @include typography.helper-1;
+  display: inline-block;
+  color: var(--color-text-secondary);
+
+  &.fieldError {
+    color: var(--color-negative-40);
+  }
+}
+
+.subLabel {
+  color: var(--color-neutral-50);
+}
+
+.activateSequenceNudge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding-bottom: 20px;
+
+  h3 {
+    @include typography.heading-3;
+  }
+
+  span {
+    @include typography.body-2;
+  }
+
+  img {
+    margin-bottom: 8px;
+  }
+}

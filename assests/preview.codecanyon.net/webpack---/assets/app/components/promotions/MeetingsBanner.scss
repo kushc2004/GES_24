@@ -1,0 +1,29 @@
+@use 'typography';
+
+.bannerContainer {
+  & > div:first-child {
+    background-color: var(--color-primary-80);
+  }
+}
+
+.heading {
+  margin: 0;
+  color: var(--color-text-reversed);
+
+  @include typography.growth-heading-5;
+}
+
+.subHeading {
+  margin: 0;
+  color: var(--color-text-reversed);
+
+  @include typography.body-1;
+}
+
+.ctaBtn {
+  background-color: var(--color-secondary-50);
+  color: var(--color-text-header);
+  cursor: pointer;
+
+  @include typography.body-2;
+}

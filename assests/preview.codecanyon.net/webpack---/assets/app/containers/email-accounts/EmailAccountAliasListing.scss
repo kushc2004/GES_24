@@ -1,0 +1,49 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.menuClassName {
+  border-radius: 0;
+}
+
+.aliasEmptyState {
+  width: 368px;
+  padding: 38px 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  [data-illustration] {
+    width: 80px;
+    height: 80px;
+  }
+
+  h2 {
+    @include typography.body-2-bold;
+    margin: 10px 0 6px;
+  }
+
+  span {
+    @include typography.helper-1;
+    line-height: 150%;
+    margin-bottom: 18px;
+  }
+}
+
+.aliasListing {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.aliasListItem,
+.footerMenuItem {
+  width: 368px;
+  background-color: var(--color-bg-main);
+  @include typography.body-2-medium;
+  padding: 10px 0 10px 12px;
+
+  &.footerMenuItem {
+    width: 100%;
+    border-top: solid 1px var(--color-neutral-10);
+  }
+}

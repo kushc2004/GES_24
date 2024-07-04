@@ -1,0 +1,47 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &.padded {
+    padding: 25px 20px;
+  }
+
+  .title {
+    @include typography.body-2-medium;
+
+    margin-top: 20px;
+    max-width: 250px;
+    text-align: center;
+    color: var(--color-text-secondary);
+  }
+
+  .placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &.noPlaceholder {
+    align-items: flex-start;
+
+    .title {
+      margin-top: 0px;
+      @include text-overflow.ellipsis;
+      text-align: left;
+      max-width: none;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.linkEmailAccountDialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formContent {
+  padding: 0 40px 40px;
+
+  > form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.intro {
+  [data-intro-head] {
+    @include typography.heading-1;
+    margin: 8px 0;
+  }
+
+  [data-intro-body] {
+    @include typography.body-2;
+  }
+}
+
+.inputWrapper {
+  [data-email-label] {
+    @include typography.heading-3;
+    margin-bottom: 12px;
+  }
+}
+
+.emailProviderOptions {
+  .emailProviderOptionsLabel {
+    @include typography.heading-3;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+}
+
+.tosCheckbox {
+  background-color: var(--color-bg-secondary);
+  padding: 16px;
+
+  [data-tos-label] {
+    @include typography.helper-1;
+  }
+}
+
+.fieldError {
+  color: var(--color-negative-50);
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  > button {
+    margin-left: 0 !important;
+  }
+}

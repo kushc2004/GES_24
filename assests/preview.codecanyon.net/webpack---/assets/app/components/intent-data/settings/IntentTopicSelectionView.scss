@@ -1,0 +1,85 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  background-color: var(--color-bg-secondary);
+
+  &.transparent {
+    background-color: transparent;
+  }
+
+  > div:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.blurb {
+  margin-top: 8px;
+
+  .bold {
+    font-weight: bold;
+  }
+}
+
+.selectionView {
+  background-color: var(--color-bg-main);
+  border-radius: var(--border-radius-4);
+  border: 1px solid var(--color-border-light);
+  height: 437px;
+  position: relative;
+
+  &.verticalCenter {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.topicsCount {
+  @include typography.helper-1-medium;
+  color: var(--color-text-labels);
+}
+
+.checkboxContainer {
+  margin-left: 36px;
+}
+
+.checkbox {
+  @include typography.body-2-medium;
+  padding: 4px 0px;
+
+  --color-text-labels: var(--color-neutral-70);
+  width: 100%;
+
+  span {
+    width: 100%;
+    display: flex;
+
+    .topicName {
+      margin-right: auto;
+    }
+
+    .vendors {
+      max-height: 14px;
+      margin-left: auto;
+      padding-right: 6px;
+      opacity: 0;
+
+      .bomboraImage {
+        margin-left: 8px;
+      }
+
+      .leadSiftImage {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  &:hover {
+    span {
+      .vendors {
+        opacity: 1;
+      }
+    }
+  }
+}

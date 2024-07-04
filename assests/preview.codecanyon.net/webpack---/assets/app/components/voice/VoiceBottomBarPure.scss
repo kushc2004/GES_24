@@ -1,0 +1,279 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+
+.self {
+  background: white;
+  height: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: $shadow-4;
+  z-index: 4;
+}
+
+.items {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+
+  .declineButton,
+  .acceptButton {
+    width: 125px;
+    color: white;
+    @include typography.body-2-medium;
+
+    .icon {
+      color: white;
+      margin-right: 10px;
+    }
+  }
+
+  .declineButton {
+    --button-background-color: var(--color-negative-40);
+    --button-background-hover-color: var(--color-negative-30);
+    --button-background-active-color: var(--color-negative-50);
+    margin-right: 10px;
+  }
+
+  .acceptButton {
+    --button-background-color: var(--color-positive-50);
+    --button-background-hover-color: var(--color-positive-60);
+    --button-background-active-color: var(--color-positive-70);
+    border-left: 1px solid white;
+  }
+
+  .expandButton,
+  .dialPadButton,
+  .muteButton,
+  .participantsButton,
+  .callsReportButton {
+    min-width: 50px;
+    margin-right: 10px;
+  }
+
+  .hangUpButton {
+    width: 140px;
+
+    --button-background-color: var(--color-negative-40);
+    --button-background-hover-color: var(--color-negative-30);
+    --button-background-active-color: var(--color-negative-50);
+    margin-right: 10px;
+
+    .icon {
+      color: white;
+    }
+  }
+}
+
+.name {
+  @include typography.heading-3;
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.divider {
+  height: 16px;
+  width: 1px;
+  background-color: var(--color-border-light);
+  margin: 0 14px;
+
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.callText {
+  color: var(--color-text-primary);
+  @include typography.heading-3;
+}
+
+.number {
+  color: var(--color-text-secondary);
+  @include typography.body-1;
+  margin-right: 14px;
+
+  &:first-child {
+    padding-left: 10px;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.icon {
+  font-size: 26px;
+}
+
+.duration {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-secondary);
+  @include typography.heading-3;
+  padding: 0 10px;
+}
+
+.multiRowSelf {
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  overflow: hidden;
+  height: auto;
+  padding: 16px;
+
+  @media (max-width: 400px) {
+    .items {
+      padding: 0;
+      width: 100%;
+      justify-content: space-between;
+
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+
+      // Call actions/buttons
+      &:nth-child(3) {
+        column-gap: 10px;
+      }
+    }
+
+    // Override space-between and make sure name is near callText
+    .name {
+      flex-grow: 1;
+    }
+
+    .name,
+    .number {
+      display: block;
+    }
+
+    .duration,
+    .number {
+      padding: 0;
+      margin: 0;
+    }
+
+    button {
+      margin: 0 !important;
+    }
+
+    .participantsButton {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.extensionItems {
+  width: 100%;
+  padding: 0 15px 20px;
+
+  .extensionLeftItems {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  .extensionInnerItems {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 5px 0;
+    justify-content: space-evenly;
+  }
+
+  .extensionNumber {
+    color: var(--color-text-secondary);
+  }
+
+  .extensionNumberDuration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    min-height: 23px;
+  }
+
+  .expandButton,
+  .dialPadButton,
+  .muteButton,
+  .callsReportButton {
+    min-width: 35px;
+    margin-right: 10px;
+  }
+
+  .hangUpButton {
+    min-width: 65px;
+    width: 100%;
+    margin-top: 0px;
+
+    --button-background-color: var(--color-negative-40);
+    --button-background-hover-color: var(--color-negative-30);
+    --button-background-active-color: var(--color-negative-50);
+    margin-right: 10px;
+
+    .icon {
+      color: white;
+    }
+  }
+
+  .name {
+    @include typography.heading-3;
+
+    @media (max-width: $screen-sm-max) {
+      display: block;
+    }
+  }
+}
+
+.extensionIncomingItems {
+  display: flex;
+  gap: 8;
+
+  .declineButton {
+    --button-background-color: var(--color-negative-40);
+    --button-background-hover-color: var(--color-negative-30);
+    --button-background-active-color: var(--color-negative-50);
+    margin-right: 10px;
+    width: 100%;
+  }
+
+  .acceptButton {
+    --button-background-color: var(--color-positive-50);
+    --button-background-hover-color: var(--color-positive-60);
+    --button-background-active-color: var(--color-positive-70);
+    border-left: 1px solid white;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+.statusIndicator {
+  @include typography.helper-1-medium;
+  display: flex;
+  align-items: center;
+
+  &.connecting {
+    --shared-color: var(--color-text-caution);
+  }
+
+  &.ringing {
+    --shared-color: var(--color-text-links);
+  }
+
+  &.inProgress {
+    --shared-color: var(--color-text-positive);
+  }
+
+  &.connecting,
+  &.ringing,
+  &.inProgress {
+    &,
+    i {
+      color: var(--shared-color);
+      margin-right: 5px;
+    }
+  }
+}

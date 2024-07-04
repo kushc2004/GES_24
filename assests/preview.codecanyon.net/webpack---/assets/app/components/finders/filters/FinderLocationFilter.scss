@@ -1,0 +1,38 @@
+@use 'typography';
+
+.exclude-filters {
+  margin-bottom: 8px;
+}
+
+.top-row {
+  display: flex;
+}
+
+.warning {
+  margin-bottom: 8px;
+  display: flex;
+
+  .icon {
+  }
+
+  .message {
+    margin-left: 8px;
+  }
+}
+
+.breadcrumbsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+
+  .breadcrumbs {
+    display: flex;
+    gap: 4px;
+  }
+
+  .title {
+    @include typography.helper-1-medium;
+    color: var(--color-text-primary);
+  }
+}

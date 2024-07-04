@@ -1,0 +1,12 @@
+.bannerContainer {
+  padding: 16px;
+  background: var(--color-bg-secondary) !important;
+  border-bottom: 1px solid var(--color-border-light);
+
+  button.closeButton {
+    margin-left: 12px;
+
+    --button-foreground-color: var(--color-neutral-50);
+    --button-background-hover-color: transparent;
+  }
+}

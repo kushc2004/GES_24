@@ -1,0 +1,34 @@
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'common/scss/variables';
+
+.buttonWrapper:not(.mobileView) {
+  margin-top: -3px;
+  height: 20px;
+
+  button.addToListButton {
+    margin: 0 -8px;
+    padding: 0 8px;
+    min-height: 20px;
+    line-height: 1;
+  }
+}
+
+.addToListPopup {
+  padding: 5px 10px;
+  width: 280px;
+  max-width: 280px;
+
+  :global {
+    .Select-menu-outer {
+      position: relative;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .Select-option {
+      @include text-overflow.ellipsis;
+    }
+  }
+}

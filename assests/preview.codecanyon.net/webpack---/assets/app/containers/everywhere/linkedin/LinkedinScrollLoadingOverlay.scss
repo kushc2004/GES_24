@@ -1,0 +1,37 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(53 64 83 / 80%); // var(--color-neutral-70) with opacity
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  bottom: 30%;
+}
+
+.loader {
+  width: 180px;
+  height: 30px;
+}
+
+.header {
+  @include typography.heading-2;
+  color: var(--color-text-reversed);
+  margin-top: 30px;
+}
+
+.content {
+  @include typography.body-2;
+  color: var(--color-neutral-10);
+  width: 300px;
+  margin-top: 10px;
+}

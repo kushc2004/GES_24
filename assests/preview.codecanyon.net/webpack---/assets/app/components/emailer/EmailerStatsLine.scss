@@ -1,0 +1,25 @@
+@use 'typography';
+
+.emailTrackingFeatureGate {
+  text-align: right;
+}
+
+.unlockTextContainer {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary-50);
+  margin-bottom: 2px;
+
+  .lockIcon {
+    margin-right: 4px;
+  }
+
+  .unlockText {
+    @include typography.helper-1-medium;
+  }
+}
+
+.unlockSubText {
+  @include typography.helper-1;
+  color: var(--color-text-secondary);
+}

@@ -1,0 +1,59 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+
+.dial-pad {
+  flex-flow: row wrap;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+}
+
+.dial-button {
+  height: 50px;
+  width: 50px;
+  border-radius: var(--border-radius-2);
+  margin: 2px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+
+  cursor: pointer;
+
+  .number {
+    @include typography.heading-2;
+    color: var(--color-primary-50);
+  }
+
+  .letters {
+    @include typography.helper-1-medium;
+    color: var(--color-text-secondary);
+  }
+
+  &:hover {
+    background-color: var(--color-primary-50);
+
+    .number {
+      color: white;
+    }
+
+    .letters {
+      color: var(--color-primary-40);
+    }
+  }
+
+  &:active {
+    background-color: var(--color-primary-70);
+
+    .number {
+      color: white;
+    }
+
+    .letters {
+      color: var(--color-primary-40);
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import '../../../common/scss/variables';
+
+.account-stuff {
+  border-top: 2px solid var(--color-neutral-10);
+}
+
+.wrapper {
+  height: 100%;
+  overflow-y: auto;
+}

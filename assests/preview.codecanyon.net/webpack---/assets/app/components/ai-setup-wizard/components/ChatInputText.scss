@@ -1,0 +1,31 @@
+@use 'typography';
+
+.inputContainer {
+  margin-top: 32px;
+  padding: 19px 48px;
+  border-top: 1px solid var(--color-neutral-20);
+
+  .promptContainer {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+
+    .field {
+      flex-grow: 1;
+
+      input {
+        @include typography.body-1;
+
+        height: 40px;
+        margin: 0;
+        border-radius: var(--border-radius-8);
+        border-color: var(--color-border-darker);
+      }
+    }
+
+    .enterButton {
+      min-width: 166px;
+      height: 40px;
+    }
+  }
+}

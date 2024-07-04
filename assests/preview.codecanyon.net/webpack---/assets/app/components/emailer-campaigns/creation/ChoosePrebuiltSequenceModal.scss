@@ -1,0 +1,176 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+// Reset <ul>
+.list,
+.stepList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listItem,
+.stepListItem {
+  margin: 0;
+}
+
+// List of sequences in Sidebar
+.listItem {
+  padding: 17px 20px;
+
+  &:hover {
+    background-color: var(--color-ui-secondary-hover);
+    cursor: pointer;
+  }
+
+  &.selected {
+    background-color: var(--color-ui-secondary-hover);
+  }
+
+  .name {
+    @include typography.body-1-medium;
+    color: var(--color-text-secondary);
+  }
+}
+
+.lockedIcon {
+  margin-right: 4px;
+}
+
+// Selected Sequence
+.detail {
+  padding: 40px 64px;
+  min-height: 400px;
+
+  .header {
+    @include typography.heading-1;
+    color: var(--color-text-primary);
+  }
+
+  .subHeader {
+    @include typography.body-2-medium;
+    color: var(--color-text-secondary);
+    margin-top: 7px;
+  }
+}
+
+.name {
+  font-weight: 600;
+}
+
+.description {
+  @include typography.body-2;
+  color: var(--color-text-secondary);
+  margin: 12px 0px 19px;
+}
+
+.stepListItem {
+  color: var(--color-text-labels);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  position: relative;
+
+  &.expandable {
+    cursor: pointer;
+  }
+
+  .emailContentToggle,
+  .emailContentToggle :global(.zp-icon) {
+    color: var(--color-primary-50);
+  }
+
+  &::after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    background-color: var(--color-ui-secondary);
+    border: 1px solid var(--color-border-normal);
+    left: 11.25px;
+  }
+
+  &:last-child {
+    margin-bottom: 0px;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.stepListItemHeader {
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  > div {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    .iconWrapper {
+      display: flex;
+      padding: 6px;
+      background-color: white;
+      margin-left: -6px;
+      z-index: 1;
+    }
+
+    .stepLabel {
+      p {
+        margin: 0;
+
+        &:first-child {
+          @include typography.body-2-medium;
+          color: var(--color-text-labels);
+        }
+
+        &:last-child {
+          @include typography.helper-1;
+          color: var(--color-text-labels);
+        }
+      }
+    }
+  }
+}
+
+.emailContent {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-secondary);
+  padding-left: 32px;
+  position: relative;
+
+  .subject {
+    @include typography.subheader-2;
+    margin-top: 12px;
+    color: var(--color-text-primary);
+  }
+
+  pre {
+    font-family: inherit;
+    white-space: pre-line;
+    margin: 0px;
+    overflow: hidden;
+  }
+}
+
+// Modal layout
+.modalHeader {
+  @include typography.heading-3;
+
+  color: var(--color-text-primary);
+}
+
+.modalSidebar {
+  border-right: 1px solid var(--color-border-normal);
+  background-color: var(--color-bg-secondary);
+}
+
+.modalBody {
+  scrollbar-gutter: stable;
+  background-color: var(--color-bg-main);
+}

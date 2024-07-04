@@ -1,0 +1,46 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.contactGroup {
+  background-color: var(--color-bg-main);
+  padding: 20px;
+  border-radius: var(--border-radius-4);
+
+  .header {
+    --shared-header-color: var(--color-text-primary);
+    @include typography.heading-3;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: var(--shared-header-color);
+
+    > .icon {
+      color: var(--shared-header-color);
+    }
+
+    &.healthy {
+      --shared-header-color: var(--color-text-positive);
+    }
+
+    &.ill {
+      --shared-header-color: var(--color-text-negative);
+    }
+  }
+
+  .reviewMessage {
+    @include typography.body-2;
+    margin-bottom: 16px;
+  }
+
+  .alertNotification {
+    margin-bottom: 8px;
+    border-radius: var(--border-radius-4);
+    padding: 8px 16px;
+
+    [data-notification-content] {
+      color: var(--color-text-caution);
+      @include typography.helper-1;
+    }
+  }
+}

@@ -1,0 +1,389 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/elevation';
+
+$border-color: var(--color-border-light);
+
+.wrapper {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.finder-explorer {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  height: 100%;
+
+  &.min-content-height {
+    height: min-content;
+  }
+
+  &.cardFinderDesign {
+    background-color: var(--color-bg-secondary);
+  }
+
+  .main {
+    flex: 1 0;
+    display: flex;
+    overflow-y: auto;
+
+    &.cardFinderDesign {
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--border-radius-4);
+      box-shadow: $box-shadow-regular;
+
+      &.disableCardShadow {
+        box-shadow: none;
+      }
+    }
+
+    .main-header {
+      background-color: var(--color-bg-secondary);
+    }
+
+    .custom-header,
+    .main-header {
+      height: 45px;
+      padding: 0 10px;
+      box-shadow: none;
+      position: relative; // necessary because of click blocker on embed page `SignUpRequired`
+      border-bottom: none;
+
+      &.forCard {
+        background: none;
+        padding: 0;
+      }
+
+      &.cardFinderDesign {
+        background-color: var(--color-bg-main);
+      }
+
+      &.tallHeader {
+        height: 70px;
+      }
+
+      &.scoresHeader {
+        @include shadow-5;
+        height: 10vh;
+        min-height: 120px;
+        background-color: var(--color-bg-main);
+        padding: 0;
+        margin: 10px 10px 0;
+        border-bottom: 1px solid var(--color-border-light);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        & .toolbar-group {
+          width: 100%;
+        }
+      }
+
+      &.noHeaderPadding {
+        padding: 0;
+      }
+    }
+
+    .transparentHeader {
+      background-color: var(--color-bg-main);
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+      border-bottom: 1px solid $border-color;
+    }
+
+    .darkerMainHeader {
+      background-color: var(--color-bg-secondary);
+    }
+  }
+
+  &:global(.is-extension) {
+    .main-header {
+      background-color: white;
+    }
+  }
+}
+
+.finderFitHeight {
+  height: calc(100% - 40px);
+}
+
+.savedSearchesTabWrapper {
+  padding: 0 10px;
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid $border-color;
+}
+
+.results-container {
+  background-color: var(--color-bg-secondary);
+}
+
+.results-container,
+.results-container-with-header {
+  position: relative;
+  flex: 1;
+  height: 100%;
+
+  &.forCard {
+    background-color: transparent;
+  }
+
+  .results {
+    display: flex;
+    width: 100%;
+    flex: 0 1 auto;
+    height: 100%;
+    overflow-x: hidden;
+
+    // https://app.asana.com/0/467924783835806/1155558953275371
+    // display: flex;
+    flex-direction: column;
+
+    .results-container-explorer-table {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+
+      &.with-header {
+        height: 0;
+      }
+
+      &.noScroll {
+        overflow-y: hidden;
+      }
+
+      &.fullHeight {
+        height: 100%;
+      }
+    }
+
+    &.snow {
+      background-color: var(--color-bg-secondary);
+    }
+  }
+}
+
+.section-header {
+  @include typography.subheader-2;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  align-items: center;
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid $border-color;
+  display: flex;
+  justify-content: space-between;
+  height: 36px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.insights {
+  padding: 20px;
+  background-color: var(--color-bg-secondary);
+
+  .insights-card:not(:first-child) {
+    margin-top: 15px;
+  }
+}
+
+.use-flexbox-grid-row {
+  .breadcrumbs {
+    background: transparent;
+    padding: 0 20px 20px;
+  }
+}
+
+.empty-message {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: var(--color-text-secondary);
+  font-size: 24px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.banner-content {
+  @include typography.subheader-2;
+  position: relative;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  min-height: fit-content;
+  justify-content: center;
+  background-color: var(--color-primary-50);
+  border-bottom: 1px solid $border-color;
+  color: var(--color-text-reversed);
+
+  &.block-banner {
+    @media (max-width: $screen-md-max) {
+      display: block;
+    }
+  }
+}
+
+.banner-close {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  color: var(--color-primary-40);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.darkBackground {
+  background: var(--color-bg-secondary);
+}
+
+.whiteBackground {
+  background: var(--color-bg-main) !important;
+}
+
+.noBorder {
+  border: none !important;
+}
+
+.newStyleCard {
+  margin: 10px !important;
+  border: 1px solid var(--color-border-light);
+  border-radius: 6px;
+  background: var(--color-bg-main);
+}
+
+.pipeline {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10px;
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid $border-color;
+
+  &.forCard {
+    padding: 0;
+    background: none;
+  }
+
+  &.cardFinderDesign {
+    background-color: var(--color-bg-main);
+    padding: 0;
+  }
+}
+
+.pipelineTabStyles {
+  height: initial;
+  background-color: var(--color-bg-secondary);
+  padding: 0 10px 0 0;
+}
+
+.headerTopRightContentContainer {
+  display: flex;
+  height: 100%;
+  margin-right: 12px;
+
+  .headerTopRightItem {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-right: 1px solid var(--color-border-light);
+    padding: 0 4px;
+
+    &:first-child {
+      border-left: 1px solid var(--color-border-light);
+    }
+  }
+}
+
+.headerBottomLeftContentContainer {
+  display: flex;
+  height: 100%;
+
+  .headerBottomLeftItem {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-right: 1px solid var(--color-border-light);
+    padding: 0 4px;
+  }
+}
+
+.headerBottomRightContentContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+  height: 100%;
+}
+
+.finderHeader {
+  :global([data-elem='bottom-right-content-container']) {
+    flex-grow: 1;
+  }
+}
+
+.headerToolbarWrapper {
+  .rightSideActions {
+    background-color: var(--color-bg-secondary);
+  }
+}
+
+.customHeaderToolbarWrapper,
+.headerToolbarWrapper {
+  background-color: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 0 0 auto;
+
+  &.containsPipeline {
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .headerToolbar {
+    width: 100%;
+  }
+
+  .rightSideActions {
+    display: flex;
+    padding-right: 16px;
+  }
+}
+
+.maxTableHeight {
+  height: 100%;
+}
+
+.noMargin {
+  background-color: transparent !important;
+
+  .main.newStyleCard {
+    margin: 0 !important;
+  }
+}
+
+.disableTableShadow {
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.hasSideMargins {
+  padding: 0 16px !important;
+}

@@ -1,0 +1,70 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+.self {
+  display: flex;
+  align-items: center;
+}
+
+.email-icon {
+  margin-right: 5px;
+}
+
+.primaryText {
+  color: var(--color-text-primary);
+}
+
+.annotation-text {
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  margin-right: 8px;
+}
+
+.email-address-block {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  .email-address {
+    @include typography.body-2;
+    flex: 1;
+    @include text-overflow.ellipsis;
+  }
+
+  .primaryTextWrapper {
+    width: 100%;
+  }
+}
+
+.copyEmailButton {
+  --button-foreground-color: var(--color-neutral-40) !important;
+}
+
+.badgeFlex {
+  display: flex;
+}
+
+.emailType {
+  @include typography.helper-1-medium;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.overflow {
+  width: 100%;
+  @include text-overflow.ellipsis;
+  display: block;
+}
+
+.dotSeparator {
+  background-color: var(--color-neutral-40);
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  margin: 0 5px;
+}

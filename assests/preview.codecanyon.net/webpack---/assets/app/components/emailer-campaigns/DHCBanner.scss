@@ -1,0 +1,124 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+@import 'assets/common/scss/mixins/elevation';
+
+.bannerContainer {
+  padding: 11px;
+  background-color: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border-light);
+  border-radius: 6px;
+  width: 100%;
+}
+
+.scheduledEnrichmentBanner {
+  padding: 16px !important;
+}
+
+.bannerContent {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  background-color: var(--color-primary-70);
+  box-shadow: var(--shadow-1);
+  color: var(--color-text-reversed);
+  min-height: 78px;
+}
+
+.heading {
+  @include typography.growth-mini-heading;
+
+  display: flex;
+  align-items: center;
+  color: var(--color-text-reversed);
+}
+
+.left,
+.right {
+  display: flex;
+}
+
+.left {
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.right {
+  flex-direction: row;
+  padding: 15px;
+}
+
+@media (max-width: $screen-lg-min) {
+  .bannerContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right {
+    align-self: flex-end;
+  }
+}
+
+.image {
+  margin-right: 12px;
+  max-height: 78px;
+  margin-left: 15px;
+}
+
+.headingAndFeatures {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 16px;
+}
+
+.ctaButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 12px;
+  gap: 6px;
+  width: 97px;
+  height: 40px;
+  margin-top: 5px;
+  border-radius: var(--border-radius-8);
+}
+
+.subHeading {
+  font-family: var(--system-ui);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text-reversed);
+  margin-bottom: 5px;
+}
+
+.ctaButton {
+  width: 97px !important;
+  height: 40px !important;
+  align-items: center;
+  padding: 12px 18px 14px !important;
+  border-radius: var(--border-radius-8) !important;
+  background: var(--color-bg-main);
+}
+
+.buttonDetails {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 16px;
+}
+
+.featureButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ctaButtonLabel {
+  @include body-2_medium;
+  font-family: var(--system-ui);
+  font-weight: 510 !important;
+  line-height: 140% !important;
+  color: var(--color-text-header);
+}

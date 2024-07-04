@@ -1,0 +1,30 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.reportModalHeader {
+  @include typography.heading-3;
+}
+
+.reportModalFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.body {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+.contactsGroupWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form {
+  height: 240px;
+}

@@ -1,0 +1,87 @@
+@use 'typography';
+
+.modal {
+  width: fit-content;
+}
+
+.modalHeader {
+  padding: 16px 20px;
+  justify-content: flex-end;
+}
+
+.modalBody {
+  padding: 0px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .title {
+    @include typography.heading-2;
+    color: var(--color-text-header);
+  }
+
+  .subtitle {
+    @include typography.body-2-medium;
+    color: var(--color-text-body);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  li {
+    @include typography.body-2;
+    color: var(--color-text-body);
+
+    :global(.zp-icon) {
+      font-size: inherit;
+      color: var(--color-primary-50);
+    }
+
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+.illustrationContainer {
+  border-radius: var(--border-radius-8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+
+  &.defaultIllustration {
+    background: var(--color-primary-70);
+    padding: 28px 32px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  svg {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+.modalFooter {
+  border: none;
+  padding: 0px 40px 40px;
+  gap: 24px;
+
+  a {
+    display: block;
+    width: 100%;
+  }
+}
+
+.button {
+  margin: 0 !important;
+}

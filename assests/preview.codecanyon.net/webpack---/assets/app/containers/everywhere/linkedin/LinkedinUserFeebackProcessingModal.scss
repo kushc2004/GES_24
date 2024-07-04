@@ -1,0 +1,83 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.successModal {
+  width: 500px !important;
+
+  .header {
+    justify-content: flex-end;
+    height: 56px;
+    padding: 22px;
+
+    .close {
+      height: 12px;
+      width: 12px;
+    }
+  }
+
+  .body {
+    min-height: 132px;
+    padding: 4px 48px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .title {
+      @include typography.heading-3;
+    }
+
+    .description {
+      @include typography.body-2-medium;
+      text-align: center;
+    }
+  }
+
+  .successIcon {
+    font-size: 45px;
+    height: 45px;
+    width: 45px;
+    color: var(--color-positive-60);
+    margin-bottom: 20px;
+  }
+
+  .alertIcon {
+    font-size: 45px;
+    height: 45px;
+    width: 45px;
+    color: var(--color-caution-60);
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 20px;
+
+    :global {
+      .zp-button {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.spinnerContainer {
+  display: flex;
+
+  > div {
+    margin-left: 45px;
+    margin-top: 20px;
+  }
+}

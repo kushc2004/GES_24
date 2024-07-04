@@ -1,0 +1,63 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.icon-wrapper {
+  flex: 1;
+}
+
+.statusContainer {
+  flex: 1;
+  padding-left: 12px;
+}
+
+:global(.zp .Select-option.is-focused) {
+  .active > div > div {
+    color: var(--color-text-reversed) !important;
+  }
+}
+
+.star {
+  @include typography.body-1;
+}
+
+.option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .current-selection {
+    opacity: 0.6;
+  }
+
+  .optionLabel {
+    width: 100%;
+  }
+}
+
+.sequenceLink {
+  @include typography.body-2-medium;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px;
+  border-top: 1px solid var(--color-border-light);
+
+  .linkText {
+    margin-right: 6px;
+  }
+
+  .externalLinkIcon {
+    color: var(--color-primary-50);
+  }
+}
+
+.showErrorBorder {
+  :global .Select-control {
+    /* :global is required to override Select container style */
+    border: 1px solid var(--color-negative-40) !important;
+
+    .Select-placeholder {
+      color: var(--color-negative-40) !important;
+    }
+  }
+}

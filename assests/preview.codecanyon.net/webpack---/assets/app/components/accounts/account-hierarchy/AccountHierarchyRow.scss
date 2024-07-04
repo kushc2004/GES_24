@@ -1,0 +1,52 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+.row {
+  @include typography.body-2;
+  color: var(--color-text-secondary);
+  display: grid;
+  grid-template-columns: 2.5fr repeat(3, 1fr);
+  padding: 10px 20px;
+  align-items: center;
+  grid-gap: 8px;
+  border-bottom: 1px solid var(--color-border-light);
+  min-height: 58px;
+
+  &:hover {
+    background-color: var(--color-bg-secondary);
+  }
+
+  &.spanning {
+    grid-template-columns: 1fr;
+
+    &:hover {
+      background-color: var(--color-bg-main);
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+}
+
+.cell {
+  padding: 0 !important;
+}
+
+.accountStage {
+  @include typography.body-2;
+
+  .indicator {
+    height: 10px;
+    width: 10px;
+    margin-right: 6px;
+  }
+}
+
+.truncated,
+.truncated div,
+.truncated span {
+  @include text-overflow.ellipsis;
+}

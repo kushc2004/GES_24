@@ -1,0 +1,58 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+.company {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &.primary {
+    padding: 10px 0px;
+  }
+
+  .logo {
+    box-shadow: 1px 1px 1px 0 var(--color-neutral-30);
+    border-radius: var(--border-radius-4);
+    margin-right: 10px;
+  }
+
+  .title-and-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+
+    .overflowingTextContainer {
+      display: flex;
+      align-items: center;
+    }
+
+    .title {
+      @include typography.body-1-medium;
+      color: var(--color-text-links);
+      display: block;
+      text-decoration: none;
+      text-align: left;
+      margin-right: 10px;
+      max-width: 200px;
+      @include text-overflow.ellipsis;
+
+      &.primary {
+        @include typography.body-2-medium;
+      }
+
+      &.clickable {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &.empty {
+        @include typography.body-2;
+        color: var(--color-text-secondary);
+      }
+    }
+  }
+}

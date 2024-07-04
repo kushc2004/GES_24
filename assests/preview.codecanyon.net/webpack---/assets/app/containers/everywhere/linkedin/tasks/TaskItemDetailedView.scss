@@ -1,0 +1,106 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/text-overflow';
+
+.taskDetailedViewContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+
+  > * {
+    margin: 0 -16px;
+  }
+
+  .headerWrapper {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: var(--color-border-light);
+    padding: 16px;
+
+    .header {
+      @include typography.body-2;
+      color: var(--color-text-secondary);
+
+      .bold {
+        @include typography.subheader-1;
+        color: var(--color-text-primary);
+      }
+
+      .campaignName {
+        @include text-overflow-ellipsis;
+        display: inline-block;
+        vertical-align: bottom;
+        max-width: 15em;
+      }
+    }
+
+    .taskHeaderInfoContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 14px 0 0;
+
+      .date {
+        @include typography.helper-1-medium;
+        color: var(--color-text-positive);
+      }
+
+      .pastDate {
+        color: var(--color-negative-40);
+      }
+    }
+  }
+
+  .bodyContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+
+    .textArea {
+      textarea {
+        @include typography.body-2;
+        color: var(--color-text-secondary);
+
+        &:hover {
+          --input-border-color: var(--color-neutral-30);
+        }
+      }
+    }
+  }
+
+  .messageContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .noteContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .otherActionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 16px 16px;
+
+    .otherActions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+
+  .label {
+    @include typography.subheader-2;
+    color: var(--color-text-labels);
+  }
+
+  .message,
+  .note {
+    color: var(--color-text-secondary);
+    white-space: pre-wrap;
+  }
+}

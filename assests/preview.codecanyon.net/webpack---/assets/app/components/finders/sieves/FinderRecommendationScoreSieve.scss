@@ -1,0 +1,41 @@
+@use 'typography';
+
+@import '../../../../common/scss/variables';
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .score {
+    font-weight: $font-weight-semibold;
+
+    &.green {
+      color: var(--color-text-positive);
+    }
+
+    &.orange {
+      color: var(--color-caution-50);
+    }
+  }
+}
+
+.section {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.section-name {
+  color: var(--color-text-secondary);
+  font-weight: $font-weight-semibold;
+}
+
+.missing-filters {
+  @include typography.helper-1;
+  color: var(--color-text-labels);
+  margin-top: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

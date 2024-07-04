@@ -1,0 +1,245 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.formBody {
+  width: 500px !important;
+}
+
+.formBlock {
+  min-height: 353px;
+  max-height: 450px;
+  padding: 0px 20px 28px;
+}
+
+.footer {
+  flex-direction: row-reverse !important;
+
+  & > button:nth-child(2) {
+    margin-right: 8px;
+  }
+}
+
+.header {
+  box-shadow: inset 0px -1px 0px var(--color-neutral-30);
+}
+
+.stackedContainer {
+  padding: 0 10px;
+}
+
+.stackedContainerContent {
+  padding: 10px 10px 0;
+}
+
+.backButton {
+  margin-right: auto;
+}
+
+.stackedContainerWithBottomBorder {
+  padding-bottom: 10px;
+
+  .contextType {
+    @include typography.body-2-medium;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    width: 249px;
+    height: 21px;
+    color: var(--color-text-secondary);
+    margin-bottom: 10px;
+  }
+}
+
+.progressBar {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.progressBarContent {
+  background-color: var(--color-bg-secondary);
+  margin: -13px -20px -28px;
+}
+
+.divider {
+  border: 0.5px solid var(--color-border-light);
+}
+
+.dividerSection {
+  border: 0.5px solid var(--color-border-light);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+
+.fieldPadding {
+  padding: 5px 5px 5px 25px;
+}
+
+.contextType {
+  @include typography.subheader-1;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  width: 249px;
+  height: 21px;
+  color: var(--color-text-primary);
+
+  .icon {
+    margin-right: 10px;
+    color: var(--color-icon-light);
+  }
+}
+
+.description {
+  margin-left: 30px;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.dropdownComponent {
+  width: 410px;
+  padding: 4px 10px 0;
+  height: 48px;
+  display: flex;
+  flex-flow: column;
+  align-items: normal;
+}
+
+.scheduleButtonHeading {
+  @include typography.body-2-medium;
+  display: flex;
+  line-height: 21px;
+}
+
+.scheduleButtonDescription {
+  @include typography.body-3;
+}
+
+.nextScheduleDetails {
+  @include typography.body-2;
+  margin-top: 10px;
+  color: var(--color-text-body);
+}
+
+.scheduleDropdown {
+  padding: 10px 8px 9px 30px;
+
+  .scheduleDropdownButton {
+    @include typography.body-2;
+    width: 410px;
+    display: flex;
+    justify-content: space-between;
+
+    .scheduleButtonValueLabel {
+      color: var(--color-text-header);
+    }
+
+    .scheduleButtonValueDescription {
+      color: var(--color-neutral-60);
+    }
+  }
+}
+
+.numberField {
+  padding: 5px 5px 5px 30px;
+  width: 250px;
+}
+
+.messageBlock {
+  @include typography.body-2;
+  align-items: center;
+  display: flex;
+  padding: 8px 20px;
+
+  &.info {
+    background-color: var(--color-primary-10);
+    color: var(--color-primary-50);
+    text-align: center;
+
+    .infoIcon {
+      padding-right: 20px;
+      color: var(--color-primary-50);
+    }
+  }
+}
+
+.filterContext {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+
+  .filterContextType {
+    @include typography.subheader-1;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    width: 249px;
+    height: 21px;
+    color: var(--color-text-primary);
+
+    .icon {
+      margin-right: 10px;
+    }
+  }
+
+  .clearFilters {
+    @include typography.helper-1-medium;
+    color: var(--color-primary-50);
+  }
+}
+
+.filterBlock {
+  padding: 5px 5px 5px 25px;
+  display: flex;
+  flex-flow: column;
+
+  .filterButton {
+    @include typography.body-2-medium;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px 4px 8px;
+    gap: 4px;
+    width: 112px;
+    height: 24px;
+    color: var(--color-text-secondary);
+    background: var(--color-bg-main);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-2);
+
+    i {
+      margin-right: 1px !important;
+    }
+  }
+
+  .filtersContainer {
+    margin-top: 8px;
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y: scroll;
+    max-height: 65px;
+
+    .filterBadge {
+      @include typography.helper-1;
+    }
+  }
+}
+
+.contactStageNote {
+  margin: 0 0 5px 30px;
+}
+
+.dayPickerContainer {
+  padding: 10px 10px 9px;
+  background: var(--color-bg-main);
+  display: flex;
+  justify-content: center;
+}
+
+.dayPickerHeader {
+  @include typography.body-2-bold;
+  color: var(--color-text-light);
+}

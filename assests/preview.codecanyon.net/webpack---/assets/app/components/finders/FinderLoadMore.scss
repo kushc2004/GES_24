@@ -1,0 +1,16 @@
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.load-more {
+  height: 30px;
+  color: var(--color-primary-70);
+  @include typography.body-2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

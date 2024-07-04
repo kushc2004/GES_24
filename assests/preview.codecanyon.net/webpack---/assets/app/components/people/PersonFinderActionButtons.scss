@@ -1,0 +1,36 @@
+@import '../../../common/scss/variables';
+
+.self {
+  .email-envelope {
+    @media (max-width: $screen-sm-max) {
+      display: none;
+    }
+  }
+
+  .linkedin {
+    @media (max-width: $screen-sm-max) {
+      display: none;
+    }
+  }
+
+  .suppress {
+    @media (max-width: $screen-sm-max) {
+      display: none;
+    }
+  }
+
+  :global {
+    .zp-button {
+      padding-left: 6px !important;
+      padding-right: 6px !important;
+
+      &.zp-disabled {
+        background-color: white !important;
+
+        i {
+          opacity: 0.5 !important;
+        }
+      }
+    }
+  }
+}

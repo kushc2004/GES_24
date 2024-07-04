@@ -1,0 +1,83 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.modalHeader {
+  justify-content: flex-end;
+  padding: 15px;
+}
+
+.modalHeaderCloseIcon {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.modalBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 48px 48px;
+}
+
+.bodyWrapper {
+  width: min(400px, 100%);
+
+  .alertIcon {
+    font-size: 48px;
+    line-height: 100%;
+    margin-bottom: 16px;
+    color: var(--color-caution-50);
+  }
+
+  h3 {
+    @include typography.heading-3;
+    text-align: center;
+  }
+
+  p {
+    @include typography.body-2;
+    text-align: center;
+    margin: 8px 0 24px;
+  }
+}
+
+.bodyActions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .radioLabel {
+    @include typography.body-2;
+  }
+}
+
+.mailBoxOption {
+  padding: 0;
+}
+
+.mailboxSelector {
+  margin: 12px 0 0 24px;
+
+  --select-margin-bottom: 0;
+
+  :global {
+    .Select-input {
+      height: 32px;
+    }
+
+    .Select-placeholder {
+      line-height: 32px;
+    }
+  }
+}
+
+.dangerBtn {
+  background-color: var(--color-negative-50) !important;
+}
+
+.modalFooter {
+  padding: 12px 20px;
+
+  :global .zp-button:first-child:not(:last-child) {
+    margin-right: 8px;
+  }
+}

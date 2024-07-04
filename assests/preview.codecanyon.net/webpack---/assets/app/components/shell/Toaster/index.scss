@@ -1,0 +1,140 @@
+@use 'sass:math';
+@use 'typography';
+@import '../../../../common/scss/variables';
+@import '../../../../common/scss/mixins/_elevation';
+
+:global {
+  @import './variables';
+  @import './animation';
+  @import './confirm';
+
+  body.toastr-confirm-active {
+    overflow: hidden;
+  }
+
+  .redux-toastr {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    .top-left,
+    .top-right,
+    .top-center,
+    .bottom-left,
+    .bottom-right,
+    .bottom-center {
+      width: $toastr-width;
+      position: fixed;
+      z-index: 99999999;
+      padding: 0 $defaultSpace;
+    }
+
+    // 201806 Scott: toast offsets from Cedric's designs after input from Tim
+    .top-left,
+    .top-right,
+    .top-center {
+      top: 15px;
+    }
+
+    .top-right,
+    .bottom-right {
+      right: 80px; // avoid covering any action button on top-right corner of app
+    }
+
+    .bottom-left,
+    .bottom-right,
+    .bottom-center {
+      bottom: 15px;
+    }
+
+    .top-left,
+    .bottom-left {
+      left: 30px;
+    }
+
+    .top-center,
+    .bottom-center {
+      left: 50%;
+      margin-left: -(math.div($toastr-width, 2));
+    }
+
+    @media (max-width: 320px) {
+      .top-left,
+      .top-right,
+      .top-center,
+      .bottom-left,
+      .bottom-right,
+      .bottom-center {
+        width: $toastr-width - 30;
+      }
+
+      .top-center,
+      .bottom-center {
+        $with: $toastr-width - 30;
+        margin-left: -(math.div($with, 2));
+      }
+    }
+
+    .toastr {
+      box-shadow: var(--shadow-3);
+      width: 320px;
+      min-height: 37px;
+      overflow: hidden;
+      margin: $defaultSpace 0;
+      position: relative;
+      z-index: 2;
+
+      // 201805 Scott: our custom CSS
+      border-radius: var(--border-radius-4);
+      background-color: white;
+
+      // 201805 Scott: remove padding so that rrt-middle-container fills everything
+      padding: 0;
+
+      > div {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .rrt-left-container {
+        // 201805 Scott: hide the left container
+        display: none;
+        width: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+      }
+
+      .rrt-middle-container {
+        @include typography.helper-1;
+        position: relative;
+        flex: 1;
+        min-height: 50px;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: center;
+
+        text-align: left;
+
+        .rrt-title {
+          display: none;
+        }
+      }
+
+      .rrt-right-container {
+        // 201805 Scott: hide the right container
+        display: none;
+        width: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+}

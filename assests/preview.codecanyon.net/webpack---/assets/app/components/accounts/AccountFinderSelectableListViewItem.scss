@@ -1,0 +1,228 @@
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+.avatar {
+  width: 30px;
+  margin-right: 10px;
+  position: relative;
+  @media (max-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+.avatar-image {
+  @media (max-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+.account-badge {
+  @media (min-width: $screen-md-min) {
+    position: absolute;
+    top: -9px;
+    left: -9px;
+  }
+}
+
+.owner-avatar-wrapper {
+  margin-left: 10px;
+}
+
+.user-avatar {
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color-primary-70);
+  }
+}
+
+.name {
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--color-primary-50);
+
+  &:hover {
+    color: var(--color-primary-70);
+  }
+
+  &.accounts-tab-mode {
+    flex: 1 0 200px;
+  }
+
+  &.prospect-mode {
+    width: 200px;
+    min-width: 200px;
+  }
+}
+
+.name-text {
+  @include typography.heading-3;
+}
+
+.stage-space {
+  width: 10px;
+}
+
+.stage {
+  width: 180px;
+  min-width: 180px;
+  margin-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  display: flex;
+  flex-direction: column;
+
+  &.prospect-mode {
+    width: 140px;
+    min-width: 140px;
+  }
+
+  .campaign-status-badges {
+    padding-top: 4px;
+    padding-bottom: 2px;
+    @media (max-width: $screen-md-max) {
+      display: none;
+    }
+  }
+}
+
+.account-stage-badge {
+  margin-right: 4px;
+}
+
+.stage-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.stage-flex-top {
+  @extend .stage-flex;
+  flex-wrap: wrap;
+  @media (max-width: $screen-md-max) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  padding-bottom: 5px;
+  @media (max-width: $screen-sm-max) {
+    padding-bottom: 0;
+  }
+}
+
+.snippet {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  margin-right: 10px;
+  padding-left: 15px;
+  min-height: 45px;
+  align-items: center;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &.prospect-mode {
+    border-left: none;
+  }
+}
+
+.org-snippet-min-width {
+  width: 250px;
+  flex-grow: 1;
+}
+
+.snippet-mixed-company {
+  @extend .snippet;
+  padding-left: 0;
+  border-left: none;
+  padding-right: 15px;
+  border-right: 1px solid var(--color-border-light);
+}
+
+.last-activity {
+  @include typography.helper-1;
+  width: 50px;
+  margin-right: 5px;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  color: var(--color-text-labels);
+  @media (max-width: $screen-md-max) {
+    display: none;
+  }
+}
+
+.social-media-links {
+  font-size: 13px;
+  line-height: 13px;
+
+  > div {
+    margin-top: 4px;
+  }
+
+  > div:empty {
+    margin-top: 0;
+  }
+}
+
+.engagement-graph-wrapper {
+  margin-right: 5px;
+  @media (max-width: $screen-md-max) {
+    display: none;
+  }
+}
+
+.x-ray {
+  @media (max-width: $screen-md-max) {
+    display: none;
+  }
+}
+
+.links {
+  flex: 1;
+  max-width: 8%;
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.card-org-title {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.card-org-detail {
+  flex: 1;
+}
+
+.actions {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.preview-padding {
+  padding: 5px 0 8px !important;
+}
+
+.prospectRightSide {
+  display: flex;
+  align-items: center;
+}
+
+.stageActions {
+  min-width: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge {
+  margin: 0 0 15px 2px;
+}
+
+.actionButtonsLg {
+  margin-left: -2px;
+}

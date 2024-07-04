@@ -1,0 +1,8 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.primaryRecordSelection {
+  .trophySelected {
+    color: var(--color-secondary-50);
+  }
+}

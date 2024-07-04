@@ -1,0 +1,18 @@
+@import 'assets/common/scss/variables';
+
+.footer {
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.form {
+  height: 240px;
+}
+
+.modalBody {
+  padding: 0;
+
+  .modalBodyContent {
+    padding: 20px;
+  }
+}

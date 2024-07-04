@@ -1,0 +1,146 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 32px;
+  gap: 32px;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  padding: 0;
+  margin-top: 56px;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+
+  [data-intro-head] {
+    margin: 8px 0;
+  }
+}
+
+.intro {
+  [data-intro-body] {
+    @include typography.body-2;
+    color: var(--color-text-body);
+  }
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  scrollbar-gutter: stable; // Prevent layout shift
+}
+
+.reactiveSequenceBanner {
+  padding: 30px;
+}
+
+.warningOverride {
+  background-color: var(--color-caution-10);
+
+  i {
+    @include typography.body-1;
+  }
+
+  * {
+    color: var(--color-text-caution) !important;
+    @include typography.body-2-medium;
+  }
+}
+
+.tip,
+.fieldError {
+  @include typography.helper-1;
+  display: inline-block;
+  color: var(--color-text-secondary);
+
+  &.fieldError {
+    color: var(--color-negative-40);
+  }
+}
+
+.collapseWrapper {
+  border: 1px solid var(--color-border-light);
+  padding: 0 24px;
+  border-radius: var(--border-radius-4);
+}
+
+.collapseHeader {
+  @include typography.heading-3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  cursor: pointer;
+
+  * {
+    color: var(--color-text-body);
+  }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.collapseTitle {
+  margin-left: 16px;
+}
+
+.collapseBody {
+  padding: 0 0 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  --select-margin-bottom: 0;
+
+  .grid {
+    display: grid;
+    gap: 16px 16px;
+    grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+  }
+
+  .subLabel {
+    color: var(--color-neutral-50);
+  }
+}
+
+.modalFooter {
+  margin-inline: -32px;
+  margin-top: auto;
+  justify-content: space-between;
+
+  .rightButtonsWrapper {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.sendingLimitsStylesOverride {
+  box-shadow: none !important;
+
+  [data-card-content] {
+    padding: 0 !important;
+
+    label {
+      @include typography.subheader-1;
+      color: var(--color-text-body);
+
+      span {
+        @include typography.subheader-1;
+      }
+    }
+  }
+}

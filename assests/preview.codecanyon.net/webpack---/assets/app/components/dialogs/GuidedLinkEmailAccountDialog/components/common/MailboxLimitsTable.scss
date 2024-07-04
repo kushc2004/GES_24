@@ -1,0 +1,44 @@
+@use 'typography';
+
+.limitsTable {
+  border-radius: var(--border-radius-4);
+  border: 1px solid var(--color-border-light);
+  border-collapse: separate;
+  width: 100%;
+
+  thead {
+    position: relative;
+
+    th {
+      @include typography.helper-1-medium;
+      color: var(--color-text-placeholder);
+      padding: 8px 16px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+  }
+
+  td {
+    color: var(--color-text-body);
+    text-align: center;
+    @include typography.body-2;
+    padding: 12px 24px;
+
+    > div {
+      display: inline-block;
+      width: max-content;
+
+      i {
+        color: var(--color-text-caution) !important;
+        height: unset;
+      }
+    }
+  }
+}

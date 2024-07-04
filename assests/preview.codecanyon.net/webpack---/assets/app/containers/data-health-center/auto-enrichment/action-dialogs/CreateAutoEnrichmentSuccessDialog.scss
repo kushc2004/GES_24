@@ -1,0 +1,54 @@
+@use 'typography';
+
+.screenHeader {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.successIcon {
+  margin-top: -18px;
+}
+
+.title {
+  @include typography.heading-3;
+  color: var(--color-text-primary);
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  @include typography.body-2;
+  color: var(--color-text-secondary);
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.updateSubtitle {
+  padding-bottom: 12px;
+}
+
+.footerContents {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close {
+  display: flex;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  line-height: normal;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 1;
+}
+
+.content {
+  @include typography.body-2;
+  max-width: 356px;
+  color: var(--color-text-secondary);
+  display: inline-block;
+  line-height: 21px;
+  padding-bottom: 12px;
+  padding-top: 4px;
+}

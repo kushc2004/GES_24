@@ -1,0 +1,90 @@
+@import '../../../../common/scss/variables';
+
+.item {
+  + .item {
+    margin-top: 8px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 20px;
+  }
+
+  border-radius: var(--border-radius-4);
+  box-shadow: var(--shadow-1);
+  border: 1px solid transparent !important;
+
+  transition: all 0.15s ease-in-out;
+
+  &:not(.selected):hover {
+    background-color: white !important;
+    border-color: var(--color-primary-50) !important;
+    box-shadow: none;
+  }
+
+  &.selected {
+    background-color: var(--color-bg-secondary) !important;
+    border-color: var(--color-border-light) !important;
+  }
+}
+
+.name {
+  flex: 1;
+  flex-grow: 1;
+  min-width: 230px;
+  padding-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  @media (max-width: $screen-sm-max) {
+    max-width: 100%;
+  }
+
+  .nameText {
+    display: flex;
+    align-items: center;
+
+    .privacyIcon {
+      color: var(--color-secondary-50);
+      margin-right: 4px;
+    }
+
+    :global {
+      .zp-icon {
+        font-size: 16px !important;
+        line-height: 15px !important;
+      }
+    }
+  }
+}
+
+.stats {
+  margin-left: 9px;
+  padding-right: 10px;
+  border-right: 1px dashed var(--color-border-light);
+
+  --statistic-min-width: 0px; // "unset" doesn't work because of default value at the usage of --statistic-min-width
+  --statistic-padding-left: 0px;
+  --statistic-padding-right: 0px;
+  --statistics-row-column-gap: 16px;
+}
+
+.user {
+  margin-left: 12px;
+  margin-right: 10px;
+  text-align: right;
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.lists {
+  display: flex;
+  flex-direction: row;
+  font-size: 11px !important;
+}
+
+.selected {
+  .nameText {
+    color: var(--color-primary-50);
+  }
+}

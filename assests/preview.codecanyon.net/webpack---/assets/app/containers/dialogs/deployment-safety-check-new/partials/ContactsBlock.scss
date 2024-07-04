@@ -1,0 +1,40 @@
+@import 'assets/common/scss/variables';
+
+.tip {
+  margin-bottom: 6px;
+}
+
+.accordionHead {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+
+  .headerLeft {
+    display: flex;
+    gap: 6px;
+  }
+
+  .warningIcon {
+    font-size: 20px;
+    color: var(--color-text-caution);
+  }
+
+  .lockedIcon {
+    font-size: 20px;
+  }
+}
+
+.accordionBox {
+  width: calc(100% - 20px) !important;
+}
+
+.hideCheckbox {
+  [data-input='checkbox'] {
+    display: none !important;
+  }
+}
+
+.accordionBoxContent {
+  padding-top: 0;
+  padding-left: 36px;
+}

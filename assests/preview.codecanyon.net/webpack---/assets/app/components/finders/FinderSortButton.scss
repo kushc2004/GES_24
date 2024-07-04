@@ -1,0 +1,7 @@
+@import '../../../common/scss/variables';
+
+.popover {
+  form > :not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

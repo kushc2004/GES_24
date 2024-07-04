@@ -1,0 +1,66 @@
+@use 'mixins/text-overflow' as text-overflow;
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-main);
+  transition: max-height 100ms;
+
+  .headerContainer {
+    max-height: 100px;
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+
+    .title {
+      @include text-overflow.ellipsis;
+      @include typography.heading-2;
+      color: var(--color-text-header);
+    }
+
+    .subTitle {
+      @include text-overflow.ellipsis;
+      @include typography.body-3;
+      color: var(--color-text-body);
+    }
+
+    .headerTransition {
+      transition: all 100ms ease-in-out;
+    }
+  }
+
+  .breadcrumbs {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 4px;
+
+    .breadcrumb {
+      @include typography.body-3;
+      color: var(--color-text-body);
+    }
+  }
+
+  .collapsedHeader {
+    opacity: 0;
+    transform: translate(0, -10px) scaleY(0);
+  }
+
+  .extendedHeader {
+    opacity: 1;
+    transform: translate(0, 0) scaleY(1);
+  }
+
+  .containerShow {
+    max-height: 100px;
+    margin-top: 4px;
+  }
+
+  .containerHide {
+    max-height: 0;
+    margin-top: 0;
+  }
+}

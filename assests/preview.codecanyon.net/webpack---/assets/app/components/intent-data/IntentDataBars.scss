@@ -1,0 +1,49 @@
+@import 'assets/common/scss/variables';
+
+.barsContainer {
+  display: flex;
+  align-items: flex-end;
+  padding: 4px;
+  cursor: pointer;
+
+  &:hover {
+    .low,
+    .medium,
+    .high {
+      background-color: var(--color-positive-50);
+    }
+
+    .updatedLow,
+    .updatedMedium,
+    .updatedHigh {
+      background-color: var(--color-neutral-40);
+    }
+  }
+
+  .low,
+  .medium,
+  .high {
+    width: 3px;
+    background-color: var(--color-positive-40);
+    border-radius: var(--border-radius-4);
+    margin: 0 1px;
+  }
+
+  .low {
+    height: 4px;
+  }
+
+  .medium {
+    height: 8px;
+  }
+
+  .high {
+    height: 14px;
+  }
+
+  .updatedLow,
+  .updatedMedium,
+  .updatedHigh {
+    background-color: var(--color-neutral-30);
+  }
+}

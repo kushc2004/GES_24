@@ -1,0 +1,158 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.linkedinSearch {
+  background-image: url(chrome-extension/assets/img/empty-states/linkedin_search_2.svg);
+  background-repeat: no-repeat;
+  height: 155px;
+  width: 235px;
+}
+
+.heading {
+  @include typography.heading-1;
+  margin-top: 30px;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.subheading {
+  @include typography.body-2;
+  margin-top: 10px;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.contactsContainer {
+  min-height: 0;
+  overflow: auto;
+
+  > *:not(:last-child) {
+    border-bottom: 1px solid var(--color-border-light);
+  }
+}
+
+.contact {
+  padding: 18px 16px;
+  display: flex;
+}
+
+.contactCheckbox {
+  flex-shrink: 0;
+}
+
+.contactContent {
+  flex-grow: 1;
+  margin-left: 10px;
+  margin-top: -2px;
+  min-width: 0;
+}
+
+.contactBadgeAndName {
+  display: flex;
+  align-items: center;
+}
+
+.contactBadgeContainer {
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+.contactActions {
+  margin-top: 14px;
+}
+
+.bulkSelectCheckboxes {
+  display: flex;
+  padding: 10px 16px;
+
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  + .checkboxContainer {
+    margin-left: 24px;
+  }
+}
+
+.checkboxLabel {
+  margin-left: 10px;
+}
+
+.actionsContainer {
+  padding: 4px 20px 16px; // top-spacing is supposed to be 16px. 12px margin-top of label compensates for the rest.
+  border-top: 1px solid var(--color-border-light);
+  background: var(--color-bg-secondary);
+  margin-top: auto;
+}
+
+.actionsCta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 6px; // top-spacing is supposed to be 16px, 10px margin-bottom of form-item compensates for the rest.
+}
+
+.contactName {
+  @include typography.body-1-medium;
+
+  color: var(--color-text-primary);
+  @include text-overflow.ellipsis;
+}
+
+.contactTitle {
+  @include typography.body-2;
+
+  margin-top: 4px;
+  color: var(--color-text-secondary);
+  word-break: break-word;
+}
+
+.labelWithAction {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  > [role='button'] {
+    display: flex;
+    gap: 4px;
+    cursor: pointer;
+
+    :global(.zp-icon) {
+      font-size: 1em;
+    }
+  }
+}
+
+.providerButtons {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: row;
+  gap: 8px;
+  margin-top: 12px;
+
+  &.iconOnly {
+    grid-auto-flow: column;
+  }
+}

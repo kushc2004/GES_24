@@ -1,0 +1,169 @@
+@use 'typography';
+@import '../../../../common/scss/variables';
+
+.noScoreContainer {
+  background-color: #fbfbfd;
+  height: 320px; // static height so we can match it with loading state
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loadingState {
+  align-items: center; // for the spinner
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameContainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 16px 0px;
+
+  .userIcon {
+    background-color: var(--color-neutral-80);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
+  }
+
+  .userName {
+    @include typography.body-2-medium;
+    font-weight: $font-weight-medium;
+    color: var(--color-text-header);
+  }
+}
+
+.descriptionContainer {
+  text-align: center;
+  padding: 0px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  .mainContent {
+    @include typography.body-1;
+    font-weight: $font-weight-semibold;
+    color: var(--color-text-header);
+  }
+
+  .subContent {
+    @include typography.body-2;
+    color: var(--color-text-body);
+  }
+}
+
+.buttonActionContainer {
+  margin-top: 12px;
+  align-self: center;
+
+  .buttonDescription {
+    @include typography.subheader-2;
+    display: inline-block;
+    font-weight: $font-weight-semibold;
+    color: var(--color-text-body);
+    margin-bottom: 5px;
+  }
+
+  .buttonAction {
+    margin: auto;
+  }
+}
+
+.scoreOptionsContainer {
+  margin-top: 8px;
+}
+
+.radio {
+  margin-bottom: 16px;
+}
+
+.scoreNameContainer {
+  margin-bottom: 30px;
+
+  .scoreNamelabel {
+    @include typography.helper-1;
+    color: var(--color-text-secondary);
+    margin-bottom: 2px;
+  }
+}
+
+.footerContainer {
+  background-color: #fbfbfd;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  height: 32px;
+
+  :global {
+    .zp-link {
+      flex: 1;
+    }
+  }
+
+  .footerButton {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+.excellent {
+  background-color: rgba($color: $color-positive-50, $alpha: 18%);
+}
+
+.good {
+  background-color: $color-primary-10;
+}
+
+.fair {
+  background-color: rgba($color: $color-caution-40, $alpha: 18%);
+}
+
+.poor {
+  background-color: #efefef;
+}
+
+.scoreNameLabelBadge {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px 0px;
+
+  .primaryBadge {
+    background-color: #f2eeff;
+    color: var(--color-quaternary-50);
+
+    :global {
+      .zp-icon {
+        color: var(--color-quaternary-50) !important;
+      }
+    }
+  }
+}
+
+.inaccurateFiltersWarningContainer {
+  display: flex;
+  margin-top: 1px;
+}
+
+.inaccurateFiltersWarningIcon {
+  &:global(.zp-icon) {
+    @include typography.body-1;
+    color: var(--color-caution-40) !important;
+  }
+}
+
+.inaccurateFiltersWarningIconTooltipWrapper {
+  display: flex;
+  align-items: center;
+  height: 16px;
+}

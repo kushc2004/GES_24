@@ -1,0 +1,11 @@
+@import '../../../../common/scss/variables';
+
+.noInputMargin {
+  margin: 0 !important;
+}
+
+.tabButtons {
+  & + div {
+    margin-top: 12px !important;
+  }
+}

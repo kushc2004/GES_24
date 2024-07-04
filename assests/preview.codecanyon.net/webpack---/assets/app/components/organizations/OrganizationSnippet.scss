@@ -1,0 +1,67 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+.lists {
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .grey-item {
+    font-size: 13px;
+    opacity: 0.6;
+    margin-bottom: 10px;
+  }
+}
+
+.links {
+  line-height: 15px;
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.org-name {
+  &,
+  a {
+    @include typography.body-1-medium;
+    line-height: 16px;
+  }
+  color: var(--color-primary-50);
+  padding-bottom: 10px;
+  display: block;
+
+  &.revertPaddingBottom {
+    padding-bottom: 0;
+  }
+}
+
+.orgLogo {
+  display: flex;
+  align-items: flex-start;
+
+  .orgLeftMargin {
+    margin-left: 15px;
+  }
+}
+
+.accStage {
+  margin-top: 10px;
+}
+
+.contactTitle {
+  @include typography.helper-1;
+  color: var(--color-text-secondary);
+  display: block;
+  width: 170px;
+  @include text-overflow.ellipsis;
+}
+
+.removeMargin {
+  margin-left: 0 !important;
+}

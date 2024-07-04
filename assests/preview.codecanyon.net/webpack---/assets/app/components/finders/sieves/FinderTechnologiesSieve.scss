@@ -1,0 +1,10 @@
+@use 'typography';
+
+@import '../../../../common/scss/variables';
+
+.option {
+  .category {
+    @include typography.helper-1;
+    color: var(--color-text-labels);
+  }
+}

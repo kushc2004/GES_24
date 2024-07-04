@@ -1,0 +1,101 @@
+@import '../../../common/scss/variables';
+
+.volume-control-input-blue {
+  input[type='range'] {
+    /* removes default webkit styles */
+    appearance: none;
+
+    /* required for proper track sizing in FF */
+    width: 85px;
+    cursor: pointer;
+  }
+
+  input[type='range']::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 4px;
+    background: var(--color-neutral-30);
+    border: none;
+    border-radius: var(--border-radius-2);
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    appearance: none;
+    border: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: var(--color-primary-50);
+    margin-top: -4px;
+  }
+
+  input[type='range']:focus {
+    outline: none;
+  }
+
+  input[type='range']:focus::-webkit-slider-runnable-track {
+    background: var(--color-neutral-30);
+  }
+
+  input[type='range']::-moz-range-track {
+    width: 300px;
+    height: 4px;
+    background: var(--color-neutral-30);
+    border: none;
+    border-radius: var(--border-radius-2);
+  }
+
+  input[type='range']::-moz-range-thumb {
+    border: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: var(--color-primary-50);
+  }
+
+  /* hide the outline behind the border */
+  input[type='range']:-moz-focusring {
+    outline: 1px solid white;
+    outline-offset: -1px;
+  }
+
+  input[type='range']::-ms-track {
+    width: 300px;
+    height: 4px;
+
+    /* remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+
+    /* leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /* remove default tick marks */
+    color: transparent;
+  }
+
+  input[type='range']::-ms-fill-lower {
+    background: var(--color-primary-50);
+    border-radius: 11px;
+  }
+
+  input[type='range']::-ms-fill-upper {
+    background: var(--color-neutral-30);
+    border-radius: 11px;
+  }
+
+  input[type='range']::-ms-thumb {
+    border: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: var(--color-primary-50);
+  }
+
+  input[type='range']:focus::-ms-fill-lower {
+    background: var(--color-primary-50);
+  }
+
+  input[type='range']:focus::-ms-fill-upper {
+    background: var(--color-neutral-30);
+  }
+}

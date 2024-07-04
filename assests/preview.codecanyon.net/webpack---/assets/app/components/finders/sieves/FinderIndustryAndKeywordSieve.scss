@@ -1,0 +1,17 @@
+@import 'assets/common/scss/variables';
+
+.keywordSieveSubAccordion {
+  :global(.subaccordion-body) {
+    padding-bottom: 8px;
+  }
+
+  &.bodyPadding {
+    :global(.subaccordion-body) {
+      padding-bottom: 16px;
+    }
+  }
+}
+
+.industryFieldSpacing {
+  padding-bottom: 14px;
+}

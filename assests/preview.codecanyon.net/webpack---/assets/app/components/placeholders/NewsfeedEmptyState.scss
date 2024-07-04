@@ -1,0 +1,38 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &.padded {
+    padding: 25px 20px;
+  }
+
+  .title {
+    @include typography.heading-3;
+
+    margin-top: 20px;
+    max-width: 330px;
+    text-align: center;
+    color: var(--color-text-primary);
+  }
+
+  .description {
+    @include typography.body-2;
+    color: var(--color-text-secondary);
+  }
+
+  .placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+    }
+  }
+}

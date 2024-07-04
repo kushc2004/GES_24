@@ -1,0 +1,65 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.loader {
+  height: 100px;
+  position: relative;
+}
+
+.subHeader {
+  @include typography.subheader-1;
+  margin-bottom: 8px;
+}
+
+.cardContentContainer {
+  display: flex;
+  padding: 14px;
+  gap: 14px;
+
+  .cardIcon {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .cardHeader {
+      @include typography.subheader-1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .creditsBadge {
+        padding: 2px 8px;
+        background: var(--color-base-secondary-20, var(--color-secondary-20));
+        border-radius: var(--border-radius-2);
+        @include typography.body-3;
+        font-weight: 500;
+      }
+    }
+
+    .cardHelperText {
+      @include typography.body-2;
+      color: var(--color-text-placeholder);
+    }
+
+    .cardDescription {
+      @include typography.body-2;
+      color: var(--color-text-body);
+      max-width: 600px;
+    }
+  }
+
+  .cardButton {
+    margin-left: auto;
+  }
+}

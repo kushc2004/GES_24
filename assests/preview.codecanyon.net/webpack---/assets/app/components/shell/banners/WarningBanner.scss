@@ -1,0 +1,45 @@
+@use 'typography';
+@import 'assets/common/scss/mixins/elevation';
+
+.icon {
+  color: var(--color-caution-50);
+  font-size: 44px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  padding: 12px 18px;
+  background: var(--color-bg-main);
+  box-shadow: 0px 1px 3px rgba(0 0 0 / 10%);
+  border-radius: var(--border-radius-4);
+  width: 100vw;
+  max-width: 100%;
+}
+
+.title {
+  @include typography.body-1;
+  font-weight: 590;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  @include typography.body-1;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+.textContainer {
+  display: block;
+}
+
+.closeButton {
+  @include typography.body-2-medium;
+  margin: auto;
+  margin-right: 0px;
+  color: var(--color-primary-50);
+}

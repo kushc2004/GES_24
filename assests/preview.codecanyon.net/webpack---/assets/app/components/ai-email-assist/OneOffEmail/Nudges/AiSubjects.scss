@@ -1,0 +1,102 @@
+@use 'typography';
+@use 'mixins/elevation';
+
+.subjectFieldWrapper {
+  position: relative;
+}
+
+.elementContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border-normal);
+  border-radius: var(--border-radius-4);
+  max-height: 32px;
+
+  .inputRow {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .inputLabel {
+    display: flex;
+    align-items: center;
+    @include typography.subheader-1;
+    height: 30px;
+    padding: 4px 12px;
+    border-right: 1px solid var(--color-border-normal);
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+  }
+
+  :global {
+    input {
+      font-weight: 400;
+      margin: 0 !important;
+      border: none !important;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+      color: var(--color-text-primary);
+      padding: 13px 12px !important;
+    }
+  }
+}
+
+.inputWrapper.active {
+  @include elevation.shadow-3;
+  border: 1px solid var(--color-border-light);
+  border-bottom-color: var(--color-border-normal);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.suggestionsContainer {
+  @include elevation.shadow-3;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--color-border-light);
+  border-top: none;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.subjectSuggestion {
+  @include typography.body-2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: var(--color-text-body);
+  cursor: pointer;
+
+  :global {
+    .zp-icon {
+      line-height: 1;
+      color: var(--color-icon-light);
+    }
+  }
+}
+
+.subjectSuggestion:hover,
+.subjectSuggestion:active {
+  background: var(--color-bg-feedback);
+}
+
+.label {
+  @include typography.helper-1-medium;
+  color: var(--color-text-placeholder);
+  padding: 8px 16px;
+}

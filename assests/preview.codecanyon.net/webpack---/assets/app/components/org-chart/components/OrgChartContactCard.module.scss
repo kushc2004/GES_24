@@ -1,0 +1,71 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.card {
+  @include typography.body-3;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.highlighted {
+  border: 1px solid var(--color-border-focused);
+  box-shadow: 0px 0px 5px var(--color-primary-40);
+}
+
+.dehighlighted {
+  background-color: var(--color-bg-secondary);
+}
+
+.toggleChildrenButton {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  color: white;
+  padding: 0 28px;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  .toggleChildrenButtonLabel {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+}
+
+.expandButton {
+  background-color: var(--color-primary-30) !important;
+
+  &:hover {
+    background-color: var(--color-ui-primary) !important;
+  }
+}
+
+.handleTop {
+  min-height: 2px;
+  height: 2px;
+  top: 0px !important;
+}
+
+.handleBottom {
+  min-height: 2px;
+  height: 2px;
+  bottom: 0px !important;
+}
+
+.hoverAnchor {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -50%);
+
+  padding: 40px 0px 40px 8px; // necessary for hover target
+}

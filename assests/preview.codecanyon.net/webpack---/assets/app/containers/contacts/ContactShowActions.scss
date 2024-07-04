@@ -1,0 +1,41 @@
+@import 'assets/common/scss/variables';
+
+.contact-show-actions {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+button.moreButton {
+  &.smallMargin {
+    margin-left: -10px;
+  }
+
+  :global {
+    .zp-icon:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+}
+
+button.compactButton {
+  :global {
+    .zp-icon:not(:first-child) {
+      margin-left: 0;
+    }
+  }
+}
+
+button.newButton {
+  &.actionButton {
+    --button-foreground-color: var(--color-neutral-60);
+    --button-foreground-hover-color: var(--color-primary-50);
+  }
+
+  :global {
+    .zp-icon {
+      --button-icon-color: var(--color-icon-normal);
+    }
+  }
+}

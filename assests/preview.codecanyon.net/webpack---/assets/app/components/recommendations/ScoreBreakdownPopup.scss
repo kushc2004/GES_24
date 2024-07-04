@@ -1,0 +1,79 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.info-popover {
+  width: 350px;
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: var(--border-radius-4);
+
+  &.forCalendarExtensionOverlay {
+    width: 300px;
+  }
+}
+
+.overall {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  .loadingOrEmpty {
+    border-top: 1px solid var(--color-border-light);
+    padding: 12px 20px;
+  }
+
+  .criterion {
+    display: flex;
+    align-items: flex-start;
+    border-top: 1px solid var(--color-border-light);
+    padding: 12px 20px;
+
+    .badgeContainer {
+      border-radius: var(--border-radius-16);
+    }
+  }
+
+  .score-desc {
+    margin-left: 12px;
+  }
+
+  .criterion-name {
+    @include typography.subheader-2;
+    font-weight: $font-weight-semibold;
+    color: var(--color-text-primary);
+  }
+
+  .criterion-value {
+    margin-top: 10px;
+  }
+
+  .criterion-score {
+    font-weight: $font-weight-semibold;
+
+    &.green {
+      color: var(--color-text-positive);
+    }
+
+    &.orange {
+      color: var(--color-caution-50);
+    }
+  }
+}
+
+.score-container {
+  @include typography.body-2-medium;
+  margin: -2px 20px 12px;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+
+  .help-icon {
+    margin-left: 8px;
+    color: var(--color-neutral-40);
+
+    &:hover {
+      color: var(--color-primary-50);
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.warningIcon {
+  font-size: 48px;
+  color: var(--color-caution-50);
+}
+
+.warningText {
+  @include typography.heading-3;
+  margin: 30px 0 8px;
+  text-align: center;
+  color: var(--color-text-header);
+}
+
+.message {
+  @include typography.body-2;
+  margin: 0 48px;
+  color: var(--color-text-body);
+  text-align: center;
+}
+
+.selectField {
+  margin: 20px 48px;
+
+  > label {
+    @include typography.subheader-1;
+  }
+
+  .typeWrapper {
+    margin-top: 12px;
+
+    .type {
+      margin-top: 12px;
+
+      span {
+        @include typography.body-2-medium;
+      }
+    }
+  }
+
+  .sequenceTitle {
+    margin-top: 8px;
+    color: var(--color-text-body);
+    @include typography.body-2-medium;
+  }
+}
+
+.footerRemoveButton {
+  button[type='submit'] {
+    background-color: var(--color-negative-50);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-negative-60);
+    }
+  }
+}

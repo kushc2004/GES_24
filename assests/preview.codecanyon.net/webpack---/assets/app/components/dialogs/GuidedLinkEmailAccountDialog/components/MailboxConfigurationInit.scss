@@ -1,0 +1,55 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 32px;
+  gap: 24px;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  padding: 0;
+  margin-top: 60px;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+
+  [data-intro-head] {
+    margin: 8px 0;
+  }
+}
+
+.intro {
+  [data-intro-body] {
+    @include typography.body-2;
+    color: var(--color-text-body);
+  }
+}
+
+.statusContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalFooter {
+  margin-inline: -32px;
+  margin-top: auto;
+}
+
+.actionBtnsContainer {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.configLoadingText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include typography.body-1;
+  color: var(--color-text-placeholder);
+}

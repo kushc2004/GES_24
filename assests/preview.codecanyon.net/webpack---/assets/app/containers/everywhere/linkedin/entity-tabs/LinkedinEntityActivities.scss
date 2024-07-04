@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+}
+
+.logActivityContainer {
+  :global {
+    .extensionLogActivityRadioButtons {
+      justify-content: space-between;
+    }
+
+    .extensionLogActivityRadioContainer {
+      margin: -4px 0px -4px -6px;
+
+      .radio-label {
+        padding: 0;
+      }
+    }
+  }
+}

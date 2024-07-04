@@ -1,0 +1,37 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.banner {
+  width: calc(100% - 20px);
+  height: 50px;
+  border-radius: 6px;
+  padding: 10px 8px;
+  margin: 10px 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-positive-40);
+
+  .icon {
+    color: var(--color-positive-50);
+  }
+
+  .content {
+    @include typography.helper-1-medium;
+    color: var(--color-text-positive);
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+
+    i {
+      font-size: 16px;
+      margin-left: 4px;
+    }
+
+    .noMargin {
+      margin: 0;
+    }
+  }
+}

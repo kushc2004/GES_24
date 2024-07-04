@@ -1,0 +1,61 @@
+@use 'typography';
+
+.overlayHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  background: var(--color-base-neutral-0);
+  box-shadow: 0px -1px 0px 0px #e3e3e5 inset;
+  border-radius: var(--border-radius-8) var(--border-radius-8) 0 0;
+}
+
+.overlayHeaderMinimized {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  background-color: var(--color-secondary-50);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.overlayHeaderMinimizedLabel {
+  padding-left: 5px;
+  @include typography.heading-3;
+  color: var(--color-text-header);
+}
+
+.draftEmailLabel {
+  @include typography.heading-3;
+  letter-spacing: -0.32px;
+  padding-right: 40px;
+}
+
+.autoSaveStatusLabel {
+  color: var(--color-primary-50);
+  @include typography.helper-1-medium;
+}
+
+.overHeaderRightContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+
+  .autoSaveStatusLabel {
+    margin-right: 8px;
+  }
+
+  :global {
+    .zp-button {
+      width: 24px;
+      height: 24px;
+    }
+
+    .zp-button .zp-icon {
+      @include typography.body-1;
+      color: var(--color-icon-hover);
+    }
+  }
+}

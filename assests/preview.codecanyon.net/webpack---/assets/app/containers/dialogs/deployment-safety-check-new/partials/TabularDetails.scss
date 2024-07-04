@@ -1,0 +1,69 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/text-overflow';
+
+.tabularDetails {
+  padding: 8px 12px;
+  border: solid 1px var(--color-border-light);
+  border-radius: var(--border-radius-4);
+
+  [data-elem='row-item'],
+  .tableHead {
+    display: flex;
+    gap: 6px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .tableHead {
+    margin-bottom: 8px;
+    color: var(--color-text-placeholder);
+  }
+
+  [data-elem='row-item'] {
+    padding: 4px 0;
+  }
+
+  .tableBody {
+    max-height: 150px;
+    overflow-y: auto;
+    flex-direction: column;
+    display: flex;
+  }
+
+  [data-elem='row-cell'] {
+    @include typography.body-2;
+    @include ellipsis;
+    display: inline-block;
+
+    // NOTE: only works for 3 column layout, increase this to fit more use-case
+    @for $i from 1 to 4 {
+      &:nth-child(#{$i}) {
+        flex: var(--flex-proportions-#{$i}, 1);
+      }
+    }
+
+    :global(.apollo-icon) {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 6px;
+
+      &,
+      &:hover {
+        color: var(--color-icon-light);
+      }
+    }
+
+    &:first-child {
+      @include body-2-medium;
+    }
+  }
+}
+
+.capitalizeText {
+  text-transform: capitalize;
+}
+
+.ellipsis {
+  @include ellipsis;
+}

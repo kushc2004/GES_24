@@ -1,0 +1,15 @@
+@import './FinderFilterHelpers';
+
+.checkboxContent {
+  display: flex;
+  align-items: center;
+  line-height: 21px;
+}
+
+.checkBoxBadge {
+  margin-left: 8px;
+}
+
+.icon {
+  height: 24px;
+}

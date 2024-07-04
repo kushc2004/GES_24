@@ -1,0 +1,120 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.menu {
+  margin-top: 0;
+  min-width: 300px;
+
+  :global(.subaccordion-header) {
+    @include typography.body-2-medium;
+    height: 45px;
+    color: var(--color-text-secondary);
+    padding: 0 16px !important;
+  }
+}
+
+.menu-border-bottom {
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+
+  &.disabled {
+    color: var(--color-neutral-40);
+    height: 45px;
+    padding-right: 6px;
+  }
+}
+
+.advanced-container {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.apply-button {
+  margin: 8px 0 16px !important;
+}
+
+.removeBorder {
+  border-bottom: none;
+}
+
+.select-number-input,
+.max-per-company-number-input {
+  width: 80px;
+  text-align: center;
+  align-self: flex-end;
+}
+
+.max-per-company,
+.select-n {
+  @include typography.body-2-medium;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .max-checkbox {
+    margin-right: 6px;
+  }
+}
+
+.buttonVariant2 {
+  padding-left: 10px;
+
+  &:not(:hover),
+  &:not(:active) {
+    --button-foreground-color: var(--color-neutral-60) !important;
+  }
+
+  :global([data-elem='button-label']) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.bulkUpgradeContainer {
+  position: relative;
+}
+
+.bulkUpgradeActiveBorder {
+  border: 3px solid var(--color-primary-50);
+  border-radius: var(--border-radius-4);
+}
+
+.bulkUpgradeNotification {
+  border-radius: var(--border-radius-4);
+  background: var(--color-bg-main);
+  filter: drop-shadow(0px 5px 12px rgb(0 0 0 / 12%));
+  position: absolute;
+  top: 35px;
+  left: -3px;
+  z-index: 500;
+  width: 280px;
+
+  .bulkUpgradeHeader {
+    margin: 14px 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bulkUpgradeDismiss {
+    margin-right: 4px !important;
+  }
+
+  .bulkUpgradeBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px 40px 16px;
+    text-align: center;
+    @include typography.body-2-medium;
+    color: var(--color-text-primary);
+
+    img {
+      margin-bottom: 12px;
+    }
+  }
+}

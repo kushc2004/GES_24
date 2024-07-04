@@ -1,0 +1,48 @@
+@use 'typography';
+
+.modal {
+  width: 500px;
+  min-width: 500px;
+}
+
+.header {
+  color: var(--color-text-primary);
+  justify-content: flex-end;
+  border: none;
+}
+
+.body {
+  align-items: center;
+  margin: 0px 48px 20px;
+  padding: 0px;
+
+  .icon {
+    color: var(--color-caution-50);
+    line-height: normal;
+    font-size: 44px;
+    margin-top: 4px;
+  }
+
+  .title {
+    @include typography.heading-3;
+    color: var(--color-text-primary);
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+
+  .description {
+    @include typography.body-2-medium;
+    color: var(--color-text-secondary);
+    text-align: center;
+    padding-bottom: 20px;
+
+    .link {
+      @include typography.body-2-medium;
+    }
+  }
+}
+
+.footer {
+  flex-direction: row;
+  justify-content: flex-end;
+}

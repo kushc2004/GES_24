@@ -1,0 +1,15 @@
+$drafting-window-height: 85vh;
+$drafting-window-width: 500px;
+$floating-window-width: 300px;
+$floating-window-width-for-email-analyzer: 350px;
+
+// 5vw is the distance of draft overlay from right for in app views
+$drafting-window-right-offset-default: 5vw;
+$drafting-window-right-offset-extension: 320px + 15 + 8; // 320px is the width of linkedin extension and 15px is the right of extension container, adding 8px more as a buffer
+$ai-assistant-panel-width: 100px;
+
+@mixin overlay {
+  box-shadow: 0px 8px 10px 1px rgb(0 0 0/14%), 0px 3px 14px 2px rgb(0 0 0/12%),
+    0px 5px 5px -3px rgb(0 0 0/2%);
+  border: 1px solid var(--color-border-light);
+}

@@ -1,0 +1,648 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+.hidden {
+  display: none;
+}
+
+.contact-avatar {
+  margin-right: 10px;
+
+  @media (max-width: $screen-md-max) {
+    display: none;
+  }
+}
+
+.changed-job-badge {
+  margin-left: 4px;
+}
+
+.preview-avatar {
+  margin-right: 10px;
+}
+
+.avatar:hover {
+  cursor: pointer;
+  background-color: var(--color-primary-70);
+}
+
+.extensionAvatar:hover {
+  background-color: var(--color-neutral-40);
+}
+
+.owner-avatar-wrapper-finder {
+  margin-left: 16px;
+  width: 25px;
+  margin-right: 0;
+}
+
+.combined-name-stage-fail-block {
+  max-width: 80%;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.name-stage {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  min-width: 180px;
+}
+
+.name {
+  margin-right: 10px;
+  display: flex;
+  flex: 0 0 200px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &.condensedName {
+    width: 150px;
+  }
+
+  &.name-campaign {
+    @media (max-width: $screen-md-min) {
+      flex-grow: 1;
+    }
+  }
+}
+
+.newScoreLayout {
+  padding: 4px !important;
+  height: 20px;
+  border-radius: var(--border-radius-2) !important;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .arrowIcon {
+    color: var(--color-neutral-30);
+  }
+}
+
+.name-container {
+  @media (min-width: $screen-lg-min) {
+    flex-direction: column;
+
+    > span {
+      display: block;
+    }
+
+    .name-text {
+      @include typography.body-1-medium;
+      margin-right: 4px;
+      display: flex;
+    }
+  }
+}
+
+.water-text {
+  color: var(--color-primary-50);
+
+  &:hover {
+    color: var(--color-primary-70);
+  }
+
+  &.nameOverflowHandler {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &.condensedNameOverflowHandler {
+    width: 150px;
+  }
+}
+
+.prospect-title-text {
+  @include typography.body-2;
+  color: var(--color-text-labels);
+
+  &.ellipsisTitle {
+    display: block;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.titlename {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.fixed-width-titlename {
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  flex-grow: 0;
+}
+
+.titlename-badge {
+  margin-right: 7px;
+}
+
+.opportunity-contact-role {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1;
+  align-items: center;
+
+  .more-role-count {
+    color: var(--color-primary-50);
+  }
+
+  .primary-badge {
+    color: var(--color-text-links);
+    border: 1px solid var(--color-primary-60);
+    border-radius: var(--border-radius-2);
+    padding: 1px 10px;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+}
+
+.stage {
+  flex: 1;
+  margin-right: 10px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+
+  .tags {
+    padding-top: 5px;
+  }
+}
+
+.screen-small-stage {
+  padding-top: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.action-button-container {
+  margin-left: 10px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &.campaign-actions {
+    min-width: 85px;
+  }
+
+  &.engagement-graph-wrapper {
+    text-align: center;
+    padding: 4px;
+    margin-right: 4px;
+  }
+}
+
+.actionButtonContainerWidth {
+  width: 175px;
+}
+
+.location {
+  @include typography.helper-1;
+  color: var(--color-text-labels);
+}
+
+.badge {
+  margin: 0;
+}
+
+.prospectRightSide {
+  display: flex;
+  align-items: center;
+}
+
+.stageGraphActions {
+  min-width: 275px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.prospectBadge {
+  margin-left: 2px;
+}
+
+.prospectEngagementGraph {
+  text-align: left;
+  margin: 5px 0 10px 2px;
+}
+
+.title-at-company {
+  margin-right: 10px;
+}
+
+.linkedin-button-override {
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  height: auto !important;
+
+  &:hover {
+    :global {
+      .zp-icon {
+        color: var(--color-primary-50) !important;
+      }
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+    margin: 0;
+    padding-top: 3px !important;
+  }
+}
+
+.buttons {
+  width: 250px;
+
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.last-activity {
+  @include typography.helper-1;
+  width: 50px;
+  text-align: center;
+  color: var(--color-text-labels);
+  margin-right: 6px;
+  display: inline-block;
+
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.actions {
+  @include typography.helper-1;
+  margin-left: 10px;
+
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.tags {
+  padding: 0;
+
+  div {
+    font-size: 11px !important;
+    line-height: 11px !important;
+    font-weight: 400 !important;
+  }
+
+  &.prospect-mode {
+    padding-top: 8px;
+  }
+}
+
+.card-self {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  column-gap: 16px;
+}
+
+.card-name {
+  flex: 3 1 0%;
+  margin-right: 16px;
+}
+
+.card-title {
+  flex: 3 1 0%;
+}
+
+.card-stage {
+  text-align: right;
+  flex: 2 1 0%;
+}
+
+.card-buttons {
+  min-width: 365px;
+  flex: 2 1 0%;
+  align-items: flex-start;
+}
+
+.card-owner {
+  margin-left: auto;
+}
+
+.newCardRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &:first-child {
+    margin-bottom: 8px;
+  }
+}
+
+.newCardName {
+  color: var(--color-text-secondary);
+}
+
+.newCardSelf {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  overflow: hidden;
+  padding: 0 0 0 12px;
+}
+
+.newCardOwner {
+  margin-left: auto;
+  padding-left: 10px;
+}
+
+.newCardButtons {
+  flex: 1;
+}
+
+.newCardStage {
+  margin-bottom: 16px;
+}
+
+.calendarCardPadding {
+  padding: 0 14px !important;
+}
+
+.newCardPadding {
+  padding: 0 14px !important; // todo (ricardo): refactor when we start overview page
+}
+
+.withMaxWidth > div > div {
+  @include text-overflow.ellipsis;
+  max-width: 120px;
+}
+
+.noMargin {
+  margin: 0;
+}
+
+// campaign mode
+
+.campaign-name {
+  display: flex;
+  flex: 0.25;
+  min-width: 180px;
+  align-items: center;
+}
+
+.campaign-content {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.campaign-failed-reason {
+  padding-bottom: 5px;
+
+  &.bounced {
+    color: var(--color-negative-50);
+  }
+
+  &.notSent {
+    color: var(--color-text-caution);
+  }
+}
+
+.campaign-badges {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 8px;
+
+  @media (max-width: $screen-md-max) {
+    padding-bottom: 5px;
+  }
+}
+
+.campaign-title {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.campaign-badge-and-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 1;
+
+  @media (max-width: $screen-md-max) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media (max-width: $screen-md-min) {
+    flex: 1;
+    align-items: flex-end;
+  }
+}
+
+.step-badge {
+  background-color: var(--color-neutral-60);
+  color: white;
+}
+
+.preview-padding {
+  padding: 5px 0 8px !important;
+  justify-content: space-between;
+
+  .small-title {
+    @include typography.helper-1;
+    color: var(--color-text-primary);
+  }
+
+  .nameTitleContainer {
+    flex: 2;
+    max-width: 45%;
+  }
+
+  .organizationSnippetContainer {
+    flex: 1.5;
+    padding-left: 10px;
+    max-width: 55%;
+  }
+}
+
+.prospect-snippet {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  margin-right: 10px;
+  padding-left: 15px;
+  min-height: 45px;
+  align-items: center;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--color-text-labels);
+
+  @media (max-width: $screen-md-max) {
+    display: none;
+  }
+}
+
+.prospectWrapped {
+  white-space: unset;
+  padding-left: 0;
+  margin-right: 0;
+
+  &.jobChangeItemCustomFlex {
+    justify-content: flex-start;
+    flex: 1;
+  }
+}
+
+.newOrgSnippet {
+  display: flex;
+  align-items: baseline;
+  margin-left: 15px;
+}
+
+.orgLeftMargin {
+  margin-left: 15px;
+  min-width: 0;
+}
+
+.titleWidth {
+  width: initial;
+}
+
+.jobChangeOrg {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  overflow: hidden;
+}
+
+.prospect-badge {
+  width: 110px;
+  min-width: 110px;
+  margin-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.prospectBadgeUpdates {
+  margin-left: unset;
+  margin-top: 10px;
+}
+
+.contact-location {
+  @include typography.helper-1;
+  color: var(--color-text-labels);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 12px;
+  padding-top: 4px;
+
+  > div {
+    display: inline-block;
+  }
+
+  .location-icon {
+    font-size: 13px !important;
+    line-height: 13px !important;
+    margin-left: -2px;
+    padding-right: 2px;
+  }
+}
+
+.actionButtonsLg {
+  margin-left: -2px;
+}
+
+// ======================== sidebar view ========================
+.listViewItem .tableView {
+  .card-self {
+    display: block;
+    width: 100%;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .nameWrapper {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .statusWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .card-stage {
+    margin-right: 10px;
+  }
+
+  .listViewItemTitle {
+    @include text-overflow.ellipsis;
+  }
+
+  .card-title {
+    @include text-overflow.ellipsis;
+  }
+
+  .avatar {
+    background-color: var(--color-neutral-30);
+    color: var(--color-text-secondary);
+    height: 20px;
+    width: 20px;
+    font-size: 10px;
+    font-weight: 500;
+  }
+}
+
+// ======================== sidebar view ========================
+
+.flex {
+  display: flex;
+}
+
+.extensionItemContainer {
+  .newCardName > div {
+    @include typography.body-1-medium;
+    color: var(--color-text-header);
+  }
+
+  .newCardTitle > small {
+    @include typography.body-2;
+    color: var(--color-text-body);
+  }
+}

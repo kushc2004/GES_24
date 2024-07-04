@@ -1,0 +1,41 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  padding-top: 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  @media (max-height: 500px) {
+    padding-top: 45px;
+  }
+}
+
+.containerWithTabs {
+  padding-top: 75px;
+  @media (max-height: 500px) {
+    padding-top: 15px;
+  }
+}
+
+.containerWithOverflow {
+  height: calc(100% - 50px); // 50px - footer
+  overflow-y: auto;
+}
+
+.title {
+  @include typography.heading-3;
+  color: var(--color-text-primary);
+  margin: 25px 0 10px;
+}
+
+.content {
+  @include typography.body-2;
+  color: var(--color-text-labels);
+  width: 180px;
+}
+
+.wideContent {
+  width: 300px;
+}

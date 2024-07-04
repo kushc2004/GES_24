@@ -1,0 +1,147 @@
+@use 'mixins/text-overflow' as text-overflow;
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px 24px;
+  background: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border-light);
+  width: 100%;
+
+  &.noTabsPadding {
+    padding: 16px 24px;
+  }
+
+  &.hideBorderBottom {
+    padding: 16px 24px 10px;
+    border-bottom: none;
+  }
+
+  &.breadcrumbPadding {
+    padding-top: 16px;
+  }
+
+  &.tabsPadding {
+    padding-bottom: 0;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    gap: 8px;
+    align-items: center;
+    margin: 0 0 8px;
+
+    .breadcrumb {
+      @include typography.helper-1-medium;
+
+      &:hover {
+        color: var(--color-primary-50);
+      }
+    }
+
+    .active {
+      color: var(--color-text-header);
+    }
+
+    .silent {
+      pointer-events: none;
+      color: var(--color-text-body);
+    }
+
+    .separator {
+      color: var(--color-neutral-50);
+    }
+
+    &.onlyBreadcrumbs {
+      margin: 2px 0;
+    }
+  }
+
+  .titleContainer {
+    @include text-overflow.ellipsis;
+    @include typography.heading-2;
+    line-height: 30px;
+
+    max-height: 100px;
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-text-header);
+
+    .headerTransition {
+      transition: all 100ms ease-in-out;
+    }
+  }
+
+  .marginBottom {
+    margin-bottom: 5px;
+  }
+
+  .collapsedHeader {
+    opacity: 0;
+    transform: translate(0, -10px) scaleY(0);
+  }
+
+  .extendedHeader {
+    opacity: 1;
+    transform: translate(0, 0) scaleY(1);
+  }
+
+  .containerShow {
+    max-height: 100px;
+    opacity: 1;
+    transform: translate(0, 0) scaleY(1);
+  }
+
+  .containerHide {
+    max-height: 0;
+    opacity: 0;
+    transform: translate(0, -10px) scaleY(0);
+  }
+
+  .leftContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .tabItem {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+    }
+  }
+
+  .rightContainer {
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-bottom: 8px;
+
+    &.hasNoTabs {
+      padding-bottom: 0;
+    }
+
+    &.hasTabs {
+      padding-bottom: 16px;
+    }
+  }
+
+  &.scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+  }
+}

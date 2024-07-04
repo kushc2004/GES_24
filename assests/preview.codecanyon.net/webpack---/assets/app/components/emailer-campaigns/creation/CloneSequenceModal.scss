@@ -1,0 +1,35 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.header {
+  @include typography.heading-3;
+
+  color: var(--color-text-primary);
+}
+
+.modalBody {
+  background-color: var(--color-bg-secondary);
+
+  padding-bottom: 0;
+
+  :global(.finder-results-list-panel-content) {
+    margin-top: 12px !important;
+  }
+}
+
+.subtitle {
+  @include typography.body-2;
+  margin: 0 0 4px;
+  color: var(--color-text-secondary);
+}
+
+.footerContents {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerButtons {
+  display: flex;
+}

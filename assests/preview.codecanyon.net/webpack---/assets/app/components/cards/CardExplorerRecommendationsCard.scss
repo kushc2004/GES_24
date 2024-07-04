@@ -1,0 +1,188 @@
+@use 'mixins/text-overflow' as text-overflow;
+@use 'typography';
+@use 'mixins/elevation';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/elevation';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+
+  .headerLeft {
+    display: flex;
+    flex-direction: column;
+
+    > h1 {
+      @include typography.heading-1;
+    }
+
+    .headerSubtitle {
+      display: flex;
+      align-items: center;
+
+      > span {
+        @include typography.body-2;
+      }
+    }
+
+    .digestToggle {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+    }
+  }
+}
+
+.noResultsFound {
+  @include typography.heading-3;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+
+.personaCtaBanner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: var(--border-radius-16);
+  border: 1px solid var(--color-primary-20);
+  background: var(--color-primary-10);
+  margin-bottom: 20px;
+
+  .personaCtaTitle {
+    @include typography.heading-2;
+    margin-bottom: 8px;
+    color: var(--color-primary-50);
+  }
+
+  .personaCtaSubtitle {
+    @include typography.body-2;
+    max-width: 90%;
+    color: var(--color-primary-40);
+  }
+}
+
+.tourPopup {
+  padding: 16px 24px;
+  background: white;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 332px;
+  max-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+  z-index: 1000;
+  @include elevation.shadow-3;
+  border-radius: var(--border-radius-4);
+
+  .tourTextContainer {
+    text-align: center;
+  }
+
+  .tourHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .tourTitle {
+    text-align: center;
+    @include typography.heading-3;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+  }
+
+  .tourSubTitle {
+    text-align: center;
+    @include typography.body-2;
+    color: var(--color-text-secondary);
+  }
+}
+
+.recommendationFinderContainer {
+  background: var(--color-bg-main);
+
+  :global {
+    .ReactCollapse--collapse {
+      transition: height 400ms ease-in-out;
+    }
+
+    .recommendationsHeader {
+      padding-top: 12px !important;
+      height: fit-content !important;
+
+      > div:first-child {
+        display: block;
+      }
+    }
+
+    div[class^='finder-explorer-sidebar'] > div {
+      margin: 0 !important;
+      border: none;
+      border-radius: 0;
+    }
+  }
+
+  .title {
+    @include typography.heading-3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+
+    .betaBadgeContainer {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+    }
+
+    &.overviewHeader {
+      flex-direction: column;
+      align-items: flex-start;
+
+      > span {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .overviewButtons {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+      }
+    }
+
+    &.canCollapse {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .baseChevron {
+      transition: transform 400ms ease-in-out;
+
+      &.rotateChevron {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
+
+.dropdownContainer {
+  .groupLabel {
+    @include typography.body-3;
+    color: var(--color-text-secondary);
+    margin-bottom: 10px;
+  }
+}

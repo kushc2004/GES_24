@@ -1,0 +1,42 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.form {
+  margin-top: 16px;
+}
+
+.csvSettings {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.modalFooter {
+  justify-content: flex-end;
+}
+
+.modalBody {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.body {
+  @include typography.body-2;
+  color: $color-neutral-70;
+}
+
+.messageBlock {
+  @include typography.body-2;
+  align-items: center;
+  display: flex;
+  padding: 8px 20px;
+
+  &.info {
+    background-color: var(--color-primary-10);
+    color: var(--color-text-links);
+    text-align: start;
+
+    .infoIcon {
+      padding-right: 30px;
+      padding-left: 10px;
+      color: var(--color-text-links);
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import '../../../common/scss/variables';
+
+.contextMenuItem {
+  &.menuItemInfo {
+    i {
+      color: var(--color-text-secondary) !important;
+    }
+
+    &:hover {
+      i {
+        color: var(--color-text-reversed) !important;
+      }
+    }
+  }
+
+  &.menuItemWarning {
+    color: var(--color-negative-40) !important;
+
+    i {
+      color: var(--color-negative-40) !important;
+    }
+
+    &:hover {
+      color: var(--color-text-reversed) !important;
+
+      i {
+        color: var(--color-icon-inverted) !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.singularBlock {
+  margin-bottom: 16px;
+
+  button {
+    align-items: center;
+    display: flex;
+    justify-self: flex-start;
+  }
+
+  .label {
+    @include typography.body-2-medium;
+    text-align: start;
+    padding-left: 12px;
+    color: var(--color-text-labels);
+  }
+
+  .tip {
+    margin-top: 6px;
+    padding-left: 34px;
+  }
+}

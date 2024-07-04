@@ -1,0 +1,12 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.disableMenuItem {
+  color: var(--color-neutral-50);
+  opacity: 0.4;
+}
+
+.appliedJob {
+  background: var(--color-neutral-30) !important;
+  padding: 4px 10px !important;
+}

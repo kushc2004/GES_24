@@ -1,0 +1,72 @@
+@use 'mixins/text-overflow' as text-overflow;
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+@import 'assets/common/scss/placeholders/svg';
+
+.keywords {
+  @include typography.body-2;
+  color: var(--color-text-labels);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: 15px;
+
+  &:not(.no-padding) {
+    padding-bottom: 5px;
+  }
+
+  :global {
+    .zp-icon {
+      font-size: 16px;
+      margin-top: -2px;
+    }
+  }
+}
+
+.keywordsMedium {
+  @include typography.body-2;
+  color: var(--color-text-primary);
+  @include text-overflow.ellipsis;
+}
+
+.more-keywords {
+  color: var(--color-primary-50);
+}
+
+.keyword {
+  margin-right: 5px;
+}
+
+.clickable {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.space {
+  margin-right: 4px;
+}
+
+.keywords-full-width {
+  width: 100%;
+}
+
+.badge {
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.expandLink {
+  @include typography.helper-1-medium;
+}
+
+.numberOfKeywords {
+  @include typography.helper-1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

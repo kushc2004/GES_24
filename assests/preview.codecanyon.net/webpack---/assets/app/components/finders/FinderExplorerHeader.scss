@@ -1,0 +1,27 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border-light);
+
+  .prefixWrapper {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &.noBottomPadding {
+    padding: 16px 16px 0;
+    border-bottom: none;
+  }
+
+  &.bottomToolbarStyles {
+    & + div {
+      box-shadow: none !important;
+      padding-left: 16px !important;
+    }
+  }
+}

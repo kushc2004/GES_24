@@ -1,0 +1,73 @@
+@use 'typography';
+
+.tabContent {
+  width: 100%;
+  text-align: left;
+  @include typography.body-2;
+  border-radius: var(--border-radius-16);
+  justify-content: flex-start;
+  color: var(--color-text-reversed) !important;
+
+  &.disabled {
+    opacity: 0.6;
+  }
+
+  i {
+    color: var(--color-text-reversed) !important;
+  }
+
+  &.completed {
+    i {
+      color: var(--color-positive-40) !important;
+    }
+  }
+
+  &.pending {
+    i {
+      color: var(--color-positive-40) !important;
+    }
+  }
+
+  &.error {
+    i {
+      color: var(--color-negative-40) !important;
+    }
+  }
+
+  &:hover {
+    background-color: var(--color-primary-50);
+
+    i {
+      color: var(--color-text-reversed) !important;
+    }
+  }
+
+  > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+}
+
+.arrowIcon {
+  transition: all 0.2s linear;
+}
+
+.arrowRotate {
+  transform: rotate(180deg);
+}
+
+.subTabsWrapper {
+  width: 100%;
+
+  .tabContent {
+    margin-left: 24px;
+    @extend .tabContent;
+  }
+
+  > button {
+    margin-bottom: 6px;
+  }
+}

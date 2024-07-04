@@ -1,0 +1,133 @@
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 14px 20px;
+}
+
+.headerLeftContainer {
+  display: flex;
+  align-items: center;
+}
+
+.headerTitle {
+  @include heading-3;
+  color: var(--color-text-primary);
+}
+
+.drawerContent {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: calc(100% - 52px);
+  overflow-y: scroll;
+}
+
+.emptyStateContainer,
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+}
+
+.emptyStateIllustration {
+  width: 200px;
+  height: auto;
+}
+
+.emptyStateDescription {
+  width: 290px;
+  @include heading-3;
+  margin: 0;
+  margin-top: 24px;
+  color: var(--color-text-primary);
+}
+
+.drawer {
+  top: 153px;
+  height: calc(100vh - 153px);
+}
+
+.rightDrawer {
+  top: 50px;
+  left: 0;
+  clip-path: inset(0 -60px 0 0);
+}
+
+.suggestionListContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.suggestionListHeading {
+  @include body-2-bold;
+  margin: 0;
+  color: var(--color-neutral-50);
+  margin-bottom: 14px;
+}
+
+.suggestionsContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  row-gap: 8px;
+  overflow-y: auto;
+}
+
+.suggestionCard {
+  padding: 12px;
+  border: 1px solid var(--color-border-normal);
+  border-radius: var(--border-radius-4);
+}
+
+.suggestionCard:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.headingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.suggestionHeading {
+  @include body-2-medium;
+  color: var(--color-text-secondary);
+  margin: 0;
+
+  :global {
+    .zp-icon {
+      @include typography.body-1;
+    }
+  }
+}
+
+.suggestionContent {
+  @include body-3;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.suggestionActionContainer {
+  display: flex;
+  align-items: center;
+
+  :global {
+    .zp-button {
+      padding: 0 !important;
+    }
+
+    .zp-icon {
+      color: var(--color-text-secondary) !important;
+    }
+  }
+}

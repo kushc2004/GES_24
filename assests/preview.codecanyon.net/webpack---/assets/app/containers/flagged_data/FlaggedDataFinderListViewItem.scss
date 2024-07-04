@@ -1,0 +1,51 @@
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.modality {
+  @include typography.subheader-2;
+  padding: 0 5px;
+  margin-right: 5px;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  line-height: 1.3;
+  min-height: 60px;
+  align-self: stretch;
+  flex: 0 0 65px;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-info {
+  margin-left: 10px;
+  flex: 2;
+
+  .name-link {
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.additional-info,
+.button-group {
+  margin-left: 10px;
+  flex: 1;
+}
+
+.button-group {
+  margin-left: 10px;
+  flex: 1;
+}
+
+.buttonIcon {
+  cursor: auto !important;
+
+  &:hover {
+    cursor: auto !important;
+  }
+}
+
+.hiddenButton {
+  display: none !important;
+}

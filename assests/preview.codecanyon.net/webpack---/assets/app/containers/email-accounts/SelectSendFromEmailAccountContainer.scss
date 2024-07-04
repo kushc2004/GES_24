@@ -1,0 +1,111 @@
+@use 'mixins/text-overflow' as text-overflow;
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .name {
+    flex: 0 0 25%;
+    @include text-overflow.ellipsis;
+    margin-right: 25px;
+  }
+
+  .email {
+    @include typography.helper-1;
+    line-height: 1.3em;
+    color: var(--color-text-secondary);
+
+    & > i {
+      text-transform: capitalize;
+    }
+  }
+
+  .default-badge {
+    margin-left: auto;
+  }
+}
+
+.optionWithCheckbox {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+
+  .accountDetails {
+    display: flex;
+    flex-direction: column;
+
+    .email {
+      @include typography.body-2-medium;
+      color: var(--color-text-primary);
+    }
+
+    .name {
+      @include typography.helper-1;
+      color: var(--color-text-secondary);
+    }
+
+    i {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.dropDownMenuItemWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: var(--color-white);
+  position: relative;
+  width: 100%;
+  padding: 5px 16px;
+
+  &:hover {
+    background-color: var(--color-grayscale-00);
+
+    .menuItemRemoveBtn {
+      display: flex;
+      margin-right: 16px;
+      height: 24px;
+      width: 34px !important;
+    }
+  }
+
+  .accountDetails {
+    display: flex;
+    flex-direction: column;
+
+    .email {
+      @include typography.body-2-medium;
+      color: var(--color-text-primary);
+    }
+
+    .name {
+      @include typography.helper-1;
+      color: var(--color-text-secondary);
+    }
+  }
+
+  .menuItemRemoveBtn {
+    position: absolute;
+    right: 0;
+    display: none;
+    padding: 12px 7px;
+  }
+}
+
+.showErrorBorder {
+  :global .Select-control {
+    /* :global is required to override Select container style */
+    border: 1px solid var(--color-negative-40) !important;
+
+    .Select-placeholder {
+      color: var(--color-negative-40) !important;
+    }
+  }
+}

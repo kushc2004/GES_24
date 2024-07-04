@@ -1,0 +1,72 @@
+@import '../../../../common/scss/variables';
+
+.wrapper {
+  padding-top: 10px;
+}
+
+.list-item {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--color-border-light);
+
+  .content {
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &.selected {
+      color: var(--color-primary-50);
+    }
+  }
+
+  .label {
+    font-weight: $font-weight-semibold;
+
+    &.dismissed {
+      color: var(--color-text-labels);
+      font-weight: $font-weight-regular;
+    }
+  }
+
+  .facet-count {
+    font-weight: $font-weight-semibold;
+    color: var(--color-text-labels);
+
+    &.facet-dismissed {
+      font-weight: $font-weight-regular;
+    }
+
+    &.facet-selected {
+      color: var(--color-primary-50);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: var(--color-primary-50);
+
+    .dismissed {
+      color: var(--color-primary-50);
+    }
+
+    .facet-count {
+      color: var(--color-primary-50);
+    }
+  }
+}
+
+.separator {
+  height: 10px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.mapped-field-title {
+  font-weight: $font-weight-semibold;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.marginHorizontal {
+  margin-right: 10px;
+  margin-left: 10px;
+}

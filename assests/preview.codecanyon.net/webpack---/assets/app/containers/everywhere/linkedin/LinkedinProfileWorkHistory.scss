@@ -1,0 +1,16 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.workHistoryContainer {
+  border-bottom: 1px solid var(--color-border-light);
+
+  .title {
+    @include typography.heading-3;
+    color: var(--color-text-primary);
+    padding: 16px 16px 8px;
+  }
+
+  .viewMoreBtn {
+    padding: 8px 16px 16px;
+  }
+}

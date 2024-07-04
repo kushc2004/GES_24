@@ -1,0 +1,17 @@
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.option {
+  display: flex;
+
+  .logo {
+    margin-left: auto;
+  }
+
+  .website {
+    @include typography.helper-1;
+    color: var(--color-text-labels);
+    margin-bottom: 4px;
+  }
+}

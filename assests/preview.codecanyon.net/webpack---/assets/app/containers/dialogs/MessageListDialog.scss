@@ -1,0 +1,60 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+
+.wrapper {
+  background-color: var(--color-bg-secondary);
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 17px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .list-item {
+      display: flex;
+      flex-direction: row;
+
+      .list-item-header {
+        @include typography.subheader-2;
+        flex: 0 0 100px;
+        margin-right: 5px;
+        color: var(--color-text-primary);
+      }
+
+      .list-item-body {
+        @include typography.helper-1-medium;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        color: var(--color-text-labels);
+      }
+    }
+  }
+
+  .message {
+    @include typography.body-2-medium;
+    color: var(--color-text-secondary);
+    margin-bottom: 16px;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+
+  .icon {
+    margin-right: 8px;
+    color: var(--color-caution-50);
+  }
+}

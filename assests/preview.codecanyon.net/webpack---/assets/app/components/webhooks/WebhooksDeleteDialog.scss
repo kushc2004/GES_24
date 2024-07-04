@@ -1,0 +1,34 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.buttonStyle,
+.buttonStyle:hover,
+.buttonStyle:active {
+  background-color: var(--color-negative-50);
+}
+
+.alertIcon {
+  color: var(--color-caution-40);
+  line-height: normal;
+  margin-right: 12px;
+  font-size: 22px;
+}
+
+.modalTitle {
+  display: flex;
+  align-items: center;
+}
+
+.footerStyles {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.message {
+  @include typography.body-2;
+  color: var(--color-text-secondary);
+}
+
+.modalBody {
+  background: var(--color-base-neutral-10, #f7f7f7);
+}

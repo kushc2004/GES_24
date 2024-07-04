@@ -1,0 +1,136 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/text-overflow';
+
+.defaultListHeaderContainer {
+  margin: 8px 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.defaultListTitleText {
+  flex-basis: 50%;
+  @include typography.body-1-medium;
+  margin: 0;
+  line-height: 22px;
+}
+
+.defaultListEditButton {
+  flex-basis: 30%;
+  margin-left: 38px;
+
+  & button {
+    border: none;
+    color: var(--color-primary-50);
+
+    & i {
+      color: var(--color-primary-50) !important;
+    }
+  }
+
+  & button:hover {
+    border: none;
+    color: var(--color-primary-50);
+  }
+}
+
+.editButton {
+  border: none;
+}
+
+.tip {
+  font-size: 16px;
+  color: var(--color-icon-normal);
+  cursor: default;
+  flex-basis: 20%;
+  display: inline-flex;
+  margin-left: 4px;
+}
+
+.tip:hover {
+  color: var(--color-icon-normal);
+}
+
+.defaultListsBox {
+  margin-top: 16px;
+
+  & .defaultListsContainer {
+    margin-top: 2px;
+    padding: 6px 20px;
+    display: flex;
+    justify-content: space-between;
+
+    & .badgeContainer {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    & .badgeName {
+      @include typography.helper-1-medium;
+      font-style: normal;
+      font-weight: 500;
+      border-radius: var(--border-radius-2);
+      height: 20px;
+      white-space: nowrap;
+      text-align: center;
+      padding: 2px 7px;
+      background-color: var(--color-neutral-20);
+      color: var(--color-text-primary);
+      margin-right: 4px;
+      margin-bottom: 4px;
+      border: 1px solid transparent;
+      line-height: 16px;
+      @include ellipsis;
+    }
+
+    & .noItems {
+      margin-left: 44px;
+      display: flex;
+      flex-wrap: wrap;
+
+      & .noItemsImage {
+        height: 64px;
+        width: 64px;
+        margin-left: 58px;
+      }
+
+      & .noItemsLabel {
+        height: 21px;
+        font-style: normal;
+        @include typography.subheader-1;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: var(--color-text-primary);
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin-bottom: 6px;
+        margin-top: 14px;
+      }
+    }
+  }
+
+  & .selectListItem {
+    flex-basis: 100%;
+    margin-left: 104.5px;
+  }
+
+  & .defaultListsFormBox {
+    padding: 2px 20px 20px;
+    margin-top: -6px;
+
+    :global(.zp-badge) {
+      padding: 2px 7px !important;
+    }
+
+    & .defaultListsButtonBox {
+      display: flex;
+      gap: 5px;
+      margin-top: 8px;
+    }
+  }
+}

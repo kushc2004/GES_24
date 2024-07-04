@@ -1,0 +1,25 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  display: flex;
+  height: auto;
+  padding: 0 10px 15px;
+  align-items: center;
+  background-color: var(--color-bg-main);
+  justify-content: space-between;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  @include typography.heading-2;
+  color: var(--color-text-primary);
+}
+
+.borderBottom {
+  border-bottom: 1px solid var(--color-border-light);
+}

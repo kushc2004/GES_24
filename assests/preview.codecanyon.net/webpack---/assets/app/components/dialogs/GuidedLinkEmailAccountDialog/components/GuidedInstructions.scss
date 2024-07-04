@@ -1,0 +1,63 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.wrapper {
+  @include typography.subheader-1;
+  margin-block: 16px;
+}
+
+.collapseWrapper {
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.collapseHeader {
+  @include typography.heading-3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  cursor: pointer;
+  overflow-x: hidden;
+
+  * {
+    color: var(--color-text-body);
+  }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .collapseRightContent {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .expandTitle {
+      color: var(--color-primary-50);
+      @include typography.body-2-medium;
+    }
+
+    .expandIcon {
+      color: var(--color-primary-50);
+      transition: all 0.2s linear;
+      width: 18px;
+    }
+
+    .arrowRotate {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.collapseTitle {
+  color: var(--color-text-body);
+  @include typography.subheader-1;
+}
+
+.collapseBody {
+  padding: 0;
+}

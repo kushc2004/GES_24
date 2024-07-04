@@ -1,0 +1,24 @@
+@import 'assets/common/scss/variables';
+
+.statusCard {
+  margin-bottom: 20px;
+}
+
+.statusContainer {
+  padding: 8px 0;
+}
+
+.listView {
+  color: var(--color-text-primary);
+  width: 100%;
+}
+
+.emptyStateImage {
+  height: 70px !important;
+  padding-bottom: 0 !important;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}

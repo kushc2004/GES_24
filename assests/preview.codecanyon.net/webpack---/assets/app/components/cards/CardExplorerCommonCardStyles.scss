@@ -1,0 +1,230 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/placeholders/svg';
+
+.newContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--color-border-light);
+
+  a.link {
+    display: inline-block;
+  }
+}
+
+.newClickableContainer:hover {
+  cursor: pointer;
+  background-color: var(--color-bg-secondary);
+}
+
+.newTitle {
+  @include typography.body-1-medium;
+  color: var(--color-text-primary);
+}
+
+.newContent {
+  @include typography.body-2;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.newTimeAgo {
+  @include typography.helper-1;
+  color: var(--color-text-secondary);
+}
+
+.noResultsContainer {
+  padding: 0 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.funding-row {
+  display: flex;
+  width: 100%;
+
+  .funding-type-amount {
+    flex: 1;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+  }
+
+  .funding-amount {
+    flex: 1;
+  }
+
+  .funding-url {
+    margin-left: 4px;
+  }
+
+  .funding-type {
+    margin-left: 4px;
+  }
+
+  .funding-date {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .link {
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-repeat: no-repeat;
+
+    &.crunchbase {
+      @extend %crunchbase;
+    }
+  }
+}
+
+.investors {
+  @include typography.helper-1;
+  margin-top: 2px;
+  color: var(--color-text-labels);
+  display: flex;
+}
+
+// Styles for information display.
+.seeAll {
+  @include typography.body-2-medium;
+
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-50);
+  cursor: pointer;
+
+  &.hasSeeAllBottomLink {
+    position: sticky;
+    bottom: 0;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: white;
+  }
+}
+
+.seeAllIcon {
+  @include typography.subheader-2;
+
+  margin-left: 6px;
+  color: var(--color-primary-50);
+}
+
+.inlineFundingDetails {
+  .fundingDetails {
+    @include typography.body-2;
+
+    align-items: center;
+    color: var(--color-text-labels);
+
+    span {
+      @include typography.body-2;
+    }
+  }
+
+  .funding-type {
+    @include typography.helper-1;
+
+    margin-left: 0;
+    color: var(--color-text-labels);
+  }
+
+  .funding-date {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .crunchbase-url {
+    margin-left: 0;
+
+    .crunchbase {
+      width: auto;
+      height: auto;
+      @include typography.helper-1;
+      background: none;
+    }
+  }
+
+  .link {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+  }
+}
+
+.largeHeading {
+  .title {
+    @include typography.heading-3;
+
+    color: var(--color-text-primary);
+  }
+
+  .subTitle {
+    @include typography.body-2;
+  }
+
+  .investors {
+    @include typography.body-2;
+  }
+
+  .funding-type {
+    @include typography.body-2;
+  }
+
+  .funding-date {
+    span {
+      @include typography.body-2;
+    }
+  }
+
+  .crunchbase-url {
+    .crunchbase {
+      @include typography.body-2;
+    }
+  }
+}
+
+.divider {
+  margin: 0 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-border-light);
+}
+
+.overflowWithPipeline {
+  height: calc(100% - 82px); // 50px - footer | 32px - pipeline
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-gutter: stable;
+}
+
+.overflowWithoutPipeline {
+  height: calc(100% - 50px); // 50px - footer
+  overflow-y: auto;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-content {
+  flex-grow: 1;
+}

@@ -1,0 +1,412 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/elevation';
+
+$finder-sidebar-width: 310px;
+$finder-sidebar-top-section-height: $filter-header-height;
+$expanded-finder-sidebar-width: 400px;
+
+.sidebar {
+  flex: 0 0 $finder-sidebar-width;
+  max-width: $finder-sidebar-width;
+  background: var(--color-bg-main);
+  border-right: 1px solid var(--color-border-light);
+  display: flex;
+  flex-direction: column;
+
+  .sidebarContent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &.stickyBottom {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &.forCard {
+    border: none;
+    box-shadow: $box-shadow-regular;
+    border-radius: var(--border-radius-4);
+    margin: 2px 10px 4px 3px;
+    overflow: hidden;
+  }
+
+  &.cardFinderDesign {
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-4);
+    margin-right: 16px;
+    overflow: hidden;
+    box-shadow: $box-shadow-regular;
+
+    &.disableCardShadow {
+      box-shadow: none;
+    }
+  }
+
+  &.expandedWidth {
+    flex: 0 0 $expanded-finder-sidebar-width;
+    max-width: $expanded-finder-sidebar-width;
+  }
+
+  .sidebar-header {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px 0 17px;
+    background: white;
+    position: relative;
+    border-bottom: 1px solid var(--color-border-light);
+    transition: all 0.3s;
+
+    &.shadow {
+      box-shadow: var(--shadow-2);
+      border-bottom: 1px solid transparent;
+    }
+  }
+
+  .sidebarTabItem {
+    margin-right: 16px !important;
+  }
+
+  .sidebar-header-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .sidebarHeaderWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebarHeaderText {
+    @include typography.heading-3;
+    color: var(--color-text-primary);
+    line-height: normal;
+    margin-right: 10px;
+  }
+
+  .views-or-filter-tabs {
+    height: $finder-sidebar-top-section-height;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+
+  .views {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .prospect-tabs {
+    display: flex;
+    flex-flow: row;
+    background: var(--color-bg-secondary);
+    height: 50px;
+    border-bottom: var(--color-border-light) solid 1px;
+
+    .prospect-tab-item {
+      height: 50px;
+      flex: 1 1;
+
+      &:last-child {
+        margin-right: 3px !important;
+      }
+
+      &.removeMarginBottom {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .filters {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+
+    &.hideScrollbar {
+      overflow: -moz-scrollbars-none;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        width: 0 !important;
+        display: none;
+      }
+    }
+
+    background-color: white;
+
+    &.extraBottomPadding {
+      padding-bottom: 50px;
+    }
+
+    .recommendations-toggle {
+      position: sticky;
+      top: 0;
+      background-color: var(--color-bg-secondary);
+      padding: 5px 14px;
+      outline: 1px solid var(--color-neutral-30);
+
+      span {
+        margin-right: 5px;
+        padding: 3px 5px;
+        cursor: pointer;
+        border-radius: var(--border-radius-2);
+
+        &.selected {
+          background-color: var(--color-neutral-30);
+          font-weight: 600;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    :global {
+      .zp-accordion-locked:not(:global(.accordion-variant-3)) {
+        border-radius: 0;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+      }
+    }
+  }
+
+  .smart-view-actions {
+    height: $finder-sidebar-top-section-height;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .moreFiltersWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: var(--sidebar-width);
+    bottom: 0;
+    padding: 10px 8px;
+    background-color: var(--color-bg-main);
+    width: 309px;
+    gap: 4px;
+    box-shadow: 0 -5px 12px rgb(0 0 0 / 12%);
+
+    &.forCard {
+      position: initial;
+    }
+  }
+
+  .showMoreFiltersButton {
+    width: 100%;
+    margin: 0 4px;
+  }
+
+  .showMoreFiltersButtonWrapperRight {
+    margin-left: 8px;
+  }
+
+  .showMoreFiltersButtonWrapperCentered {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .sidebar {
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: $finder-sidebar-width;
+    max-width: $finder-sidebar-width;
+    border-top: var(--color-border-light);
+    overflow-x: hidden;
+    border-right: 1px solid var(--color-border-light);
+
+    &.expandedWidth {
+      width: $expanded-finder-sidebar-width;
+      max-width: $expanded-finder-sidebar-width;
+    }
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  .sidebar {
+    position: relative;
+  }
+}
+
+// secondary-sidebar styles are imported and used by LoadPersonaLink.scss and LoadTerritoryLink.scss.
+.secondary-sidebar {
+  position: absolute;
+  width: $finder-sidebar-width;
+  max-width: $finder-sidebar-width;
+  height: 500px;
+  max-height: 500px;
+  z-index: 999;
+  top: $finder-sidebar-top-section-height;
+  left: $finder-sidebar-width;
+  background: var(--color-bg-secondary);
+  border-right: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  border-top: 1px solid var(--color-border-light);
+  @media (max-width: $screen-sm-min) {
+    display: none;
+  }
+}
+
+.secondary-sidebar-content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.secondary-sidebar-bottom-button {
+  height: $finder-sidebar-top-section-height;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.secondary-sidebar-title {
+  display: flex;
+  align-items: flex-end;
+  color: var(--color-text-primary);
+  @include typography.heading-3;
+  padding: 16px 8px 8px;
+}
+
+.secondary-sidebar-results {
+  padding-top: 3px;
+  flex: 1;
+  background-color: transparent;
+
+  div {
+    background-color: transparent;
+  }
+  overflow-y: auto;
+}
+
+.result-max-height {
+  max-height: 220px;
+  height: 220px;
+}
+
+.secondary-sidebar-filter-input {
+  padding: 0 8px;
+
+  .input-container {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.secondary-sidebar-small-link {
+  margin-left: auto;
+}
+
+.keyword-search {
+  padding: 0;
+  border-bottom: 1px solid var(--color-border-light);
+  min-height: 44px;
+
+  .finderKeywordsSearchInput {
+    --input-background-color: white;
+
+    :global {
+      .input-container {
+        > div {
+          transition: background-color 0.3s;
+          transition-timing-function: ease-in-out;
+          padding-left: 9px;
+          background-color: var(--input-background-color);
+        }
+      }
+    }
+
+    input {
+      margin-left: 4px;
+      height: 45px;
+      background-color: var(--input-background-color);
+      transition: background-color 0.3s;
+      transition-timing-function: ease-in-out;
+
+      &:-webkit-autofill {
+        box-shadow: 0 0 0 30px var(--input-background-color) inset !important;
+      }
+    }
+  }
+}
+
+.emptyStateContainer {
+  width: 400px;
+  text-align: center;
+  margin: 100px auto;
+
+  .emptyStateHeading {
+    @include typography.heading-2;
+  }
+
+  .emptyStateSubText {
+    @include typography.body-1;
+    color: var(--color-text-secondary);
+  }
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .createRuleButton {
+      margin: 24px 0 8px;
+    }
+  }
+}
+
+.subscribeButton {
+  i {
+    font-size: 12px !important;
+  }
+}
+
+.newStyleCard {
+  margin: 10px 0 10px 10px !important;
+  border: 1px solid var(--color-border-light);
+  border-radius: 6px;
+  overflow: hidden;
+
+  &.noMargin {
+    margin: 0 10px 0 0 !important;
+  }
+}
+
+.saveAndSubscribeNewSolo {
+  padding: 0 30px;
+  flex-grow: 1;
+  margin: 0 8px;
+}
+
+.saveAndSubscribeNewGroup {
+  padding: 0 30px;
+  flex-grow: 1;
+}

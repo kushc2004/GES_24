@@ -1,0 +1,71 @@
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.emailer-status-progress-bar {
+  font-weight: 300;
+
+  .relative {
+    position: relative;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    @include typography.body-2;
+    border-radius: 50%;
+    background-color: var(--color-neutral-20);
+    color: var(--color-icon-inverted);
+    text-align: center;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    :global {
+      .zp-icon {
+        color: white;
+        @include typography.body-2;
+        height: 21px;
+      }
+    }
+
+    &.completed {
+      background-color: var(--color-positive-60);
+    }
+
+    &.tracking-disabled {
+      background-color: var(--color-negative-40);
+    }
+  }
+
+  .connector {
+    display: inline-block;
+    width: 6px;
+    height: 2px;
+    background-color: var(--color-bg-secondary);
+    vertical-align: middle;
+
+    &.completed {
+      background-color: var(--color-positive-60);
+    }
+  }
+
+  .count {
+    position: absolute;
+    pointer-events: none;
+    font-weight: 600;
+    font-size: 10px;
+    background-color: var(--color-positive-70);
+    color: white;
+    border-radius: 50%;
+    box-sizing: border-box;
+    text-align: center;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    top: -9px;
+    left: 12px;
+    letter-spacing: -1px;
+  }
+}

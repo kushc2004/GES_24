@@ -1,0 +1,85 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+@import '../../../common/scss/placeholders/svg';
+@import '../../../common/scss/variables';
+
+.folder-item-wrapper {
+  position: relative;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background-color: var(--color-bg-feedback);
+  }
+
+  :global {
+    .zp-icon {
+      line-height: normal;
+      padding-right: 7px;
+    }
+  }
+}
+
+.folder-open {
+  color: var(--color-icon-normal);
+}
+
+.folder-open-blue {
+  color: var(--color-text-links);
+}
+
+.folder-active {
+  color: var(--color-text-links);
+}
+
+.folder-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+
+  .folder-left {
+    display: flex;
+    flex: 1;
+    width: 100%;
+
+    .name-and-count {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      margin-right: 20px;
+
+      .folder-name {
+        @include typography.helper-1;
+        @include text-overflow.ellipsis;
+        color: var(--color-text-primary);
+      }
+    }
+  }
+}
+
+.hover-bottom {
+  border-bottom: 1px solid var(--color-primary-50);
+  width: 100%;
+}
+
+.hover-left-margin {
+  margin-left: 20px;
+}
+
+.hover-negative-margin {
+  margin-left: -20px;
+}
+
+.folder-children-count {
+  @include typography.helper-1;
+  color: var(--color-text-secondary);
+  margin-left: 5px;
+  white-space: nowrap;
+}
+
+.settings-icon {
+  color: var(--color-primary-50);
+  position: absolute;
+  right: 0;
+}

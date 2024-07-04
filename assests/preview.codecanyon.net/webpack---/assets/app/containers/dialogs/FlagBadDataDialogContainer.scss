@@ -1,0 +1,16 @@
+@import '../../../common/scss/variables';
+
+.field-item-row {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.input-field {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.error {
+  color: var(--color-negative-40);
+}

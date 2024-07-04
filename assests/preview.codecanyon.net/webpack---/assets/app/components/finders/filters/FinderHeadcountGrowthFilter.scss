@@ -1,0 +1,71 @@
+@use 'typography';
+
+.row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.field-container {
+  margin: 0 -15px;
+  padding: 13px 15px;
+
+  border-bottom: 1px solid;
+  border-color: var(--color-border-light);
+
+  > *:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.field-container-no-bottom {
+  margin: 0 -15px;
+  padding: 13px 15px;
+}
+
+.input {
+  flex: 1 1 50%;
+  margin-bottom: 0 !important;
+
+  &.error {
+    border: 1px solid var(--color-border-error) !important;
+  }
+}
+
+.error-message {
+  @include typography.helper-1;
+  margin-top: 4px;
+  color: var(--color-negative-40);
+}
+
+.text {
+  color: var(--color-text-secondary);
+}
+
+.select {
+  width: 64px;
+  margin: 0 8px;
+
+  &.error {
+    :global {
+      .Select-control {
+        border: 1px solid var(--color-border-error) !important;
+      }
+    }
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.departmentPlaceholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  i {
+    margin-right: 4px;
+    color: var(--color-neutral-40);
+  }
+}

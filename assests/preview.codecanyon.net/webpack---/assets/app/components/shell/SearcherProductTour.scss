@@ -1,0 +1,15 @@
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/elevation';
+
+.sequencesProductTour {
+  box-shadow: var(--shadow-3);
+
+  [data-tour-elem='subheading'] {
+    max-width: 280px;
+  }
+}
+
+.button {
+  padding-left: 6px;
+  padding-right: 6px;
+}

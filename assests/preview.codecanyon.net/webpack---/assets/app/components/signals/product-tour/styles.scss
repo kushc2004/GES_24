@@ -1,0 +1,21 @@
+.badgeContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.badge {
+  padding: 2px 3px !important;
+}
+
+.badgeLabel {
+  color: var(--color-text-reversed) !important;
+}
+
+.lottieContainer {
+  margin-bottom: 16px;
+}
+
+.tour {
+  z-index: 19999;
+}

@@ -1,0 +1,16 @@
+@import '../../../common/scss/variables';
+
+.active {
+  color: white;
+  background-color: var(--color-primary-50);
+}
+
+.paused {
+  color: white;
+  background-color: var(--color-neutral-40);
+}
+
+.finished {
+  color: white;
+  background-color: var(--color-positive-50);
+}

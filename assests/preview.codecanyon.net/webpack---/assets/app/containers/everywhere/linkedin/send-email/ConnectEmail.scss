@@ -1,0 +1,56 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerIcon {
+  color: var(--color-icon-normal);
+  font-size: 80px;
+  line-height: 80px;
+  margin-bottom: 20px;
+}
+
+.headerText {
+  @include typography.heading-2;
+  color: var(--color-text-primary);
+}
+
+.headerSubText {
+  @include typography.helper-1;
+  color: var(--color-text-labels);
+  margin: 10px 0 20px;
+  width: 240px;
+}
+
+.closeContainer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close {
+  cursor: pointer;
+  color: var(--color-icon-normal);
+  line-height: normal;
+
+  &:hover,
+  &:focus {
+    color: var(--color-icon-normal);
+  }
+}
+
+.error {
+  @include typography.helper-1;
+  color: var(--color-negative-50) !important;
+  margin-bottom: 10px;
+
+  :global(a) {
+    display: inline-block;
+  }
+}

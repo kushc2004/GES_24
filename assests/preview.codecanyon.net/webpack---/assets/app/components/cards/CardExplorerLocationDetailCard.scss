@@ -1,0 +1,179 @@
+@use 'mixins/text-overflow' as text-overflow;
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+.cardWrapper {
+  height: 100%;
+
+  :global {
+    .noResults {
+      padding: 20px;
+    }
+  }
+}
+
+.content {
+  padding: 20px;
+
+  .contactForm {
+    width: 100%;
+  }
+}
+
+.item {
+  margin: 0;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  &:only-child {
+    line-height: 26px;
+  }
+}
+
+.fieldContainer {
+  display: flex;
+  align-items: center;
+
+  .label {
+    @include typography.body-2-medium;
+
+    display: flex;
+    margin-right: 10px;
+    width: 120px;
+    color: var(--color-text-labels);
+    text-transform: capitalize;
+  }
+
+  .field {
+    @include typography.body-2-medium;
+
+    display: flex;
+    width: calc(100% - 130px);
+    color: var(--color-text-secondary);
+
+    & > span {
+      display: flex;
+      align-items: center;
+    }
+
+    &.industryInfo {
+      & > span {
+        overflow: hidden;
+      }
+    }
+
+    &.location {
+      display: block;
+    }
+  }
+}
+
+.text {
+  @include typography.body-2-medium;
+  @include text-overflow.ellipsis;
+  color: var(--color-text-secondary);
+
+  & > div {
+    @include text-overflow.ellipsis;
+    color: var(--color-text-secondary);
+  }
+
+  &.noResults {
+    color: var(--color-text-labels);
+  }
+}
+
+.crmIcon {
+  margin-left: 2px;
+  @include typography.body-2;
+
+  &.salesforceIcon {
+    color: var(--color-ui-primary);
+  }
+
+  &.hubspotIcon {
+    color: var(--color-ui-negative);
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+
+  .col {
+    width: 50%;
+
+    &:first-child {
+      border-right: 1px solid var(--color-border-light);
+    }
+
+    &:first-child:last-child {
+      width: 100%;
+      border: none !important;
+    }
+
+    .employmentHistoryCard {
+      :global {
+        .card-header {
+          padding: 6px 16px;
+        }
+
+        .zp-card-body {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+    }
+  }
+
+  @mixin tableViewMode {
+    display: block;
+
+    .col {
+      width: 100%;
+
+      &:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border-light);
+      }
+    }
+  }
+
+  @media (max-width: $screen-md-max) {
+    @include tableViewMode;
+  }
+
+  &.tableView {
+    @include tableViewMode;
+  }
+}
+
+.parentAccountContainer {
+  display: flex;
+  align-items: center;
+
+  .link {
+    @include typography.body-2-medium;
+  }
+
+  .triggerButton {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '·';
+      display: block;
+      margin: 0 8px;
+      color: var(--color-text-labels);
+    }
+
+    .icon {
+      --button-foreground-color: var(--color-neutral-40) !important;
+      --button-foreground-hover-color: var(--color-primary-50) !important;
+      margin-left: -4px;
+    }
+  }
+}

@@ -1,0 +1,651 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .itemContainer {
+    height: 100%;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 22px;
+    gap: 20px;
+    border: 1px solid var(--color-border-light);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    background-color: var(--color-bg-main);
+    height: 50px;
+    padding: 12px 16px;
+
+    .aiSwitch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 16px;
+    }
+
+    .actions {
+      position: sticky;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      bottom: 0px;
+      padding: 12px 0 12px 16px;
+      justify-content: flex-end;
+    }
+
+    .headerMail {
+      @include typography.helper-1;
+      color: var(--color-text-secondary);
+      margin-right: 6px;
+    }
+  }
+}
+
+.body {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  overflow-x: auto;
+
+  :global {
+    .zp-card-body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+
+  .inputContainer,
+  .outputContainer {
+    position: relative;
+
+    :global {
+      .zp-card {
+        border-radius: 0;
+        border: none;
+        border-left: 1px solid var(--color-border-light);
+      }
+
+      .zp-card-body {
+        padding: 0;
+        border-radius: 0;
+      }
+    }
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+
+    .formContainer {
+      box-sizing: border-box;
+      padding: 20px 14px 10px;
+      overflow: scroll;
+
+      .typeDropdown {
+        margin-bottom: 16px;
+      }
+
+      .inputTextField {
+        input {
+          height: auto !important;
+          padding: 8px 10px !important;
+          margin-top: 4px;
+        }
+      }
+
+      label {
+        @include typography.body-2;
+        line-height: 1.5;
+      }
+
+      textarea {
+        padding: 10px 12px;
+        margin-top: 4px;
+      }
+    }
+
+    .cardFooter {
+      justify-self: flex-end;
+      width: 100%;
+      background-color: var(--color-bg-main);
+      display: flex;
+      bottom: 0px;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-top: 1px solid var(--card-border);
+      height: 56px;
+    }
+  }
+
+  .editorCard {
+    @extend .card;
+
+    width: 67%;
+    min-width: 720px;
+
+    :global {
+      .card-header {
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  .hiddenPreview {
+    min-width: 0;
+  }
+
+  .inputTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 14px;
+    background: white;
+    border-bottom: 1px solid var(--color-border-light);
+    border-left: 1px solid var(--color-border-light);
+    max-height: 50px;
+    position: relative;
+
+    .editSwitch {
+      display: flex;
+      gap: 10px;
+    }
+
+    .logo {
+      @include typography.heading-3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+
+      .alertIcon {
+        @include typography.heading-3;
+        border-radius: 40px;
+        align-self: center;
+        padding: 0 3px;
+        background-color: rgba(220 197 255 / 20%);
+      }
+    }
+  }
+
+  .editButton {
+    min-width: 100px;
+  }
+
+  .inputTitleText {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @include typography.heading-3;
+  }
+
+  .inputTitleActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .inputTitleNavigate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    :global {
+      .zp-icon {
+        @include typography.body-1;
+      }
+    }
+
+    [disabled] {
+      color: var(--color-text-light);
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  .toggleAssistantContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    width: 52px;
+    background: var(--color-bg-main);
+    height: 100%;
+    padding: 16px 8px;
+  }
+
+  .toggleAssistantBtn {
+    height: 28px !important;
+    width: 28px !important;
+  }
+
+  .collapseSection {
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden;
+  }
+
+  .inputOutputColumn {
+    display: flex;
+    max-width: 500px;
+    width: 33%;
+    min-width: 360px;
+  }
+
+  .inputOutputColumnWithoutPreview {
+    width: 50%;
+  }
+
+  .inputOutputWrapper {
+    width: 100%;
+  }
+
+  .outputWrapper {
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: scroll;
+  }
+
+  .aiContentSplash {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    height: 100%;
+  }
+
+  .editSwitch {
+    display: flex;
+    gap: 1px;
+    background-color: var(--color-border-light);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-4);
+    overflow: hidden;
+
+    :global {
+      .zp-button {
+        border: none;
+        border-radius: 0;
+      }
+    }
+  }
+
+  .noOutput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    @include typography.body-2-medium;
+    background-color: rgba(247 249 251 / 50%);
+    padding: 0px 60px;
+    height: 100%;
+    border-radius: 6px;
+    color: var(--color-text-labels);
+  }
+
+  .questionCircle {
+    font-size: 17px;
+
+    &:hover {
+      :global {
+        .zp-icon {
+          color: var(--button-foreground-active-color);
+        }
+      }
+    }
+  }
+}
+
+.togglePreviewBody {
+  background-color: var(--color-bg-secondary);
+}
+
+.contentSelectHeader {
+  @include typography.subheader-1;
+}
+
+.options {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.optionsCard {
+  @include typography.body-2;
+  padding: 16px 12px 12px;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: 6px;
+
+  &.optionsCardSelected {
+    border-color: var(--color-primary-50);
+  }
+
+  .generatedContent {
+    @include typography.body-2;
+    color: var(--color-text-secondary);
+    margin-top: 16px;
+    white-space: pre-line;
+  }
+
+  .optionHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 22px;
+
+    > span {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      > input {
+        margin: 0px 0px 0px 4px;
+      }
+
+      .generatedContentLabel {
+        @include typography.subheader-2;
+        color: var(--color-text-labels);
+        line-height: 16px;
+        margin-top: 2px;
+      }
+    }
+  }
+
+  .optionLabel {
+    @include typography.subheader-2;
+    color: var(--color-text-secondary);
+  }
+
+  :global {
+    .zp-spinner {
+      line-height: normal;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-origin: unset;
+      margin-left: 0;
+
+      :hover {
+        color: var(--color-icon-hover);
+      }
+    }
+  }
+
+  .refresh {
+    @include typography.body-1;
+    justify-content: space-between;
+  }
+
+  .refreshDisabled {
+    @extend .refresh;
+    color: var(--color-neutral-30);
+  }
+
+  .actionBtnsWrapper {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    :global {
+      .zp-button {
+        width: auto;
+        padding: 0;
+      }
+
+      .zp-icon {
+        color: var(--color-text-secondary);
+      }
+    }
+
+    .activeIconButton {
+      :global {
+        .zp-icon {
+          color: var(--button-icon-active-color);
+        }
+      }
+    }
+  }
+}
+
+.card {
+  height: calc(100% - 24px);
+}
+
+.charLimit {
+  @include typography.helper-1;
+  display: flex;
+  margin-top: -20px;
+  justify-content: flex-end;
+  color: #000;
+}
+
+.charLimitMarginForTextBox {
+  margin-top: -16px;
+}
+
+.extraSpaceForTextBox {
+  padding-top: 4px;
+}
+
+.charLimitThreshold {
+  color: var(--color-negative-40);
+}
+
+.activeContent {
+  border-radius: 6px;
+  border: 1px solid transparent;
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+
+  &.disabled {
+    opacity: 0.6 !important;
+    pointer-events: none !important;
+  }
+
+  &:hover {
+    background-color: var(--color-bg-secondary);
+  }
+}
+
+.alertIcon {
+  color: var(--color-caution-40);
+  padding-right: 11px;
+}
+
+.replyMail {
+  text-transform: none;
+  padding: 8px 0;
+
+  i {
+    line-height: 1.5 !important;
+  }
+}
+
+.divider {
+  border-right: 1px solid var(--color-border-light);
+}
+
+.editorTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.editorCard {
+  margin: 12px;
+  border: none;
+  box-shadow: $shadow-1;
+  border-radius: 6px;
+
+  :global {
+    .card-header {
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .zp-card-title {
+      @include typography.heading-3;
+    }
+  }
+
+  &.editModeCard {
+    :global {
+      .zp-card-body {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.editorCheckbox {
+  font-size: 12px !important;
+}
+
+.editorCheckboxBox {
+  border-color: var(--color-border-normal);
+}
+
+.aiUnavailable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: var(--color-caution-10);
+  color: var(--color-negative-40);
+  padding: 8px 20px;
+
+  .aiUnavailableText {
+    @include typography.body-2-medium;
+    flex-grow: 1;
+    line-height: 1.5;
+  }
+
+  .aiUnavailableTryagain {
+    @include typography.helper-1-medium;
+    text-decoration: underline;
+    cursor: pointer;
+    line-height: 1.5;
+    color: var(--color-negative-40);
+  }
+
+  .aiUnavailableIcon {
+    @include typography.body-1;
+    color: var(--color-negative-40);
+    line-height: 1;
+  }
+}
+
+.aiAssistTooltip {
+  padding: 15px 11px;
+  border-radius: 12px;
+  width: 260px;
+
+  .aiAssistTooltipContent {
+    @include typography.helper-1-medium;
+    line-height: 16px;
+  }
+
+  .aiPolicy {
+    color: var(--color-primary-30) !important;
+    text-decoration: underline;
+  }
+}
+
+.typeDropdown {
+  :global {
+    .Select-control {
+      height: 50px;
+    }
+
+    .Select-value {
+      position: static;
+    }
+  }
+}
+
+.typeOptionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  @include typography.body-2-medium;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+
+  .typeOptionIcon {
+    --apollo-colored-icon-height: 1;
+    font-size: 18px;
+  }
+}
+
+.typeSelectedContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  @include typography.subheader-1;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+
+  .typeSelectedIcon {
+    --apollo-colored-icon-height: 1;
+    font-size: 36px;
+  }
+
+  .typeSelectedArrow {
+    @include typography.body-1;
+    position: absolute;
+    right: 10px;
+  }
+}
+
+.flexFill {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.height100Percent {
+  height: 100%;
+}
+
+.height100PercentLess50px {
+  height: calc(100% - 50px);
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.personalizedOpenersToggle {
+  margin: 0 !important;
+}
+
+.personalizationTogglePadded {
+  padding: 12px 0 0;
+}
+
+.panelTitle {
+  @include typography.heading-3;
+  display: flex;
+  gap: 8px;
+  color: var(--color-quaternary-50);
+}

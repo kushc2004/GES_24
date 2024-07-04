@@ -1,0 +1,22 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/hide-scrollbar';
+
+.tasksExplorerList {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  overscroll-behavior-y: contain;
+  row-gap: 8px;
+  padding-bottom: 64px;
+  margin-right: -10px; // For scrollbar
+  scrollbar-gutter: stable;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  @include typography.body-2-medium;
+  color: var(--color-text-secondary);
+  padding: 8px;
+}

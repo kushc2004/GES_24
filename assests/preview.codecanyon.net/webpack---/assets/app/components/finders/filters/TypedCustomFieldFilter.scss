@@ -1,0 +1,34 @@
+@import 'assets/common/scss/variables';
+
+.header {
+  display: flex;
+
+  span {
+    font-weight: $font-weight-semibold;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+  }
+
+  .label {
+    width: calc(100% - 30px);
+  }
+
+  .icon {
+    position: absolute;
+    right: 16px;
+  }
+}
+
+.sliderButtonGroup {
+  width: 100%;
+
+  .sliderButton {
+    width: 50%;
+  }
+}
+
+// Aligns other fields like FinderDateRange
+.fieldOnlyContainer {
+  display: flex;
+  height: 40px;
+}

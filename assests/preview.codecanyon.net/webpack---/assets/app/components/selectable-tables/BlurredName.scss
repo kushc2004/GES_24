@@ -1,0 +1,30 @@
+.container {
+  text-wrap: nowrap;
+  position: relative;
+  vertical-align: middle;
+  padding: 0;
+}
+
+.blurredText {
+  position: absolute;
+  color: #ddd;
+  margin: 3px 4px;
+  text-shadow: 0px 0px 5px #888;
+}
+
+.blurOverlay {
+  width: 80px;
+  display: inline-block;
+  border-radius: var(--border-radius-4);
+  border: 1px solid rgba(#000, 0.1);
+  background: rgba(#d9d9d9, 0.4);
+  flex-shrink: 0;
+  text-align: right;
+  padding: 2px 2px 0;
+}
+
+.tooltipIcon {
+  color: var(--color-icon-light);
+  display: inline;
+  vertical-align: middle;
+}

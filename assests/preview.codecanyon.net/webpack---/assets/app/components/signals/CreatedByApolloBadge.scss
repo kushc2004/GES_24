@@ -1,0 +1,11 @@
+.createdByApollo {
+  &:global(.zp-badge) {
+    background-color: var(--color-secondary-40);
+
+    i {
+      &:global(.zp-icon) {
+        color: var(--color-neutral-80) !important;
+      }
+    }
+  }
+}

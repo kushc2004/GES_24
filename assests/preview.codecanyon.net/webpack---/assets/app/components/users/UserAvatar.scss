@@ -1,0 +1,14 @@
+@import 'assets/common/scss/variables';
+
+.blankLogo {
+  background: var(--color-neutral-20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .blankLogoIcon {
+    color: var(--color-icon-normal);
+    font-size: 20px;
+  }
+}

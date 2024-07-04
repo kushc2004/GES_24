@@ -1,0 +1,50 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  font-variant-numeric: tabular-nums;
+  font-weight: $font-weight-medium;
+  padding: 10px 12px;
+  border-radius: var(--border-radius-2);
+  width: auto;
+}
+
+.excellent {
+  background-color: rgba($color: $color-positive-50, $alpha: 18%);
+}
+
+.good {
+  background-color: var(--color-primary-10);
+}
+
+.fair {
+  background-color: rgba($color: $color-caution-40, $alpha: 18%);
+}
+
+.poor {
+  background-color: #efefef;
+}
+
+.score {
+  @include typography.subheader-2;
+  color: var(--color-text-secondary);
+  width: 32px;
+  text-align: center;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  display: inline-block;
+
+  &.tabular {
+    font-variant-numeric: tabular-nums;
+    background-color: var(--color-neutral-20);
+    padding: 2px 8px;
+    border-radius: 20px;
+    width: auto;
+  }
+}

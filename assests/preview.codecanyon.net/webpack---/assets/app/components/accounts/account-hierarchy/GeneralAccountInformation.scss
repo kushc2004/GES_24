@@ -1,0 +1,65 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.account {
+  display: flex;
+  align-items: center;
+  padding: 0;
+
+  .badge {
+    display: flex;
+
+    :global {
+      .zp-icon {
+        color: var(--color-icon-normal);
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 8px;
+    }
+  }
+}
+
+.accordion {
+  margin-right: 8px;
+
+  .icon {
+    color: var(--color-icon-normal);
+    transition: transform 200ms ease;
+    transform-origin: center;
+
+    &.closed {
+      color: var(--color-icon-normal);
+      transform: rotate(-90deg);
+    }
+  }
+
+  .dummyIcon {
+    width: 20px;
+    height: 30px;
+    content: '';
+    display: block;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  flex: 1;
+  align-items: flex-start;
+
+  .name {
+    @include typography.body-2-medium;
+
+    &.current {
+      color: var(--color-text-secondary);
+    }
+  }
+
+  .domain {
+    @include typography.helper-1;
+    color: var(--color-text-labels);
+  }
+}

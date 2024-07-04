@@ -1,0 +1,23 @@
+.select-row {
+  margin-top: 18px;
+
+  .text {
+    position: relative;
+    top: 6px;
+  }
+
+  .select {
+    margin-left: 6px;
+    margin-right: 3px;
+    max-width: 110px;
+  }
+
+  .delete {
+    margin-left: 5px;
+    margin-top: 3px;
+  }
+
+  .min-number {
+    margin-right: 3px;
+  }
+}

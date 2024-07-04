@@ -1,0 +1,30 @@
+@import 'assets/common/scss/variables';
+
+.self {
+  display: flex;
+  min-width: 260px;
+
+  .owner {
+    align-items: center;
+    margin-right: 8px;
+  }
+
+  :global {
+    .zp-button {
+      padding-left: 6px !important;
+      padding-right: 6px !important;
+
+      &.zp-disabled {
+        background-color: white !important;
+
+        i {
+          opacity: 0.3 !important;
+        }
+      }
+    }
+  }
+}
+
+.noMinWidth {
+  min-width: unset;
+}

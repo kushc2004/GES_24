@@ -1,0 +1,43 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+.toggleButton {
+  :global(.slider-label) > label {
+    @include typography.body-2-medium;
+    color: var(--color-grayscale-50);
+  }
+}
+
+.mailboxAllocationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .title {
+    @include typography.subheader-1;
+    color: var(--color-grayscale-60);
+  }
+
+  .description {
+    @include typography.body-2;
+    color: var(--color-grayscale-50);
+  }
+
+  &.compactInfoDisplay {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.allocationOptionsLabel {
+  @include typography.body-2-medium;
+  color: var(--color-grayscale-60);
+}
+
+.sendFromLabel {
+  font-weight: $font-weight-semibold;
+  margin-bottom: 5px;
+  display: inline-block;
+}

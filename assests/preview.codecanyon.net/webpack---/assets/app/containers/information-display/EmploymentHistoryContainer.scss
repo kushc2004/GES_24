@@ -1,0 +1,151 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+@use 'sass:math';
+@import 'assets/common/scss/variables';
+
+$company-logo-size: 32px;
+$md-list-view-item-padding-left: 15px;
+$sm-list-view-item-padding-left: 8px;
+
+.largeHeading {
+  .title {
+    @include typography.heading-3;
+
+    color: var(--color-text-primary);
+  }
+
+  .subTitle {
+    @include typography.body-2;
+  }
+}
+
+.employmentListView {
+  padding: 8px 0;
+
+  .show-more {
+    margin: 0 12px;
+  }
+
+  .employmentRow {
+    .listViewItemContent {
+      padding: 8px 0;
+
+      .inner {
+        display: flex;
+        width: 100%;
+      }
+
+      .companyLogo {
+        margin-top: 4px;
+        margin-right: 12px;
+      }
+
+      .siblingLogo {
+        position: relative;
+        margin-top: 4px;
+        margin-right: 12px;
+        width: $company-logo-size;
+        height: $company-logo-size;
+
+        &::after {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          display: block;
+          content: '';
+          width: 12px;
+          height: 12px;
+          background: var(--color-neutral-40);
+          border-radius: 50%;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  .titleWrapper {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .title {
+    @include text-overflow.ellipsis;
+  }
+
+  .showMoreRolesWrapper {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &.groupByCompanyView {
+    .employmentRow {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        left: $md-list-view-item-padding-left + math.div($company-logo-size, 2);
+        top: $company-logo-size + 12px;
+        display: block;
+        content: '';
+        width: 1px;
+        height: calc(100% - #{$company-logo-size + 12px});
+        background: var(--color-neutral-20);
+
+        @media (max-width: $screen-sm-max) {
+          left: $sm-list-view-item-padding-left + math.div($company-logo-size, 2);
+        }
+      }
+
+      &:not(:first-child)::after {
+        top: 0;
+        height: 100%;
+      }
+
+      &:last-child::after {
+        height: 50%;
+      }
+
+      &:first-child:last-child::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.extensionStyles {
+  padding: 0;
+
+  .employmentRow {
+    padding: 0 16px;
+  }
+
+  .title {
+    @include typography.body-1-medium;
+    color: var(--color-text-primary);
+  }
+
+  .subTitle {
+    display: flex;
+
+    span {
+      @include typography.helper-1;
+      color: var(--color-text-secondary);
+    }
+
+    > span {
+      white-space: nowrap;
+
+      &:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &:last-child {
+        flex: 1;
+        margin-left: 5px;
+      }
+    }
+  }
+}

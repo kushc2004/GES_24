@@ -1,0 +1,204 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+.logo {
+  width: 30px;
+  margin-right: 10px;
+  position: relative;
+  @media (max-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+.name {
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--color-primary-50);
+
+  &:hover {
+    color: var(--color-primary-70);
+  }
+
+  &.name-preview {
+    color: var(--color-text-secondary);
+
+    &:hover {
+      color: var(--color-text-secondary);
+    }
+  }
+
+  &.prospect-mode {
+    width: 200px;
+    min-width: 200px;
+  }
+}
+
+.name-text {
+  @include typography.heading-3;
+}
+
+.stage {
+  width: 180px;
+  min-width: 180px;
+  margin-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  display: flex;
+  flex-direction: column;
+
+  &.prospect-mode {
+    width: 140px;
+    min-width: 140px;
+  }
+}
+
+.stage-space {
+  width: 10px;
+}
+
+.snippet {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  margin-right: 10px;
+  padding-left: 15px;
+  min-height: 45px;
+  align-items: center;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &.prospect-mode {
+    border-left: none;
+  }
+}
+
+.org-snippet-min-width {
+  min-width: 250px;
+}
+
+.user-avatar-container {
+  margin-left: 10px;
+}
+
+.social-media-links {
+  font-size: 13px;
+  line-height: 13px;
+
+  > div {
+    margin-top: 4px;
+  }
+
+  > div:empty {
+    margin-top: 0;
+  }
+}
+
+.actions {
+  width: 190px;
+  min-width: 190px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  > div {
+    display: inline-block !important;
+  }
+
+  &.prospect-mode {
+    width: 110px;
+    min-width: 110px;
+  }
+}
+
+.user-avatar-alignment {
+  width: 35px;
+}
+
+.card-org-title {
+  flex: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  .similar-reason-icon {
+    margin-left: 5px;
+    color: var(--color-neutral-40);
+  }
+}
+
+.card-org-detail {
+  width: 100%;
+}
+
+.greyed-out-leadgen {
+  opacity: 0.2 !important;
+}
+
+.prospectRightSide {
+  display: flex;
+  align-items: center;
+}
+
+.stageActions {
+  min-width: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge {
+  margin: 0 0 15px 2px;
+}
+
+.actionButtonsLg {
+  margin-left: -2px;
+}
+
+.cardOrg {
+  min-height: 75px;
+
+  .inner {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 20px);
+  }
+
+  .cardOrgRightArrowIcon {
+    margin-right: 0;
+    width: 20px;
+    font-size: 24px;
+  }
+
+  &:not(.showFullInfo) {
+    .orgName {
+      @include typography.heading-3;
+      @include text-overflow.ellipsis;
+      color: var(--color-text-primary);
+    }
+
+    .orgIndustry {
+      @include typography.body-2;
+      @include text-overflow.ellipsis;
+    }
+
+    .card-org-title {
+      margin-left: 15px;
+      flex: initial;
+      @include text-overflow.ellipsis;
+
+      .similar-reason-icon {
+        margin-left: 5px;
+        color: var(--color-neutral-40);
+      }
+    }
+
+    .card-org-detail {
+      width: auto;
+    }
+  }
+}

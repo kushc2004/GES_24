@@ -1,0 +1,15 @@
+$dropdown-width: 175px;
+
+.dropdown {
+  display: flex;
+  justify-content: flex-end;
+  margin: 16px 0px;
+}
+
+.button {
+  min-width: $dropdown-width;
+}
+
+.menuItem {
+  min-width: $dropdown-width;
+}

@@ -1,0 +1,81 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+@import 'assets/common/scss/mixins/elevation';
+
+.dropdownMenu {
+  min-width: 280px;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.popup {
+  box-shadow: var(--shadow-2);
+  position: absolute;
+  top: -8px;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--color-border-normal);
+  border-radius: var(--border-radius-4);
+}
+
+.hidePopup {
+  display: none;
+}
+
+.integration {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 20px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--color-border-normal);
+  }
+}
+
+.integrationDetails {
+  display: flex;
+  align-items: center;
+}
+
+.integrationImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 18px;
+    height: auto;
+  }
+}
+
+.integrationName {
+  @include typography.subheader-2;
+  color: var(--color-text-primary);
+  margin-left: 20px;
+}
+
+.link {
+  @include typography.helper-1;
+  color: var(--color-primary-50);
+
+  &:hover {
+    color: var(--color-text-links);
+    cursor: pointer;
+  }
+}
+
+.disabledLink {
+  @include typography.helper-1;
+  color: var(--color-neutral-40);
+}
+
+.noMargin {
+  margin: 0;
+}

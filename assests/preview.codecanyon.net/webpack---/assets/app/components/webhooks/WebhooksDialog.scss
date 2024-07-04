@@ -1,0 +1,130 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.formWidth {
+  width: 500px !important;
+}
+
+.body {
+  background-color: var(--color-bg-secondary);
+}
+
+.footer {
+  flex-direction: row-reverse !important;
+
+  & > button:nth-child(2) {
+    margin-right: 8px;
+  }
+}
+
+.header {
+  box-shadow: inset 0px -1px 0px var(--color-neutral-30);
+}
+
+.formWrapper {
+  .stackedContainer {
+    padding-bottom: 10px;
+  }
+
+  .fieldPadding {
+    padding-top: 5px;
+
+    label {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .verifiedButton {
+    pointer-events: none;
+
+    i {
+      color: var(--color-positive-50);
+    }
+  }
+
+  .checkboxInput {
+    gap: 8px;
+    padding-top: 13px;
+
+    span {
+      @include typography.body-2-medium;
+      color: var(--color-text-body) !important;
+      line-height: 15px !important;
+    }
+  }
+
+  .contextType {
+    @include typography.body-2-medium;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    width: 315px;
+    height: 21px;
+    color: var(--color-text-body);
+  }
+
+  .description {
+    @include typography.body-2-medium;
+    color: var(--color-neutral-50);
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .verifyDescription {
+    @include typography.helper-1;
+    color: var(--color-neutral-50);
+    margin-bottom: 5px;
+    margin-top: 0;
+  }
+
+  .descriptionSpacing {
+    margin: 0px;
+    margin-bottom: 5px;
+  }
+
+  .errorDescription {
+    color: var(--color-ui-negative);
+  }
+
+  .activationDesc {
+    @include typography.body-3;
+    color: var(--color-text-body);
+    margin-left: 48px;
+    margin-top: 0px;
+  }
+
+  .toggleButtonLabel {
+    label {
+      @include typography.body-2-medium;
+      color: var(--color-text-header);
+    }
+  }
+
+  .clientSecret {
+    margin: 5px 25px;
+
+    :global(.zp-icon) {
+      margin: 3px;
+      color: var(--color-icon-normal);
+    }
+  }
+
+  .targetUrlWrapper {
+    display: flex;
+
+    .targetField {
+      width: 85%;
+      padding-right: 5px;
+    }
+
+    > button {
+      margin-top: 6px;
+    }
+  }
+
+  .successCtaLabel {
+    @include typography.body-2-medium;
+    color: var(--color-text-links);
+  }
+}

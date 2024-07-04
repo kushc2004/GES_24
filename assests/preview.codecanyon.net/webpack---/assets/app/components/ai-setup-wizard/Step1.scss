@@ -1,0 +1,5 @@
+@use 'mixins/text-overflow' as text-overflow;
+
+.companyDescription {
+  @include text-overflow.line-clamp(4);
+}

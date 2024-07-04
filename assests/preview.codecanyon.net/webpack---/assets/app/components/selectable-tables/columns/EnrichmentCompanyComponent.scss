@@ -1,0 +1,39 @@
+@use 'typography';
+
+@import '../../../../common/scss/variables';
+
+.company {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .hidden {
+    opacity: 0;
+
+    &:hover {
+      cursor: auto;
+    }
+  }
+
+  .logo {
+    box-shadow: 1px 1px 1px 0 var(--color-neutral-30);
+    border-radius: var(--border-radius-4);
+    margin-right: 10px;
+  }
+
+  a {
+    @include typography.subheader-1;
+    text-decoration: none;
+    line-height: 1.14;
+    color: var(--color-text-secondary);
+    text-align: left;
+    margin-right: 10px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

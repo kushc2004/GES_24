@@ -1,0 +1,22 @@
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/elevation';
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 0 17px;
+
+  display: flex;
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border-normal);
+
+  :global {
+    .zp-tabs {
+      height: 40px;
+
+      a {
+        height: 40px;
+      }
+    }
+  }
+}

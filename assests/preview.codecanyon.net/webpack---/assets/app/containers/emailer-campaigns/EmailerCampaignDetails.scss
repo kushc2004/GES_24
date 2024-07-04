@@ -1,0 +1,110 @@
+@use 'assets/common/scss/mixins/text-overflow' as text-overflow;
+
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.sequenceName {
+  @include typography.heading-3;
+  color: var(--color-text-primary);
+  @include text-overflow.ellipsis;
+}
+
+.sequenceDetailsContainer {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-2);
+  padding: 12px 20px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+
+  &.open {
+    border-color: var(--color-primary-30);
+    padding-bottom: 20px;
+  }
+
+  .openContent {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  .sequenceDetails {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
+  .sequenceDetailsActions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+
+    .clearSequenceButton {
+      :global(.zp-icon) {
+        font-size: 22px;
+
+        &:not(:hover) {
+          color: var(--color-icon-normal);
+        }
+      }
+    }
+  }
+}
+
+.sequenceSecondaryDetails {
+  @include typography.body-2;
+  display: flex;
+  color: var(--color-text-secondary);
+}
+
+.sequencePrimaryDetailsContainer {
+  display: flex;
+  column-gap: 26px;
+  width: 100%;
+}
+
+.sequenceDetailContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  & + &::before {
+    position: relative;
+    content: '';
+    display: inline-block;
+    top: 0;
+    width: 4px;
+    height: 4px;
+    margin: 3px 8px;
+    border-radius: 50%;
+    background-color: var(--color-neutral-30);
+    color: var(--color-text-secondary);
+  }
+}
+
+.sequenceSteps {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+
+  .step {
+    display: flex;
+    column-gap: 42px;
+
+    .day {
+      @include typography.body-2;
+      min-width: 64px;
+    }
+  }
+
+  .stepName {
+    @include typography.body-2-medium;
+    display: flex;
+    gap: 8px;
+    color: var(--color-text-secondary);
+  }
+}

@@ -1,0 +1,59 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 630px 370px;
+
+  @include typography.body-2-medium;
+  color: var(--color-text-secondary);
+
+  &.settingsPage {
+    grid-template-columns: 5fr 4fr;
+  }
+
+  & > div {
+    padding: 8px 20px;
+
+    &:nth-child(2n - 1) {
+      border-right: 1px solid var(--color-border-light);
+    }
+
+    &:not(:nth-last-child(-n + 2)) {
+      border-bottom: 1px solid var(--color-border-light);
+    }
+  }
+}
+
+.selectionCounter {
+  display: flex;
+
+  .counter {
+    display: inline-block;
+    padding-right: 8px;
+  }
+
+  .error {
+    color: var(--color-ui-negative);
+  }
+
+  .preview {
+    flex: 1;
+  }
+}
+
+.resultsCount {
+  align-items: center;
+  color: var(--color-text-secondary);
+  display: flex;
+  line-height: normal;
+
+  .icon {
+    color: var(--color-icon-normal);
+    margin-right: 6px;
+  }
+}
+
+.link {
+  @include typography.body-2-medium;
+}

@@ -1,0 +1,46 @@
+@use 'typography';
+
+.wrapper {
+  padding: 10px 0;
+
+  .filterButton {
+    width: 42px;
+    padding: 0;
+    border-radius: 26px;
+
+    .iconLeft {
+      width: 14px;
+      color: var(--color-icon-normal);
+    }
+
+    .label {
+      margin-left: 6px;
+    }
+
+    &.withLabel {
+      width: unset;
+      height: unset;
+      padding: 6px 10px;
+    }
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.newStyleButton {
+  border-radius: 7px !important;
+  color: var(--color-text-body) !important;
+  border-color: var(--color-border-light) !important;
+
+  i {
+    color: var(--color-text-body) !important;
+  }
+
+  &:hover {
+    color: var(--color-text-body) !important;
+    border-color: var(--color-border-normal) !important;
+  }
+}

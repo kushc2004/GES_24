@@ -1,0 +1,39 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import './FinderFilterHelpers';
+@import 'FinderJobTitlesSieve';
+
+.booleanOperatorTitle {
+  @include typography.subheader-2;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+button.booleanFilterButton {
+  color: var(--button-foreground-color);
+  margin-left: 0px !important;
+}
+
+.infoTooltip {
+  margin-bottom: 8px;
+  color: var(--color-text-labels);
+}
+
+.infoIcon {
+  font-size: 16px;
+  margin-left: 4px;
+  color: var(--color-neutral-40);
+}
+
+.text {
+  height: 71px !important;
+}
+
+.readTutorial {
+  color: var(--color-primary-30);
+}
+
+.pastJobTitles {
+  padding-top: 7px;
+}

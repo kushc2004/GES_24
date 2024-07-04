@@ -1,0 +1,65 @@
+@use 'typography';
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dissolve {
+  0% {
+    opacity: 0;
+  }
+
+  25%,
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.loadingDescriptionContainer {
+  max-width: 288px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.fadeIn {
+  animation: fade-in 1.25s ease-in-out 0s;
+}
+
+.dissolveEffect {
+  animation: dissolve 5s ease-in-out 0s 4;
+}
+
+.description {
+  white-space: pre-line;
+  margin: 0;
+  margin-top: 14px;
+  @include typography.body-2-medium;
+  line-height: 1.5;
+  min-height: 84px;
+  color: var(--color-neutral-60);
+}
+
+.waitTimeNotificationContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.waitTimeNotification {
+  border-radius: 32px;
+  color: var(--color-neutral-60);
+  background-color: var(--color-neutral-20);
+
+  --foreground-color: var(--color-neutral-60) !important;
+}

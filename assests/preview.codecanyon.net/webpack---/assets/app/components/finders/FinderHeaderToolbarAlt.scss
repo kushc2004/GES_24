@@ -1,0 +1,26 @@
+.right-side-actions {
+  display: flex;
+  align-items: center;
+
+  &.toolbar {
+    justify-content: flex-end;
+  }
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+}
+
+.panelHeader {
+  padding: 0 8px !important;
+}
+
+.tabsWrapper {
+  margin: auto 0;
+}
+
+.leftSideActions {
+  margin-right: 16px;
+}

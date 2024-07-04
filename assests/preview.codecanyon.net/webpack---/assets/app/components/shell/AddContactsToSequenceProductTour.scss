@@ -1,0 +1,32 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/elevation';
+
+.self {
+  box-shadow: var(--shadow-3);
+
+  [data-tour-elem='subheading'] {
+    max-width: 280px;
+  }
+}
+
+.customControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    cursor: pointer;
+  }
+
+  .link {
+    @include typography.body-2-medium;
+
+    color: var(--color-text-secondary);
+    text-transform: capitalize;
+  }
+
+  .finishButton {
+    margin-left: 14px;
+  }
+}

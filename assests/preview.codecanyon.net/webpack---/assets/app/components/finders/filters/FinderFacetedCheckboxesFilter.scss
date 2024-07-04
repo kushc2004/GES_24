@@ -1,0 +1,115 @@
+@use 'typography';
+@import '../../../../common/scss/variables';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  cursor: pointer;
+
+  .clickableLabel {
+    @include typography.subheader-2;
+    color: var(--color-text-labels);
+    display: inline-block;
+  }
+
+  .link {
+    @include typography.subheader-2;
+    color: var(--color-primary-50);
+    display: inline-block;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-text-links);
+    }
+
+    &:active {
+      color: var(--color-primary-70);
+    }
+  }
+
+  &:hover i,
+  &:hover a {
+    color: var(--color-primary-60) !important;
+  }
+
+  &:active i,
+  &:active a {
+    color: var(--color-primary-70) !important;
+  }
+}
+
+.settings-icon {
+  margin-right: 3px;
+  cursor: pointer;
+  color: var(--color-primary-50);
+
+  &:hover {
+    color: var(--color-text-links);
+  }
+
+  &:active {
+    color: var(--color-primary-70);
+  }
+}
+
+.item {
+  display: flex;
+  margin-bottom: 6px;
+
+  &.narrow {
+    padding: 0px !important;
+  }
+}
+
+.item.hoverable {
+  border-radius: var(--border-radius-2);
+
+  padding: 4px 6px;
+  margin: -4px -6px 6px;
+
+  &:hover {
+    background-color: var(--color-neutral-20);
+  }
+
+  & > div {
+    flex-grow: 1;
+  }
+
+  :global(label) {
+    cursor: pointer;
+  }
+}
+
+.item:hover .item-settings-icon,
+.item:hover .itemEditButton {
+  display: block;
+}
+
+.item:hover .itemEditButton {
+  position: absolute;
+  right: 10px;
+}
+
+.item-settings-icon {
+  color: var(--color-neutral-40);
+  margin-left: 3px;
+  @include typography.body-2;
+  display: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.itemEditButton {
+  @include typography.subheader-2;
+  color: var(--color-primary-50);
+  margin-left: 5px;
+  display: none;
+  word-break: keep-all;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,7 @@
+@use 'typography';
+
+.root {
+  @include typography.heading-1;
+  max-width: 360px;
+  margin-bottom: 12px;
+}

@@ -1,0 +1,33 @@
+.mailboxWrapper {
+  padding: 16px;
+  border-radius: var(--border-radius-4);
+  border: 1px solid var(--color-border-light);
+}
+
+.mailboxActionButtons {
+  display: flex;
+}
+
+.exitSetupWarningButton {
+  background-color: var(--color-negative-50);
+
+  &:hover {
+    background-color: var(--color-negative-60);
+  }
+}
+
+.lockIcon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.optionCardWrapper {
+  flex: 1;
+  position: relative;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

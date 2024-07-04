@@ -1,0 +1,12 @@
+@import 'assets/common/scss/variables';
+
+.tip {
+  @include body-2;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  border-radius: var(--border-radius-4);
+  background: var(--color-primary-10);
+  padding: 12px;
+  margin-top: 16px;
+}

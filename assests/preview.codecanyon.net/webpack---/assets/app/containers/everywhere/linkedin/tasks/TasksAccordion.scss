@@ -1,0 +1,36 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.accordion {
+  & > summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    margin: 4px 0;
+    cursor: pointer;
+  }
+
+  .accordionTitle {
+    @include typography.subheader-1;
+    color: var(--color-text-secondary);
+  }
+
+  .arrowDownIcon {
+    i {
+      color: var(--color-primary-50);
+    }
+  }
+
+  .accordionContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.accordion[open] {
+  .arrowDownIcon {
+    transform: rotate(180deg);
+  }
+}

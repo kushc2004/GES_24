@@ -1,0 +1,32 @@
+@use 'typography';
+
+@keyframes fade-into-view {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+.chatThread {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: 1px; /* Required to fix a 1px glitch */
+
+  .chatContainer {
+    padding: 48px;
+    padding-top: 100px;
+    flex-grow: 1;
+    overflow: auto;
+    scrollbar-gutter: stable;
+
+    > * {
+      animation: fade-into-view 0.3s;
+    }
+  }
+}

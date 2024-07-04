@@ -1,0 +1,101 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/placeholders/svg';
+
+.paginator {
+  @include typography.helper-1;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+
+  .label {
+    margin-right: 12px;
+  }
+}
+
+.pageSelectorGroup {
+  :global {
+    .Select-control {
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .zp-button {
+      padding-left: 12px;
+      padding-right: 12px;
+
+      &.zp-disabled {
+        background-color: white !important;
+      }
+    }
+
+    .Select {
+      &:first-child {
+        .Select-control {
+          border-radius: 0;
+        }
+      }
+
+      &:last-child {
+        .Select-control {
+          border-radius: 0;
+        }
+      }
+
+      &.is-open {
+        .Select-control {
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+.perPageOption {
+  .secondaryAnnotation {
+    font-style: italic;
+    color: var(--color-text-labels);
+    font-size: 11px;
+  }
+}
+
+.pageSelect {
+  width: 55px;
+  border-radius: 0;
+
+  :global {
+    .Select-control {
+      height: 24px;
+    }
+
+    .Select-placeholder {
+      display: flex;
+      align-items: center;
+    }
+
+    .Select-menu {
+      width: 100%;
+    }
+  }
+
+  &:not(:last-child) {
+    border-right: 1px solid var(--color-border-light);
+  }
+}
+
+.perPageSelect {
+  width: 95px;
+  margin-left: 10px;
+}
+
+.perPage {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.strong {
+  @include typography.helper-1;
+  color: var(--color-text-labels);
+}

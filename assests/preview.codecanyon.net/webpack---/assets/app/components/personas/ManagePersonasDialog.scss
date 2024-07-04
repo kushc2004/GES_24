@@ -1,0 +1,118 @@
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+.title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 25px !important;
+  @include typography.body-1;
+}
+
+.modalBody {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+.managePersonaContainer {
+  padding: 32px 48px 48px;
+  height: 600px;
+  overflow-y: auto;
+  background-image: url(common/images/ManagePersonaBackground.svg) !important;
+  border-radius: var(--border-radius-4);
+
+  &.managePersona {
+    background-image: none !important;
+  }
+
+  .heading {
+    @include typography.body-2;
+    top: 8px;
+    position: relative;
+  }
+
+  .infoText {
+    @include typography.helper-1;
+    top: 8px;
+    position: relative;
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .icon {
+      color: var(--color-icon-normal);
+      margin-right: 4px;
+      @include typography.body-2;
+    }
+  }
+
+  .personaIntroHeading {
+    @include typography.body-1-medium;
+    color: var(--color-text-primary);
+    @include typography.body-1;
+  }
+
+  .personaIntroText {
+    @include typography.body-2;
+    color: var(--color-text-secondary);
+  }
+
+  .personaImage {
+    padding-top: 40px;
+  }
+}
+
+.recommandedPersonas {
+  background-color: var(--color-secondary-20);
+  top: 20px;
+  position: relative;
+
+  :global {
+    .card-header,
+    .zp-card-body {
+      background-color: var(--color-secondary-20);
+    }
+  }
+
+  .emptyState {
+    background-color: var(--color-secondary-10);
+    margin: 16px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .recommendedGif {
+    width: 100px;
+    height: 80px;
+  }
+
+  .loadingState {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+  }
+
+  .recommendPersonaHeading {
+    @include typography.subheader-2;
+  }
+
+  .recommendPersonaSubHeading {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+}
+
+.recommendedPersonaTitle {
+  background: var(--color-secondary-20);
+
+  span {
+    vertical-align: super;
+  }
+}
+
+.recommendedPersonaSubtitle {
+  font-size: '12px';
+  font-weight: 400;
+}

@@ -1,0 +1,36 @@
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.dialog {
+  width: 320px;
+
+  .fieldWrapper {
+    margin: 10px 0 35px 30px;
+
+    .input {
+      width: 50%;
+    }
+  }
+
+  .removeMargin {
+    margin: 0;
+
+    .input {
+      width: 100%;
+    }
+  }
+
+  .second-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 15px;
+
+    .title {
+      @include typography.subheader-1;
+      width: 100%;
+      color: var(--color-text-secondary);
+    }
+  }
+}

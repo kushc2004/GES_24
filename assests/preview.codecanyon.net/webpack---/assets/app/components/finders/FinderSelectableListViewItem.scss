@@ -1,0 +1,52 @@
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/elevation';
+
+$checkbox-basis: 16px;
+$checkbox-margin-right: 16px;
+$checkbox-total-width: $checkbox-basis + $checkbox-margin-right;
+
+.checkbox-part {
+  flex: 0 0 $checkbox-basis;
+  margin-right: $checkbox-margin-right;
+  @media (max-width: $screen-sm-max) {
+    margin-right: 4px;
+  }
+
+  &.checkbox-margin-small {
+    margin-right: 10px;
+  }
+}
+
+.children {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.component {
+  &.padded {
+    padding-left: 15px;
+  }
+  padding-right: 10px;
+
+  &.selected {
+    background: var(--color-bg-secondary);
+  }
+  border-bottom: 1px solid var(--color-border-light);
+
+  &.neutralDivider {
+    border-color: var(--color-border-light);
+  }
+
+  &.noItemBorder {
+    border: none;
+  }
+
+  &.largePadding {
+    padding: 0 20px;
+  }
+}
+
+.component.selectable .children {
+  width: calc(100% - #{$checkbox-total-width});
+}

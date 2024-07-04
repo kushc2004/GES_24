@@ -1,0 +1,41 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  position: relative;
+
+  .scrollIcon {
+    position: absolute;
+    margin: auto;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 120px;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    color: var(--color-primary-50);
+    background-color: var(--color-bg-main);
+    box-shadow: var(--shadow-2);
+
+    &:hover {
+      color: var(--color-text-links);
+    }
+
+    &:active {
+      color: var(--color-primary-70);
+    }
+  }
+
+  .scrollMessage {
+    @include typography.body-1-medium;
+    color: var(--color-text-secondary);
+    background-color: var(--color-bg-main);
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    padding: 40px;
+  }
+}

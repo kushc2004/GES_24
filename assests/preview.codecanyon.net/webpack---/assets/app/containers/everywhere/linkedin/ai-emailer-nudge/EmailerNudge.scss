@@ -1,0 +1,46 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.new-emailer-nudge {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-8, 8px);
+  background: var(--color-quaternary-10);
+
+  .text-section {
+    display: flex;
+    padding: var(--spacing-0, 0px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--spacing-0, 0px);
+    flex-shrink: 0;
+  }
+
+  .send-email-text {
+    color: var(--color-quaternary-50);
+    @include typography.body-2-bold;
+  }
+
+  .desc-text {
+    color: var(--color-quaternary-80);
+    @include typography.helper-1;
+  }
+
+  .email-button {
+    background-color: var(--color-quaternary-50);
+    border-radius: 3px;
+
+    &:hover {
+      background-color: var(--color-quaternary-60);
+    }
+  }
+
+  .close-button {
+    &:not(:hover) {
+      --button-foreground-color: var(--color-neutral-60) !important;
+    }
+  }
+}

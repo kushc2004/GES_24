@@ -1,0 +1,14 @@
+@import 'assets/common/scss/variables';
+
+.tooltip {
+  margin-right: 6px;
+}
+
+.tooltipButton {
+  cursor: pointer;
+}
+
+.focusRing {
+  border: 3px solid var(--color-text-links);
+  border-radius: var(--border-radius-4);
+}

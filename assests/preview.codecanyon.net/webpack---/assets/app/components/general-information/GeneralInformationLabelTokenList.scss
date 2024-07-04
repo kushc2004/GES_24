@@ -1,0 +1,69 @@
+@use 'typography';
+@import 'common/scss/variables';
+
+.generalInformationLabelTokenListComponent {
+  .labelTokenList {
+    @include typography.body-2-medium;
+
+    display: flex;
+    color: var(--color-text-labels);
+
+    .title {
+      margin-top: 2px;
+      margin-right: 8px;
+    }
+
+    .list {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      & > * {
+        margin-top: 3px;
+        margin-bottom: 3px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .none {
+    @include typography.body-2-medium;
+
+    display: flex;
+    color: var(--color-text-labels);
+
+    .text {
+      margin: 3px 0;
+      line-height: 1.45;
+    }
+  }
+}
+
+.listMorePopup {
+  padding: 10px;
+
+  .listItem {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  :global {
+    .zp-badge {
+      margin-right: 0;
+    }
+  }
+}
+
+.listMoreButtonWrapper {
+  cursor: pointer;
+
+  .listMore {
+    display: flex;
+    align-items: center;
+  }
+}

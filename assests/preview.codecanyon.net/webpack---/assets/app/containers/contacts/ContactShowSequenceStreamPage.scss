@@ -1,0 +1,42 @@
+@import '../../../common/scss/variables';
+
+.borderBottom {
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--color-border-normal);
+  }
+}
+
+.panelForCard {
+  max-height: 450px;
+}
+
+.header {
+  padding: 15px !important;
+  margin-bottom: 10px;
+  height: min-content !important;
+  border-radius: var(--border-radius-2);
+  box-shadow: 0 0 2px 0 rgb(53 64 83 / 40%) !important;
+
+  &.forCard {
+    border: 1px solid var(--color-border-light);
+    box-shadow: none !important;
+  }
+
+  .dropdown {
+    float: right;
+  }
+
+  .row {
+    display: flex;
+    padding: 4px 0;
+
+    .label {
+      font-weight: $font-weight-semibold;
+      width: 164px;
+    }
+  }
+}
+
+.activityContainer {
+  border: 1px solid var(--color-border-light);
+}

@@ -1,0 +1,10 @@
+@import 'assets/common/scss/variables';
+
+.sortableHeader {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-right: 5px;
+  }
+}

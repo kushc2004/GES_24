@@ -1,0 +1,81 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.noMar {
+  margin: 0 !important;
+}
+
+.intentEmptyContainer {
+  box-shadow: var(--shadow-3) !important;
+  border-radius: var(--border-radius-4);
+  margin: 0 20px 16px;
+  position: relative;
+
+  .intentImageContainer {
+    margin: 0 auto;
+
+    .image {
+      width: 100%;
+    }
+  }
+}
+
+.intentEmptyProfileContainer {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius-4);
+  margin: 0 20px 16px;
+  position: relative;
+}
+
+.intentEmptyClose {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.intentInfoContent {
+  padding: 16px;
+  margin-bottom: 16px;
+
+  .intentDataInfoHeading {
+    @include typography.heading-3;
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  .intentDataInfoText {
+    @include typography.body-2;
+    text-align: center;
+    margin-bottom: 16px;
+    margin-top: 0;
+    color: var(--color-text-secondary);
+  }
+
+  .emptyStateButton {
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+
+  .learnMoreContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .learnMore {
+      padding: 0 2px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+
+    .dropdown {
+      color: var(--color-primary-50);
+    }
+  }
+}

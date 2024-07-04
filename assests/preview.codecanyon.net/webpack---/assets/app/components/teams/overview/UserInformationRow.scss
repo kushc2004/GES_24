@@ -1,0 +1,53 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.row {
+  display: flex;
+  padding: 8px 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: var(--color-bg-secondary);
+  }
+
+  &.showDivider:not(:last-of-type) {
+    border-bottom: 1px solid var(--color-border-light);
+  }
+}
+
+.info {
+  @include typography.body-2-medium;
+  flex: 1;
+  color: var(--color-text-secondary);
+
+  &.compact {
+    @include typography.helper-1-medium;
+  }
+
+  .title {
+    @include typography.body-2;
+    color: var(--color-text-secondary);
+    max-width: 300px;
+
+    &.compact {
+      @include typography.helper-1;
+      max-width: 200px;
+    }
+  }
+}
+
+.lastLogin {
+  @include typography.helper-1;
+  color: var(--color-text-secondary);
+  margin-left: 16px;
+}
+
+.actions {
+  margin-left: 16px;
+
+  .noBorder {
+    --button-foreground-color: var(--color-neutral-40) !important;
+    --button-foreground-hover-color: var(--color-primary-50) !important;
+  }
+}

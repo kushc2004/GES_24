@@ -1,0 +1,132 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.emailAnalyzerContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+}
+
+.sectionTitle {
+  @include typography.subheader-1;
+}
+
+.subTitle {
+  padding: 0 0 4px 30px;
+}
+
+.accordionBoxOnActive {
+  margin: 8px;
+  padding: 8px;
+  border-radius: var(--border-radius-4);
+  background-color: var(--color-bg-secondary);
+}
+
+.accordionBoxBoundaryOnActive {
+  border-radius: var(--border-radius-4);
+  border: 1px solid var(--color-primary-50);
+}
+
+.noBorderBottom {
+  border-bottom: none;
+}
+
+.suggestionsContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: scroll;
+  padding: 16px 0;
+}
+
+.actionsContainer {
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  margin-bottom: -16px;
+  padding: 10px 20px;
+  border-top: 1px solid var(--color-border-light);
+  background: var(--color-bg-main);
+  display: flex;
+  justify-content: center;
+}
+
+.suggestions {
+  padding: 8px 0;
+
+  :last-child {
+    border-bottom: none;
+  }
+}
+
+.analysisBox {
+  border: none;
+  background: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--color-border-light);
+  cursor: pointer;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .mainHeader {
+      display: flex;
+      border: none;
+      gap: 8px;
+      align-items: center;
+      color: var(--color-text-header);
+    }
+
+    .trailingHeader {
+      gap: 8px;
+      padding-right: 20px;
+    }
+  }
+}
+
+.message {
+  padding: 0;
+}
+
+.analysisOutcomeList {
+  color: var(--color-text-body);
+  @include typography.body-3;
+
+  .analysisOutcome {
+    display: flex;
+    align-items: center;
+    line-height: 16px;
+    gap: 6px;
+    padding: 8px 0;
+  }
+
+  .outcomeMessage {
+    display: initial;
+  }
+}
+
+.green {
+  color: var(--color-positive-50);
+}
+
+.amber {
+  color: var(--color-negative-50);
+}
+
+.red {
+  color: var(--color-negative-50);
+}
+
+.label {
+  @include typography.body-3-medium;
+}
+
+.loading {
+  display: flex;
+  position: relative;
+  top: 50%;
+  flex-direction: column;
+  align-items: center;
+}

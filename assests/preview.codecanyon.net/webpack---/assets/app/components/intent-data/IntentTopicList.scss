@@ -1,0 +1,23 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.topicContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+
+  .topicName {
+    @include typography.helper-1-medium;
+    color: var(--color-text-secondary);
+  }
+
+  .loader {
+    display: flex;
+    align-items: center;
+  }
+
+  .bars {
+    pointer-events: none;
+    margin-right: 10px;
+  }
+}

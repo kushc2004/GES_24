@@ -1,0 +1,77 @@
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.option {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-weight: $font-weight-semibold;
+
+  &.focused {
+    color: var(--color-neutral-10);
+  }
+}
+
+.title-and-company {
+  @include typography.helper-1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+
+  &.focused {
+    color: var(--color-neutral-10) !important;
+  }
+}
+
+.stage {
+  margin-left: auto;
+}
+
+.contactNonSaved {
+  @include typography.helper-1-medium;
+  color: var(--color-neutral-50);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.dropDownMenuItemWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: var(--color-bg-main);
+  position: relative;
+  width: 100%;
+  padding: 5px 10px;
+
+  &:hover {
+    background-color: var(--color-bg-secondary);
+
+    .menuItemRemoveBtn {
+      display: flex;
+      margin-right: 16px;
+      height: 24px;
+      width: 34px !important;
+    }
+  }
+
+  .menuName {
+    @include typography.subheader-1;
+    color: var(--color-text-primary);
+  }
+
+  .menuEmail {
+    @include typography.helper-1;
+    color: var(--color-text-secondary);
+  }
+
+  .menuItemRemoveBtn {
+    position: absolute;
+    right: 0;
+    display: none;
+    padding: 12px 7px;
+  }
+}

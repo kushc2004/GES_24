@@ -1,0 +1,140 @@
+@use 'typography';
+@import 'assets/common/scss/mixins/input';
+
+.buttonContainer {
+  background-color: var(--accordion-background-active-color);
+  position: relative;
+
+  &:hover {
+    background: var(--color-neutral-20);
+    cursor: pointer;
+  }
+
+  .dateButton {
+    margin: 0 auto;
+
+    &:focus {
+      background-color: inherit;
+    }
+  }
+}
+
+.nestedCheckboxContainer {
+  padding: 0 15px 13px;
+
+  &.disableInteraction {
+    :global(.zp-button) {
+      pointer-events: none;
+    }
+  }
+}
+
+.activeButton {
+  background-color: var(--color-bm-9);
+}
+
+.newsAccordion {
+  transition: background 0.3s ease-in-out;
+}
+
+.overlayContent {
+  background: rgb(0 0 0 / 10%);
+  transition: background 0.3s ease-in-out;
+}
+
+.popoverContainer {
+  border-top: 1px solid var(--color-ui-primary);
+  position: absolute;
+  background-color: var(--color-bg-main);
+
+  min-height: 194px;
+  width: 100%;
+
+  :global {
+    .zp-tabs {
+      .zp-link {
+        &:not([class*='active']) {
+          border-color: var(--color-ui-secondary);
+        }
+      }
+    }
+
+    .Select {
+      min-width: 75px;
+    }
+  }
+
+  .datepickerContainer {
+    > div {
+      &:first-child {
+        height: 94px;
+      }
+    }
+
+    > * {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .applyButtonContainer {
+      padding: 8px 10px 8px 0;
+      width: 100%;
+      justify-content: flex-end;
+      border-top: 1px solid var(--color-ui-secondary);
+    }
+
+    .label {
+      @include typography.body-2-medium;
+    }
+
+    .relativeDateInput {
+      @include main-input-style;
+      display: flex;
+      align-items: center;
+      min-width: 130px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .dateInput {
+      max-width: 125px;
+    }
+  }
+
+  .lastContainer {
+    .selectMenu {
+      width: 70px;
+    }
+  }
+
+  .rangeContainer {
+    width: fit-content;
+    margin: 0 auto;
+    display: grid;
+    grid: repeat(2, 1fr) / 20% 80%;
+    grid-column-gap: 5px;
+
+    > .label {
+      text-align: right;
+    }
+  }
+}
+
+.menuDropdown {
+  max-width: 130px;
+  border: 1px solid var(--color-border-normal);
+  border-radius: var(--border-radius-8);
+}
+
+.menuInput {
+  @include typography.body-2-medium;
+  color: var(--color-text-secondary);
+  padding: 7px 14px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border-normal);
+}

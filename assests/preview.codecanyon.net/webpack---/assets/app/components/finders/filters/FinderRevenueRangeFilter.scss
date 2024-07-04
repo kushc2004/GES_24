@@ -1,0 +1,9 @@
+.menuDropdown {
+  // https://stackoverflow.com/a/38796408
+  // https://www.w3.org/TR/css-transforms-1/#containing-block-for-all-descendants
+  position: fixed;
+  top: -6px;
+  max-height: 200px;
+  width: 118px;
+  overflow-y: auto;
+}

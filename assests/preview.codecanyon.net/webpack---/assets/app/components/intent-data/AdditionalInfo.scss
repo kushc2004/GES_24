@@ -1,0 +1,19 @@
+@use 'typography';
+
+.additionalInfoContainer {
+  display: flex;
+  align-items: flex-start;
+
+  .textContainer {
+    margin-left: 4px;
+
+    .header {
+      @include typography.helper-1-medium;
+      color: var(--color-text-primary);
+    }
+
+    .content {
+      @include typography.helper-1;
+    }
+  }
+}

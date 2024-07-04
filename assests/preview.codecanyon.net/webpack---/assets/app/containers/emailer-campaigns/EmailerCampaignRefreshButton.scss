@@ -1,0 +1,31 @@
+@use 'typography';
+
+.refreshContainer {
+  @include typography.helper-1-medium;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  line-height: 18px;
+
+  .refreshIcon {
+    color: var(--color-neutral-40);
+  }
+
+  &:hover,
+  &:hover > .refreshIcon {
+    color: var(--color-icon-normal);
+  }
+
+  &.refreshing {
+    pointer-events: none;
+    opacity: 0.6;
+
+    :global {
+      .zp-spinner {
+        margin: 0 !important;
+      }
+    }
+  }
+}

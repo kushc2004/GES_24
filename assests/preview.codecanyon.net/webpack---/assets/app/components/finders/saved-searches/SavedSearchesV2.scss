@@ -1,0 +1,216 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/text-overflow';
+
+.keywordSearch {
+  padding: 0px 8px 0px 0px;
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .finderKeywordsSearchInput {
+    --input-background-color: white;
+    flex: 1;
+
+    :global {
+      .input-container {
+        > div {
+          transition: background-color 0.3s;
+          transition-timing-function: ease-in-out;
+          padding-left: 9px;
+          background-color: var(--input-background-color);
+        }
+      }
+    }
+
+    input {
+      margin-left: 4px;
+      height: 45px;
+      background-color: var(--input-background-color);
+      transition: background-color 0.3s;
+      transition-timing-function: ease-in-out;
+
+      &:-webkit-autofill {
+        box-shadow: 0 0 0 30px var(--input-background-color) inset !important;
+      }
+    }
+  }
+
+  .sortIcon {
+    color: var(--color-icon-light);
+  }
+}
+
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 50px;
+
+  .filterTabs {
+    margin: 16px 14px 8px;
+  }
+}
+
+.emptyStateContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 14px;
+  overflow-y: auto;
+
+  .layoutImage {
+    margin-top: 42px;
+    margin-bottom: 36px;
+  }
+
+  .emptyStateText {
+    @include typography.body-2;
+    width: 50%;
+    color: var(--color-text-header);
+    text-align: center;
+    margin-bottom: 42px;
+  }
+
+  .searchButton {
+    margin-bottom: 52px;
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  padding: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.noResult {
+  @include typography.helper-1;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.sortButton {
+  margin-right: 14px;
+  padding: 0 2px 0 6px !important;
+  border: 0 !important;
+  background: var(--color-bg-secondary) !important;
+
+  &:hover {
+    background: var(--color-neutral-30) !important;
+  }
+}
+
+.savedItemsContainers {
+  overflow-y: auto;
+}
+
+.searchContainer {
+  overflow-y: auto;
+}
+
+.itemContainer {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 12px 14px 10px;
+  gap: 8px;
+
+  &:hover {
+    background-color: var(--color-bg-secondary);
+
+    .itemName {
+      color: var(--color-primary-50);
+      cursor: pointer;
+    }
+
+    .icon {
+      color: var(--color-icon-hover);
+    }
+
+    .disabled {
+      color: inherit;
+    }
+
+    .verticalDivider {
+      color: var(--color-neutral-30);
+    }
+  }
+
+  .pin {
+    position: relative;
+    transform: rotate(45deg);
+    top: -4px;
+    cursor: pointer;
+
+    .pinned {
+      color: var(--color-secondary-60);
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .itemName {
+    @include typography.body-2-medium;
+    color: var(--color-text-header);
+    @include text-overflow-ellipsis;
+  }
+
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+    min-width: 0px;
+    flex: 1;
+    gap: 4px;
+  }
+
+  .itemDetailContainer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .verticalDivider {
+    color: var(--color-neutral-20);
+    @include typography.body-1;
+  }
+
+  .icon {
+    color: var(--color-icon-light);
+  }
+}
+
+.alertTooltipContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  align-items: center;
+
+  .header {
+    @include typography.subheader-2;
+  }
+
+  .body {
+    text-align: center;
+  }
+
+  .action {
+    color: var(--color-primary-50);
+    cursor: pointer;
+  }
+}
+
+.filterTooltip {
+  background: white !important;
+  box-shadow: 1px 23px 24px rgb(211 218 227 / 40%);
+
+  .tooltipContainer {
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-2);
+    padding: 12px;
+    margin: 10px 0px;
+  }
+}

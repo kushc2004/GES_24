@@ -1,0 +1,26 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+@import '../../../common/scss/placeholders/svg';
+
+.self {
+  .icon {
+    margin-right: 8px;
+  }
+}
+
+.button {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.card-self {
+  .card-title {
+  }
+
+  .card-meta {
+    @include typography.helper-1;
+    margin-top: 5px;
+    color: var(--color-text-secondary);
+    display: flex;
+  }
+}

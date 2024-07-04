@@ -1,0 +1,43 @@
+@use 'typography';
+
+.wrapper {
+  text-align: left;
+}
+
+.text {
+  @include typography.helper-1;
+  color: var(--color-neutral-50);
+  text-align: left;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.contactName {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 0 12px 4px;
+
+  span {
+    color: var(--color-text-secondary);
+  }
+
+  .location {
+    display: flex;
+    gap: 4px;
+    line-height: normal;
+    align-items: center;
+  }
+
+  .socials {
+    height: unset;
+  }
+}
+
+.badgeText {
+  max-width: 180px;
+}

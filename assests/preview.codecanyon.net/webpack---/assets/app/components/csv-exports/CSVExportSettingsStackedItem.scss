@@ -1,0 +1,21 @@
+@use 'typography';
+
+.csvExportSettingsSection {
+  margin-top: 16px;
+  padding-top: 16px;
+
+  .csvExportSettingsLabel {
+    @include typography.body-2;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .csvExportSettingsButtonWrapper {
+    display: flex;
+    gap: 10px;
+  }
+
+  i {
+    color: var(--color-primary-50) !important;
+  }
+}

@@ -1,0 +1,15 @@
+@use 'typography';
+
+.messageHeader {
+  @include typography.heading-3;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.messageDescription {
+  @include typography.body-2-medium;
+  color: var(--color-text-secondary);
+  padding-top: 4px;
+  padding-bottom: 16px;
+  margin: 0;
+}

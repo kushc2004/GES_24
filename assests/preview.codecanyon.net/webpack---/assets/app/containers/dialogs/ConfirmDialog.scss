@@ -1,0 +1,66 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+
+.warning-center {
+  text-align: center;
+
+  .warning-icon {
+    font-size: 50px;
+    color: var(--color-caution-50);
+  }
+
+  .warning-text {
+    @include typography.body-2;
+    color: var(--color-text-caution);
+  }
+}
+
+.messageStyle {
+  @include typography.body-2-medium;
+  color: var(--color-text-secondary);
+}
+
+.messageContainerOverflowHidden {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.confirmDialogModal {
+  &.xs {
+    width: min(360px, 100vw);
+  }
+
+  &.small {
+    width: min(500px, 100vw);
+  }
+
+  &.medium {
+    width: min(656px, 100vw);
+  }
+
+  &.large {
+    width: min(920px, 100vw);
+  }
+
+  &.xl {
+    width: min(1200px, 100vw);
+  }
+}
+
+.confirmDialogBody {
+  background-color: var(--color-bg-secondary);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+
+  .warningIcon {
+    margin-right: 8px;
+    color: var(--color-caution-50);
+  }
+}
+
+.dismissForever {
+  margin-top: 18px;
+}

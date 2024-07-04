@@ -1,0 +1,79 @@
+@use 'typography';
+@import '../../../../common/scss/variables';
+@import './FinderFilterHelpers';
+@import 'FinderJobTitlesSieve';
+
+.booleanOperatorTitle {
+  @include typography.subheader-2;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.infoTooltip {
+  margin-bottom: 8px;
+  color: var(--color-text-labels);
+}
+
+.tabButtonsOptions {
+  & + div {
+    margin-top: 12px !important;
+  }
+}
+
+.infoIcon {
+  font-size: 16px;
+  margin-left: 4px;
+  color: var(--color-neutral-40);
+}
+
+.text {
+  height: 71px !important;
+}
+
+.readTutorial {
+  color: var(--color-primary-30);
+}
+
+.personaLimitErrorPadding {
+  margin-bottom: 5px;
+}
+
+.personaLimitError {
+  text-align: center;
+  display: flex;
+  background: #fef3f0;
+  width: 268px;
+  height: 100px;
+  border-radius: var(--border-radius-4);
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 20px;
+  gap: 16px;
+
+  .alertIcon {
+    position: absolute;
+
+    i {
+      color: var(--color-negative-60);
+    }
+  }
+
+  .personaErrorLabel {
+    @include typography.body-2-medium;
+    display: inline-block;
+    text-align: left;
+    text-align: start;
+    margin-left: 35px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+
+    width: 194px;
+    height: 75px;
+
+    color: var(--color-text-negative);
+  }
+}

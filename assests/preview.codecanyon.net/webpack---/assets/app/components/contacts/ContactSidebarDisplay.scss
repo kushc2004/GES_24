@@ -1,0 +1,34 @@
+@import '../../../common/scss/variables';
+
+.account-stuff {
+  border-top: 2px solid var(--color-neutral-10);
+}
+
+.padded {
+  padding: 20px 16px 25px 10px;
+
+  @media (max-width: $screen-sm-max) {
+    padding: 20px 16px 25px;
+  }
+}
+
+.cardContainer {
+  margin-bottom: 16px;
+
+  &:empty {
+    margin: 0;
+  }
+}
+
+.newTableSidebar {
+  padding: 20px 0 0;
+
+  .cardContainer {
+    margin: 0;
+    padding: 0 16px 16px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}

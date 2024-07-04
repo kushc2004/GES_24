@@ -1,0 +1,46 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+
+.directory-wrapper {
+  overflow: hidden;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.folder-row {
+  &:hover {
+    cursor: default;
+    min-width: auto !important;
+  }
+
+  .folder-name {
+    @include typography.helper-1;
+    color: var(--color-text-secondary);
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    line-height: 13px;
+
+    &.clickable {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.folder-icon {
+  color: var(--color-icon-normal);
+  margin-right: 6px;
+}
+
+.chevron-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: var(--color-icon-normal);
+}

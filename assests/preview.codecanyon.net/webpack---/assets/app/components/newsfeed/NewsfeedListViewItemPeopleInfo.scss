@@ -1,0 +1,29 @@
+@import '../../../common/scss/variables';
+
+.self {
+  border-top: 1px solid var(--color-neutral-10);
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+
+  .people {
+    display: flex;
+    margin-bottom: 16px;
+
+    .person {
+      flex: 1;
+      max-width: 20%;
+      margin-right: 8px;
+
+      &.contact {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .link {
+    margin-bottom: 8px;
+  }
+}

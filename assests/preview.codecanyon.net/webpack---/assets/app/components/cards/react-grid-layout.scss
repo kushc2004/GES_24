@@ -1,0 +1,46 @@
+@import '../../../common/scss/variables';
+
+:global {
+  .zp {
+    .react-grid-layout {
+      position: relative;
+      transition: height 200ms ease;
+    }
+
+    .react-grid-item {
+      transition: all 200ms ease;
+      transition-property: left, top;
+      border: 1px solid transparent;
+      border-radius: var(--border-radius-4);
+
+      &.react-draggable {
+        &:hover {
+          border: 1px solid var(--color-primary-50);
+        }
+      }
+    }
+
+    .react-grid-item.cssTransforms {
+      transition-property: transform;
+    }
+
+    .react-grid-item.resizing {
+      z-index: 1;
+      will-change: width, height;
+    }
+
+    .react-grid-item.react-draggable-dragging {
+      transition: none;
+      z-index: 3;
+      will-change: transform;
+    }
+
+    .react-grid-item.react-grid-placeholder {
+      background: var(--color-primary-50);
+      opacity: 0.15;
+      transition-duration: 100ms;
+      z-index: 2;
+      user-select: none;
+    }
+  }
+}

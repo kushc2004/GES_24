@@ -1,0 +1,20 @@
+@use 'typography';
+
+button.container {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  background-color: var(--color-neutral-30);
+
+  &.underDepartment {
+    background: var(--color-neutral-40);
+  }
+  border-radius: 12px;
+}
+
+.label {
+  @include typography.body-2-bold;
+}

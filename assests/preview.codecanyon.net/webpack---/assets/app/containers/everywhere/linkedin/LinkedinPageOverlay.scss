@@ -1,0 +1,430 @@
+@use 'mixins/text-overflow' as text-overflow;
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+// Common scss for Profile page and its Company section
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactContainer {
+  padding: 16px 0 0;
+  border-bottom: 1px solid var(--color-border-light);
+
+  &.withoutPaddingTop {
+    padding-top: 0;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 20px 20px;
+}
+
+.flaggedContainer {
+  background-color: var(--color-negative-10);
+  border-radius: var(--border-radius-2);
+}
+
+.flaggedEmail {
+  .rowEmailDetails {
+    background-color: var(--color-negative-10);
+    border-radius: var(--border-radius-2);
+  }
+}
+
+.flaggedNumber {
+  .rowNotEmptyText {
+    background-color: var(--color-negative-10);
+    border-radius: var(--border-radius-2);
+  }
+}
+
+.avatarContainer {
+  margin-right: 10px;
+}
+
+.mainInfoContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .companyContainer {
+    display: flex;
+  }
+}
+
+.intentEmptyProfileContainer {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius-4);
+  margin: 0 20px 16px;
+  position: relative;
+}
+
+.contactNameAndScore {
+  display: flex;
+  align-items: center;
+}
+
+.contactName {
+  @include typography.heading-2;
+  line-height: 23px;
+  max-width: calc(218px - 45px); // name max width - score width
+  @include text-overflow.ellipsis;
+}
+
+.contactScore {
+  padding: 0 0 0 8px;
+  text-align: center;
+
+  > div {
+    min-width: 35px;
+    border-radius: 20px !important;
+  }
+}
+
+.scoreBgColor {
+  background-color: var(--color-neutral-20);
+}
+
+.contactTitleRow {
+  display: inline-flex;
+  align-items: center;
+  max-width: 215px;
+  padding: 2px 4px;
+}
+
+.contactTitle {
+  @include typography.helper-1;
+  @include text-overflow.ellipsis;
+  color: var(--color-text-labels);
+}
+
+.saveButtonRow {
+  display: flex;
+  padding: 0 20px 16px;
+  gap: 8px;
+
+  .accountSave {
+    margin-bottom: 10px;
+  }
+}
+
+.rowContact {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  min-height: 40px;
+  width: 100%;
+
+  &:hover {
+    background: var(--color-bg-secondary);
+  }
+
+  &.showButtonOnHover:hover {
+    .rowName {
+      visibility: hidden;
+    }
+
+    .rowAction {
+      display: inline-block;
+    }
+  }
+
+  &.removeRowNameOnHover:hover {
+    .rowName {
+      display: none;
+    }
+  }
+
+  &.emailOutOfCredits {
+    .mainContent {
+      flex: 1;
+      margin-left: 20px;
+      display: flex;
+
+      .mainContentText:hover {
+        color: var(--color-primary-50);
+      }
+    }
+
+    &:hover {
+      cursor: default;
+    }
+  }
+}
+
+.hideRowNameOnHover:hover * {
+  .rowName {
+    visibility: hidden;
+  }
+}
+
+.rowAction {
+  display: none;
+}
+
+.rowMainContent {
+  display: flex;
+  flex: 1;
+  margin-left: 20px;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 4px;
+
+  > div {
+    padding: 2px 4px;
+  }
+
+  .dncInfo {
+    margin-left: 0px;
+  }
+}
+
+.rowMediumLink {
+  @include typography.body-2-medium;
+  color: var(--color-text-links);
+  cursor: pointer;
+}
+
+.rowNotEmptyText {
+  @include typography.body-2;
+  color: var(--color-text-primary);
+  max-width: 165px;
+}
+
+.rowEmptyText {
+  @include typography.body-2;
+  color: var(--color-text-secondary);
+}
+
+.rowName {
+  @include typography.helper-1;
+  color: var(--color-text-secondary);
+}
+
+.rowSmallLink {
+  @include typography.helper-1-medium;
+  cursor: pointer;
+  color: var(--color-text-links);
+
+  &.nowrap {
+    white-space: nowrap;
+  }
+}
+
+.contactAccountSection {
+  padding-top: 16px;
+}
+
+.accountContainer {
+  padding-top: 8px;
+}
+
+.accountName {
+  @include typography.heading-2;
+  color: var(--color-text-primary) !important;
+  line-height: 23px;
+  width: fit-content;
+
+  &:hover,
+  &:focus {
+    color: var(--color-text-primary) !important;
+  }
+}
+
+.rowMainText {
+  @include typography.body-2;
+  flex: 1;
+  padding-top: 4px;
+  margin-left: 15px;
+}
+
+.accountNotFoundContainer {
+  min-height: 250px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.accountNotFoundText {
+  @include typography.heading-3;
+  width: 170px;
+  margin-top: 20px;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.rowEmailDetails {
+  @extend .rowNotEmptyText;
+  display: flex;
+  align-items: center;
+}
+
+.emailTextContainer {
+  max-width: 147px;
+  overflow: hidden;
+}
+
+.emailText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.emailTipContent {
+  @include typography.helper-1-medium;
+  color: var(--color-neutral-30);
+
+  .emailTipTitle {
+    color: var(--color-text-reversed);
+  }
+}
+
+.emailIcon {
+  width: 12px;
+  height: 12px;
+  margin-left: 7px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 11px;
+    line-height: 20px;
+    margin-right: 0;
+    color: var(--color-icon-inverted);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.emailVerifyingIcon {
+  @extend .emailIcon;
+  background-color: var(--color-primary-50);
+}
+
+.emailVerifiedIcon {
+  @extend .emailIcon;
+  background-color: var(--color-positive-50);
+}
+
+.emailGuessedIcon {
+  @extend .emailIcon;
+  background-color: var(--color-caution-50);
+}
+
+.jobChangeBannerToggle {
+  margin-left: 5px;
+  @include typography.body-2;
+  line-height: 10px;
+  color: var(--color-caution-50);
+}
+
+.duplicateDisplayContainer {
+  margin-bottom: 10px;
+}
+
+.phoneFields {
+  display: flex;
+  align-items: center;
+
+  .field {
+    flex: 1;
+
+    &:first-child {
+      margin-right: 4px;
+    }
+  }
+}
+
+.phoneStatusOption {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    margin-right: 3px;
+  }
+}
+
+.accountLists {
+  border-top: 1px solid var(--color-border-light);
+  margin-bottom: 20px;
+}
+
+.noBorder {
+  border: none;
+}
+
+.socialMediaLinks {
+  height: 14px;
+  margin-top: 10px;
+
+  :global {
+    .zp-icon {
+      font-size: 16px !important;
+      color: var(--color-icon-normal) !important;
+
+      &:hover {
+        color: var(--color-icon-normal) !important;
+      }
+    }
+  }
+}
+
+// See ResetWrapper.scss comment
+.apolloEverywhereCompanyLogo img {
+  width: 35px;
+  max-height: 35px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.noPadInModal {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.intentDataIconWithQuesion {
+  display: flex;
+  cursor: pointer;
+
+  & span {
+    margin-left: 8px;
+    width: 22px;
+    height: 22px;
+    background-image: url(chrome-extension/assets/img/intent-question-grey.svg);
+
+    &:hover {
+      background-image: url(chrome-extension/assets/img/intent-question-blue.svg);
+    }
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.scoresIcon {
+  img {
+    filter: invert(0.47);
+    width: 20px;
+    height: 20px !important;
+  }
+}
+
+.ai-email-button {
+  padding: 0 8px !important;
+}

@@ -1,0 +1,85 @@
+@use 'typography';
+
+.scoresOnboardingModal {
+  width: 600px;
+}
+
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.modalHeader {
+  justify-content: flex-end;
+}
+
+.modalTextContainer {
+  padding: 32px 80px;
+}
+
+.lottieContainer {
+  position: relative;
+}
+
+.lottiePlayerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watchVideo {
+  position: absolute;
+  bottom: 20px;
+  right: 14px;
+  border-radius: 50px !important;
+  padding: 13px 12px !important;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 21px;
+  margin-bottom: 8px !important;
+}
+
+.subHeading1 {
+  @include typography.body-2;
+  margin-bottom: 24px !important;
+  color: var(--color-text-body);
+}
+
+.subHeading2 {
+  @include typography.subheader-1;
+  margin-bottom: 20px !important;
+  color: var(--color-text-header);
+}
+
+.checklistItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  .checklistIcon {
+    margin-right: 10px;
+  }
+
+  span {
+    @include typography.body-2;
+    color: var(--color-text-body);
+  }
+}
+
+.modalActionsContainer {
+  display: flex;
+  padding: 8px 80px 48px;
+}
+
+.primaryButton {
+  padding: 14px 70px !important;
+}
+
+.secondaryButton {
+  padding: 14px 70px !important;
+  margin-right: 8px;
+}

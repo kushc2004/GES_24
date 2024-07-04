@@ -1,0 +1,57 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.planStrip {
+  background-color: var(--color-bg-secondary);
+  width: calc(100% + 40px);
+  padding: 8px;
+  padding-bottom: 16px;
+  color: var(--color-text-secondary);
+
+  p {
+    @include typography.helper-1;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    @include typography.heading-3;
+  }
+}
+
+.planStripItemsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.planStripItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 8px 8px;
+
+  &:not(:last-child) {
+    padding-right: 16px;
+    border-right: 1px solid var(--color-border-light);
+  }
+
+  &.planStripLimitItem {
+    flex-direction: column;
+  }
+
+  svg {
+    margin-right: 4px;
+  }
+}
+
+.limit {
+  @include typography.subheader-2;
+
+  color: var(--color-positive-60);
+
+  &.minLimit {
+    color: var(--color-negative-40);
+  }
+}

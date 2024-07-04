@@ -1,0 +1,127 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 32px;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  padding: 0;
+  margin-top: 56px;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+
+  [data-intro-head] {
+    margin: 8px 0;
+  }
+}
+
+.fieldWarning {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.intro {
+  [data-intro-body] {
+    @include typography.body-2;
+    color: var(--color-text-body);
+  }
+}
+
+.addBtnContainer {
+  display: flex;
+  width: 100%;
+
+  .addBtn {
+    margin-left: auto;
+  }
+  margin-bottom: 24px;
+}
+
+.attributeContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.domainActionBtn {
+  justify-self: flex-end;
+}
+
+.fieldLabel {
+  @include typography.subheader-1;
+}
+
+.stackedFields {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.inputField {
+  width: 100%;
+}
+
+.domainName {
+  display: flex;
+  gap: 8px;
+}
+
+.modalFooter {
+  margin-inline: -32px;
+  margin-top: auto;
+}
+
+.actionBtnsContainer {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.statusContainer {
+  .cardContentContainer {
+    display: flex;
+    gap: 14px;
+
+    .cardContent {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .cardHeader {
+        @include typography.helper-1;
+        color: var(--color-text-placeholder);
+        display: grid;
+        grid-template-columns: 3fr 0.7fr 1fr 0.2fr;
+        width: 100%;
+        padding: 8px 16px;
+        font-weight: 500 !important;
+        border-bottom: 1px solid var(--color-neutral-20);
+      }
+
+      .cardBody {
+        display: grid;
+        @include typography.body-2;
+        grid-template-columns: 3fr 0.7fr 1fr 0.2fr;
+        width: 100%;
+        padding: 16px;
+        row-gap: 24px;
+
+        > *:first-child {
+          @include typography.subheader-1;
+        }
+      }
+
+      .cardDescription {
+        @include typography.body-2;
+        color: var(--color-text-body);
+        max-width: 600px;
+      }
+    }
+  }
+}

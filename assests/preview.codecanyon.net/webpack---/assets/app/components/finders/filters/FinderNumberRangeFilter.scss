@@ -1,0 +1,11 @@
+@import '../../../../common/scss/variables';
+
+.mdash {
+  display: flex;
+  align-items: center;
+  max-width: 10px;
+  margin-right: 6px;
+  margin-left: 6px;
+  overflow: hidden;
+  color: var(--color-neutral-30);
+}

@@ -1,0 +1,8 @@
+@import 'common/scss/variables';
+
+.container {
+  box-shadow: $box-shadow-regular;
+  border-radius: var(--border-radius-4);
+  overflow: hidden;
+  background-color: var(--color-bg-main);
+}

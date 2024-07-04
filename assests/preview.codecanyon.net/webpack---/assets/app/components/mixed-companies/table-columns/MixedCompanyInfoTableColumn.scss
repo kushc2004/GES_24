@@ -1,0 +1,37 @@
+@use 'mixins/text-overflow' as text-overflow;
+@use 'typography';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.company {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .name {
+    @include typography.body-2-medium;
+    @include text-overflow.ellipsis;
+    color: var(--color-text-header);
+    flex: 1;
+    text-align: left;
+
+    &:hover {
+      color: var(--color-text-header);
+      text-decoration: underline;
+    }
+  }
+}
+
+.info {
+  @include typography.body-2;
+  color: var(--color-text-body);
+  text-align: left;
+}
+
+.truncate {
+  @include text-overflow.ellipsis;
+}

@@ -1,0 +1,7 @@
+.exitSetupWarningButton {
+  background-color: var(--color-negative-50);
+
+  &:hover {
+    background-color: var(--color-negative-60);
+  }
+}

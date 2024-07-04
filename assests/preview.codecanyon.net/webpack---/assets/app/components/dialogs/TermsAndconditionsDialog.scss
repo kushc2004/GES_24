@@ -1,0 +1,39 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.modal {
+  max-width: 450px;
+}
+
+.header {
+  align-self: end;
+}
+
+.termsAndConditionsIllustration {
+  width: 108px;
+  min-height: 117px;
+  margin: 0 auto;
+}
+
+.title {
+  @include typography.heading-3;
+  margin: 33px 0 4px;
+  color: var(--color-text-primary);
+  align-self: center;
+}
+
+.description {
+  @include typography.body-2;
+  text-align: center;
+}
+
+.footer {
+  min-width: 354px;
+  display: grid;
+  align-self: center;
+  padding: 6px 0 20px;
+
+  :first-child {
+    margin: 0 0 4px !important;
+  }
+}

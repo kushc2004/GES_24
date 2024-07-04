@@ -1,0 +1,93 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.modal {
+  width: 395px !important;
+}
+
+@media (max-width: 660px) {
+  .modal {
+    width: 100% !important;
+  }
+}
+
+.modalHeader {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.modalBody {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: var(--border-radius-4);
+
+  & > *:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  & > h2 {
+    @include typography.heading-2;
+    margin: 0 16px 8px !important;
+    line-height: 24px;
+    color: var(--color-text-primary);
+
+    strong {
+      font-weight: inherit;
+      color: var(--color-negative-40);
+    }
+  }
+
+  & > h3 {
+    @include typography.body-2;
+    margin: 0 16px;
+    font-weight: normal;
+    color: var(--color-text-labels);
+    width: 317px; /** Exact width as instructed by Eugen **/
+  }
+}
+
+.modalCloseButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--color-icon-normal);
+  line-height: normal;
+  z-index: 1;
+
+  &:hover,
+  &:focus {
+    color: var(--color-icon-normal);
+  }
+}
+
+.modalFooter {
+  margin-top: 12px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-secondary);
+
+  svg {
+    margin-right: 4px;
+  }
+
+  p {
+    @include typography.helper-1;
+    margin: 0;
+  }
+}
+
+.modalActions {
+  display: flex;
+
+  & > * {
+    min-width: #{48px * 3};
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 16px;
+  }
+}

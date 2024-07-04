@@ -1,0 +1,236 @@
+@use 'mixins/text-overflow' as text-overflow;
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.avatar {
+  flex: 0 0 25px;
+}
+
+.star {
+  margin-right: 4px;
+
+  &.no-fill {
+    color: var(--color-neutral-40);
+  }
+
+  &.fill-star {
+    color: var(--color-primary-50) !important;
+  }
+}
+
+.changed-job-badge {
+  margin-left: 4px;
+}
+
+.taskTypeBadge {
+  width: 30px;
+  margin-right: 0px;
+  margin-top: 3px;
+
+  :global {
+    .zp-icon {
+      color: var(--color-icon-normal);
+      margin-right: 0;
+    }
+  }
+}
+
+.expanding-space {
+  flex-grow: 1;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.name-wrapper {
+  flex: 10 1 130px;
+  min-width: 130px; //allow the text to shrink based on flex rules
+
+  .contactName {
+    @include typography.subheader-1;
+  }
+
+  .dot {
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    background-color: var(--color-neutral-30);
+    margin: 0 8px;
+  }
+}
+
+.name {
+  @include text-overflow.ellipsis;
+  margin-right: 10px;
+  color: var(--color-primary-50);
+}
+
+.priority {
+  flex: 0 1 50px;
+  text-align: right;
+}
+
+.note {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  .icon {
+    color: var(--color-neutral-40);
+    font-size: 12px;
+  }
+
+  .text {
+    @include typography.helper-1;
+    margin-left: 5px;
+    color: var(--color-text-secondary);
+    @include text-overflow.ellipsis;
+  }
+}
+
+.date {
+  min-width: 80px;
+  text-align: right;
+  color: var(--color-positive-50);
+  flex-shrink: 1;
+
+  &.past-due {
+    color: var(--color-negative-50);
+  }
+
+  &.no-due-date {
+    color: var(--color-neutral-40);
+  }
+
+  &.non-scheduled {
+    min-width: 110px;
+  }
+}
+
+.task-info {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 8 0 100px;
+  overflow: hidden;
+
+  & > div:first-child {
+    margin-top: 5px;
+  }
+
+  :global {
+    .zp-link {
+      color: var(--color-icon-normal);
+    }
+  }
+
+  > div:not(:first-child)::before {
+    content: '';
+    height: 4px;
+    width: 4px;
+    background-color: var(--color-neutral-30);
+    border-radius: 50%;
+    margin: 0 8px;
+  }
+}
+
+.sequence-info {
+  :global {
+    .zp-link {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+    }
+  }
+
+  .icon {
+    font-size: 12px;
+    color: var(--color-neutral-40);
+  }
+
+  .text {
+    margin-left: 5px;
+    margin-right: 5px;
+    max-width: 200px;
+    @include text-overflow.ellipsis;
+    display: inline-block;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.owner {
+  margin-right: 10px;
+  flex: 0 0 25px;
+}
+
+.priorityBadge {
+  display: flex;
+  justify-content: center;
+  width: 43px;
+}
+
+.leftInfoWrapper {
+  display: inline-block;
+  @include text-overflow.ellipsis;
+  max-width: 470px;
+}
+
+.rightInfoWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-right: 2px;
+}
+
+.actions {
+  flex: 0 0 160px;
+
+  .buttonGroup {
+    justify-content: right;
+    width: 160px;
+  }
+}
+
+.actionButton {
+  width: 50px !important;
+}
+
+.auto-prospecting-text {
+  margin-right: 10px;
+  flex: 0 0 80px;
+  text-align: right;
+  color: var(--color-positive-50);
+}
+
+.cockpit-task-type-text {
+  padding: 0 5px;
+  margin-right: 5px;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  @include typography.subheader-2;
+  line-height: 1.3;
+  min-height: 60px;
+  align-self: stretch;
+  flex: 0 0 65px;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.job-change-icon {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.item {
+  column-gap: 16px;
+  padding: 14px 16px;
+}

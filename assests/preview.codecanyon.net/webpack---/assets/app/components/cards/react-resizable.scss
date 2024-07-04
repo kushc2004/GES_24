@@ -1,0 +1,24 @@
+@import '../../../common/scss/variables';
+
+:global {
+  .zp {
+    .react-resizable {
+      position: relative;
+    }
+
+    .react-resizable-handle {
+      position: absolute;
+      width: 19px;
+      height: 19px;
+      bottom: 0;
+      right: 0;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAABGdBTUEAALGPC/xhBQAAAMpJREFUOBFjZAAC6Vk/1P4z/OtgYGB0Yfj/nxckRg5gBBnEwPDv5P//DALkGICshwXsIioYBDKUCew1ZOMpYDNREkbo9gJdRj3Agsuop2mcKFJ3PvxjCN3yk+HVNxRhFA5RLkM2SIwLRT8Kh6Bh6Aat9mFHMQCZg9cwbAapCODWglOGVINALsRpGCywQWEE8ho+F8G8itMwUKyRYhDIQEapmd/+w0ymlMbpMnIMHpyGMTIwPKeay/4zMi3CmTeJDTOQi0AGCQqw1wEAS1NJxCw2ty8AAAAASUVORK5CYII=');
+      background-position: bottom right;
+      padding: 0 3px 3px 0;
+      background-repeat: no-repeat;
+      background-origin: border-box;
+      box-sizing: border-box;
+      cursor: se-resize;
+    }
+  }
+}

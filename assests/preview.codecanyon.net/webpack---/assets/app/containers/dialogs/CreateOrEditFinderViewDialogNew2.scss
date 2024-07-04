@@ -1,0 +1,101 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.dialog {
+  max-width: 500px !important;
+}
+
+.modalFooter {
+  border: none !important;
+
+  & > button[type='submit'] {
+    margin: 0 !important;
+    margin-left: 8px !important;
+  }
+}
+
+.modalBody {
+  background: var(--color-bg-02);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.mainTabs {
+  padding: 0 0 0 16px;
+}
+
+.mainTabItems {
+  padding: 13px 16px;
+  margin-right: 16px !important;
+}
+
+.tabContentContainer {
+  padding: 24px 16px;
+}
+
+.createNewSearchLabel {
+  @include typography.subheader-1;
+}
+
+.selectSavedSearchLabel {
+  @include typography.subheader-1;
+  margin-bottom: 4px;
+}
+
+.limitText {
+  white-space: pre-line;
+}
+
+.alertIcon {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1em;
+  margin-right: 4px;
+}
+
+.visibilityOptionsContainer {
+  margin-top: 24px;
+}
+
+.visibilityOptionsLabel {
+  @include typography.subheader-1;
+  margin-bottom: 9px;
+}
+
+.visibilityInfoIcon {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1em;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.visbilityOptions {
+  margin-left: -4px;
+}
+
+.pinToSidebarContainer {
+  margin-top: 25px;
+}
+
+.alertFrequencyContainer {
+  margin-top: 25px;
+}
+
+.alertFrequencyLabel {
+  @include typography.subheader-1;
+  margin-bottom: 4px;
+}
+
+.alertFrequencySubLabel {
+  @include typography.body-2-medium;
+  margin-bottom: 8px;
+}
+
+.tableLayoutSelectContainer {
+  padding: 16px 0 0;
+}
+
+.tableLayoutSelectLabel {
+  @include typography.subheader-1;
+  margin-bottom: 4px;
+}

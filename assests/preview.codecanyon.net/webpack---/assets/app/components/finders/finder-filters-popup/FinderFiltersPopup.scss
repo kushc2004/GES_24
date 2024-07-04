@@ -1,0 +1,11 @@
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+.onboardingAcknowledgeButton {
+  cursor: pointer;
+}
+
+.onboardingBody {
+  margin: 10px 0 20px !important;
+}

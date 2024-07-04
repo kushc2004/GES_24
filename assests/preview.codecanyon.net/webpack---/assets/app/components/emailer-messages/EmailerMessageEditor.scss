@@ -1,0 +1,352 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+@import '../../../common/scss/variables';
+
+.root {
+  background-color: white;
+  height: 100%;
+
+  &.no-border-left {
+    border-left: none;
+  }
+
+  &.no-border-right {
+    border-right: none;
+  }
+
+  &.no-border-top {
+    border-top: none;
+  }
+
+  :global {
+    .ql-container {
+      height: 100% !important;
+    }
+
+    .ql-editor {
+      @include typography.helper-1;
+      color: var(--color-text-primary);
+      padding: 12px 10px;
+    }
+  }
+
+  .templateContainer {
+    min-height: 0;
+    margin-top: 12px;
+  }
+
+  .bodyField {
+    overflow: auto;
+    min-height: 0;
+    height: 100%;
+    width: 100%;
+    border: solid 1px var(--color-border-light);
+    border-radius: var(--border-radius-4);
+
+    textarea {
+      border: none;
+    }
+
+    :global {
+      .ql-toolbar {
+        position: sticky;
+        bottom: 0px;
+        background-color: var(--color-bg-main);
+      }
+    }
+  }
+}
+
+.schedule-popup {
+  background-color: white;
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 0 2px 0 rgb(53 64 83 / 40%);
+  padding-top: 16px;
+  @include typography.body-2;
+  border-radius: var(--border-radius-4);
+  top: -10px;
+
+  label {
+    color: var(--color-text-body) !important;
+    padding-left: 16px;
+  }
+
+  .schedule-popup-close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    padding: 8px;
+    cursor: pointer;
+    @include typography.body-1;
+    color: var(--color-neutral-40);
+    line-height: 28px;
+  }
+}
+
+.flex-v {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: flex-start;
+
+  &.bodyWrapper {
+    min-height: 300px;
+    height: 100%;
+  }
+
+  $label-width: 58px;
+
+  .label {
+    @include typography.subheader-2;
+    margin-right: 10px;
+    text-align: right;
+    color: var(--color-text-labels);
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+  }
+
+  .labelRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    height: 16px;
+    overflow: hidden;
+
+    & > button:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .element-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 0;
+    height: 100%;
+
+    .send-to {
+      @include typography.body-2-medium;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 4px 4px 4px 11px;
+      width: 100%;
+      color: var(--color-text-secondary);
+      border: solid 1px var(--color-border-light);
+      border-radius: var(--border-radius-4);
+      justify-content: space-between;
+    }
+
+    .sendFrom {
+      width: 100%;
+    }
+
+    :global {
+      .Select {
+        width: 100%;
+        margin: 0;
+
+        .Select-item {
+          margin-top: 2px;
+          margin-bottom: 2px;
+          margin-left: unset;
+          margin-right: 4px;
+          color: var(--color-text-secondary);
+          font-weight: unset;
+
+          &:first-child {
+            margin-top: 4px;
+          }
+
+          &:last-child {
+            margin-bottom: 4px;
+          }
+        }
+
+        .Select-control {
+          .Select-placeholder {
+            display: flex;
+            align-items: center;
+            line-height: 32px;
+            padding-left: 9px;
+            color: var(--color-text-body);
+          }
+        }
+
+        .Select-menu-outer {
+          border: 1px solid var(--color-border-light);
+          box-shadow: unset;
+        }
+      }
+
+      .input-container > input {
+        margin: 0;
+      }
+
+      .zp-badge {
+        margin-right: 0;
+      }
+
+      .apollo-icon-dropdown-large {
+        @include typography.helper-1;
+      }
+    }
+  }
+
+  &.flexV {
+    max-height: 150px;
+    height: auto;
+    padding-right: 66px;
+
+    &.fullWidth {
+      padding-right: 36px;
+    }
+
+    .element-container {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      overflow-y: auto;
+      align-items: initial;
+      flex-direction: column;
+    }
+  }
+}
+
+.actions {
+  margin-left: 4px;
+}
+
+.autosave {
+  padding: 8px;
+
+  .icon {
+    margin-right: 8px;
+  }
+}
+
+.subject-field {
+  width: 100%;
+}
+
+.tryAgainBtn {
+  background: transparent !important;
+  color: var(--color-text-negative) !important;
+  text-decoration: underline !important;
+  padding: 0 !important;
+  margin-left: auto;
+}
+
+.conciseInputWrapper {
+  display: flex;
+  flex-direction: column;
+
+  .inputRow {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .inputLabel {
+    display: flex;
+    align-items: center;
+    @include typography.subheader-1;
+    height: 32px;
+    padding: 4px 12px;
+    border: 1px solid var(--color-border-normal);
+    border-right: none;
+    border-top-left-radius: var(--border-radius-4);
+    border-bottom-left-radius: var(--border-radius-4);
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+  }
+
+  .inputLabel.disabled {
+    opacity: 1;
+    border-color: var(--color-border-light);
+  }
+
+  :global {
+    .elementContainer {
+      display: flex;
+      flex: 1;
+    }
+
+    .Select-value {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .Select-input {
+      padding: 15px 12px !important;
+    }
+
+    .sendToField {
+      @include typography.body-2-medium;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 5px 4px 5px 11px;
+      width: 100%;
+      color: var(--color-text-secondary);
+      border: solid 1px var(--color-border-light);
+      border-radius: var(--border-radius-4);
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      justify-content: space-between;
+    }
+
+    .input-container .Select {
+      margin: 0 !important;
+    }
+
+    .Select-control {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    input {
+      font-weight: 400;
+      margin: 0 !important;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+      color: var(--color-text-primary);
+      padding: 15px 12px !important;
+    }
+  }
+}
+
+.templateActionsContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -10px;
+}
+
+.templateActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  :global {
+    .zp-button {
+      padding: 0 !important;
+      min-height: auto !important;
+      height: fit-content !important;
+      background: none !important;
+    }
+  }
+}

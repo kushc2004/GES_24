@@ -1,0 +1,63 @@
+@use 'typography';
+@import 'assets/common/scss/css-variables';
+
+.marketingBanner {
+  background-color: var(--color-primary-60);
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.content {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+
+  @media (min-width: $screen-lg-min) {
+    margin-right: -40px;
+  }
+  @media (max-width: $screen-xs-max) {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.textContent {
+  color: white;
+  text-align: center;
+
+  h2 {
+    @include typography.growth-mini-heading;
+    font-size: 18px;
+  }
+
+  p {
+    @include typography.body-1;
+    margin: 0;
+  }
+}
+
+.button {
+  background-color: var(--color-neutral-0);
+
+  &:hover {
+    background-color: var(--color-neutral-30);
+  }
+
+  // Needs to be nested for specificity to take over standard marketing button css
+  .buttonLabel {
+    @include typography.body-2-medium;
+  }
+}
+
+.dismissButton {
+  padding: 10px;
+  color: white;
+  border-radius: var(--border-radius-4);
+
+  &:hover {
+    background-color: rgb(255 255 255 / 10%);
+  }
+}

@@ -1,0 +1,179 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.adjacentBlock {
+  margin-bottom: 0;
+
+  > div {
+    margin-right: 10px !important;
+
+    &:last-child {
+      margin-right: 0 !important;
+    }
+  }
+}
+
+.stackedItem {
+  margin-bottom: 5px;
+}
+
+.radioButtons {
+  display: flex;
+  padding: 0 20px;
+}
+
+.radioContainer {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.radioLabel {
+  @include typography.body-2-medium;
+  color: var(--color-text-labels);
+  margin-left: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.radioLabelActive {
+  color: var(--color-text-links);
+}
+
+.newLogContainer {
+  height: 30px;
+  display: flex;
+  align-items: center;
+
+  .newPinNote {
+    margin-left: 20px;
+
+    :global {
+      .input-container {
+        margin: 0;
+      }
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    span {
+      @include typography.body-2-medium;
+
+      margin-left: 5px;
+      color: var(--color-text-secondary);
+      line-height: 1;
+    }
+  }
+}
+
+.newSubmitButton {
+  width: 120px;
+}
+
+.newForm {
+  padding: 9px 20px 0;
+  margin: 0;
+
+  textarea {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+.newAddNote {
+  margin-bottom: 9px;
+
+  :global {
+    .input-container {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.linkedinMessage {
+  :global(.ql-editor) {
+    padding: 8px;
+  }
+}
+
+.tabs-container {
+  box-shadow: 0 1px 2px 0 var(--color-neutral-30);
+}
+
+.tabs {
+  padding: 0 15px;
+}
+
+.form {
+  padding: 15px;
+  margin: 0;
+
+  textarea {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+.add-note {
+  margin-bottom: 10px;
+}
+
+.log-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  .pin-note {
+    margin-left: 15px;
+
+    label {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.tab {
+  @media (max-width: 770px) {
+    flex: 1;
+
+    .hidden-small {
+      display: none;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.createContactLine {
+  padding: 2px 0;
+}
+
+.createContactButton {
+  @include typography.body-2-medium;
+  white-space: nowrap;
+}
+
+.visionModalFooter {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px -10px;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-4);
+  border-top: 1px solid var(--color-border-light);
+  background: var(--color-bg-main);
+}

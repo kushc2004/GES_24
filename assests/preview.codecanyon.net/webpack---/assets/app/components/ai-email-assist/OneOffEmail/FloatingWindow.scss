@@ -1,0 +1,107 @@
+@use 'typography';
+@import 'assets/app/components/ai-email-assist/OneOffEmail/OneOffEmailCommon';
+
+.floatingWindow {
+  @include overlay;
+  border-radius: 10px;
+  z-index: 210;
+  background: var(--color-bg-main);
+  position: absolute;
+  width: $floating-window-width;
+  height: $drafting-window-height;
+  display: flex;
+  flex-direction: column;
+  z-index: 100000007 !important;
+}
+
+.floatingWindowAiRephraser {
+  right: 100px;
+  bottom: 20px;
+  width: 400px;
+  min-height: 200px;
+  max-height: 50vh;
+  height: inherit;
+}
+
+.windowHeader {
+  cursor: grab;
+  position: relative;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e8f0;
+
+  .headerLeft {
+    display: flex;
+    align-items: center;
+  }
+
+  .dndIcon {
+    color: var(--color-icon-hover);
+  }
+
+  .aiAssistantLabel {
+    margin: 0;
+    padding-left: 8px;
+    color: var(--color-quaternary-50);
+    @include typography.body-2-bold;
+  }
+
+  .dragIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translateX(-50%) translateY(-50%);
+
+    :global {
+      .zp-icon {
+        @include typography.body-1;
+      }
+    }
+  }
+}
+
+.windowContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+
+  :global {
+    .warningContainer {
+      padding: 8px 20px;
+    }
+
+    .warningLabel {
+      @include typography.body-2-medium;
+    }
+
+    .suggestionsContainer {
+      overflow: auto;
+    }
+
+    .personalizedOpenerOption {
+      border-radius: var(--border-radius-4);
+      border: 1px solid var(--color-border-light);
+    }
+
+    textarea,
+    input[type='text'] {
+      &:hover,
+      &:focus {
+        border: 1px solid var(--color-primary-50) !important;
+      }
+    }
+  }
+}
+
+.attributesTab {
+  overflow: hidden;
+}
+
+.floatingWindowWidthForEmailAnalyzer {
+  width: $floating-window-width-for-email-analyzer;
+}

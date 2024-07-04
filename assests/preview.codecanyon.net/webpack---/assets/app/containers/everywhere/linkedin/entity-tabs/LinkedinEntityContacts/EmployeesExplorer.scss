@@ -1,0 +1,63 @@
+.loaderWrapper {
+  position: relative;
+  height: 80px;
+}
+
+.bulkSelectCheckboxes {
+  display: flex;
+  width: 97%;
+  background: white;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border-normal);
+}
+
+.employeeList {
+  flex: 1;
+  overflow: auto;
+  scrollbar-gutter: stable;
+  overscroll-behavior-y: contain;
+
+  :global {
+    .zp-list-view-item {
+      padding: 0 14px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--color-border-light);
+      }
+    }
+  }
+}
+
+.contactsContainer {
+  margin-top: 40px;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  + .checkboxContainer {
+    margin-left: 24px;
+  }
+}
+
+.checkboxLabel {
+  margin-left: 10px;
+}
+
+.actionsContainer {
+  padding: 4px 20px 16px; // top-spacing is supposed to be 16px. 12px margin-top of label compensates for the rest.
+  border-top: 1px solid var(--color-gray-5);
+  background: var(--color-gray-6);
+  margin-top: auto;
+}
+
+.flexAlignment {
+  display: flex;
+  align-items: flex-start;
+
+  div[data-input='checkbox'] {
+    margin-top: 20px;
+  }
+}

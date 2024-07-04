@@ -1,0 +1,45 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.modalContainer {
+  max-width: 382px !important;
+}
+
+.modalHeader {
+  border: none;
+
+  .zp-icon {
+    color: var(--color-neutral-80-1);
+  }
+}
+
+.modalBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 40px 46px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  h2 {
+    @include typography.heading-2;
+    margin-bottom: 6px;
+  }
+
+  p {
+    @include typography.body-2;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}

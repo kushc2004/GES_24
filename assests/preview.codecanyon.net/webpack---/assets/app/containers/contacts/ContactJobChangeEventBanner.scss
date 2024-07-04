@@ -1,0 +1,138 @@
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/elevation';
+
+.overlayBanner {
+  position: relative;
+  margin: 0 10px 10px;
+  padding: 15px 20px;
+  border: 1px solid var(--color-border-normal);
+  border-radius: 6px;
+
+  .title {
+    @include typography.heading-3;
+  }
+
+  .content {
+    @include typography.helper-1;
+    margin: 10px 0 15px;
+
+    > span a {
+      @include typography.subheader-2;
+    }
+  }
+
+  .buttonRow {
+    display: flex;
+    gap: 10px;
+  }
+
+  .dismiss {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+}
+
+.self {
+  padding: 15px;
+
+  .alertContainer {
+    &.rounded {
+      border-radius: var(--border-radius-4);
+    }
+  }
+
+  .alert-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;
+
+    .body {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-right: 40px;
+    }
+
+    .message {
+      display: flex;
+      align-items: center;
+    }
+
+    .action-button {
+      display: flex;
+      justify-content: center;
+    }
+
+    .dismiss {
+      cursor: pointer;
+      position: absolute;
+      top: 12px;
+      right: 10px;
+    }
+
+    &.noPadding {
+      padding: 0;
+
+      .dismiss {
+        margin-right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        font-size: 20px;
+      }
+
+      .body {
+        margin-right: 30px;
+      }
+    }
+
+    &.extension {
+      align-items: unset;
+
+      .body {
+        flex-direction: column;
+        margin-right: 0;
+      }
+
+      .message {
+        margin-right: 20px;
+      }
+
+      .action-button {
+        padding-top: 5px;
+      }
+
+      .dismiss {
+        top: 5px;
+        right: 5px;
+      }
+    }
+  }
+}
+
+:global {
+  /* stylelint-disable-next-line apollo-stylelint-plugin/no-global-classes */
+  .zp-button.borderlessButton {
+    @include typography.heading-3;
+
+    height: auto;
+    color: var(--color-primary-50);
+
+    .zp-icon {
+      color: var(--color-primary-50);
+    }
+
+    &:hover {
+      color: var(--color-text-links);
+
+      .zp-icon {
+        color: var(--color-primary-60);
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+
+  .toggle {
+    @include typography.subheader-2;
+    height: 24px;
+    padding: 0 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid var(--color-border-light);
+    color: grey;
+
+    &:hover {
+      border: 1px solid var(--color-border-focused);
+      color: var(--color-primary-50);
+    }
+  }
+
+  %chevron {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .down-chevron {
+    @extend %chevron;
+    transform: rotate(90deg);
+
+    //due to rotation, visually this is 5px
+    margin-left: 7px;
+  }
+
+  .up-chevron {
+    @extend %chevron;
+    transform: rotate(-90deg);
+    margin-left: 5px;
+  }
+}
+
+.signature-wrapper {
+  padding: 5px;
+}

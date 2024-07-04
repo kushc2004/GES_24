@@ -1,0 +1,27 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.row {
+  align-items: center;
+}
+
+.label {
+  @include typography.subheader-2;
+  min-width: 32px;
+  color: var(--color-text-labels);
+}
+
+.error {
+  @include typography.helper-1-medium;
+  color: var(--color-ui-negative-hover);
+}
+
+.field {
+  margin-right: 8px;
+}
+
+.topLabel {
+  @include typography.subheader-2;
+  width: 100%;
+  color: var(--color-text-labels);
+}

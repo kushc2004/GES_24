@@ -1,0 +1,55 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainHeading {
+  @include typography.heading-1;
+  margin-bottom: 12px;
+}
+
+.graphic {
+  height: 358px;
+}
+
+.blurbContainer {
+  align-items: center;
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.personaIcon {
+  height: 36px;
+  width: 36px;
+  margin-right: 12px;
+}
+
+.heading {
+  @include typography.heading-2;
+}
+
+.description {
+  @include typography.body-2;
+  color: var(--color-text-secondary);
+  width: 450px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.estimatedTime {
+  @include typography.body-2;
+  align-items: center;
+  color: var(--color-text-secondary);
+  display: flex;
+  margin-bottom: 28px;
+
+  .clockIcon {
+    margin-right: 5px;
+    color: var(--color-neutral-40);
+    font-size: 16px;
+  }
+}

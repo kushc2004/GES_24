@@ -1,0 +1,55 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  background-color: var(--color-bg-main);
+}
+
+.success {
+  background-image: url('common/images/confetti.svg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.header {
+  border-bottom: none;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+
+.body {
+  padding: 0 48px 48px;
+  background-color: transparent;
+}
+
+.footer {
+  padding: 12px 20px;
+
+  &.formScreen {
+    justify-content: space-between;
+  }
+}
+
+.overrideOverflow {
+  overflow-y: unset;
+}
+
+.screenHeader {
+  text-align: center;
+}
+
+.successIcon {
+  height: 83px;
+  margin-bottom: 24px;
+}
+
+.title {
+  @include typography.heading-1;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  @include typography.body-2;
+}

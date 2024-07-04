@@ -1,0 +1,72 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.normalSieveContainer {
+  :global(.normalSievePinIcon) {
+    display: none;
+  }
+
+  &:hover {
+    :global(.normalSievePinIcon) {
+      display: block;
+    }
+  }
+}
+
+.pinIcon {
+  margin-left: 4px;
+  margin-right: 4px;
+  height: 17px;
+  display: inline-block;
+  font-size: 17px !important;
+  transform: rotate(45deg);
+  color: var(--color-neutral-40);
+
+  &.pinned {
+    color: var(--color-secondary-50);
+  }
+}
+
+.sieveAccordionContainerPinned {
+  border-radius: 3px;
+  border: 0;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.sieveAccordionContainer {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-4);
+  margin-bottom: 4px;
+  width: 278px;
+}
+
+.sieveAccordionHeader {
+  padding: 11px 8px;
+  width: 276px;
+  border-radius: 3px;
+
+  &::before {
+    display: none;
+  }
+
+  &.expanded {
+    border-radius: 3px;
+    width: 276px;
+  }
+
+  &.pinnedExpanded {
+    padding-left: 28px;
+    width: 298px;
+  }
+
+  &.isLocked {
+    background: var(--color-bg-secondary) !important;
+  }
+}
+
+.sieveAccordionBody {
+  &.expanded {
+    margin-left: 2px;
+  }
+}

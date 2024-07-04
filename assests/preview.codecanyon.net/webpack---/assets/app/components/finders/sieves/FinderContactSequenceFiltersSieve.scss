@@ -1,0 +1,22 @@
+@import '../../../../common/scss/variables';
+@import './FinderFilterHelpers';
+
+.sequence-filters {
+  input {
+    padding-left: 26px !important;
+    background-size: 15px 15px !important;
+    background-position: 7px center !important;
+    background-image: url(common/images/chrome/magnify-3.svg) !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .stepWrapper {
+    margin-top: 8px;
+  }
+
+  :global {
+    .Select-placeholder {
+      padding-left: 34px !important;
+    }
+  }
+}

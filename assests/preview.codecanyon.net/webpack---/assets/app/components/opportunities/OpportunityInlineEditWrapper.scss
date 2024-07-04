@@ -1,0 +1,7 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.helperText {
+  @include typography.body-3;
+  color: var(--color-text-body);
+}

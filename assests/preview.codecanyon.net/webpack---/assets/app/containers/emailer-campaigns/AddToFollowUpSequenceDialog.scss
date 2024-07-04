@@ -1,0 +1,141 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  --select-margin-bottom: 0;
+}
+
+.fieldLabelIcon {
+  display: inline-flex;
+  transform: translateY(2px);
+  margin-left: 3px;
+}
+
+.tooltip {
+  :global(.tippy-content) {
+    justify-content: center;
+    max-width: 195px;
+  }
+}
+
+.formFooter {
+  display: flex;
+  gap: 8px;
+}
+
+.sequenceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recipientsSection {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.recipient {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: content-box;
+  padding-left: 10px;
+  border-radius: var(--border-radius-4);
+  height: 37px;
+  cursor: pointer;
+
+  .left,
+  .right {
+    display: flex;
+    gap: 8px;
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover {
+    background-color: var(--color-neutral-20);
+  }
+
+  .emailLabel {
+    @include typography.body-2;
+    color: var(--color-text-labels);
+  }
+
+  .setPrimaryButton {
+    opacity: 0;
+  }
+
+  &:hover .setPrimaryButton {
+    opacity: 1;
+  }
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  padding: 0 20px;
+  margin: 0 -20px;
+
+  .sectionTitle {
+    color: var(--color-text-primary);
+  }
+
+  .summary {
+    @include typography.subheader-1;
+    display: flex !important;
+    justify-content: space-between;
+    color: var(--color-text-secondary);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    cursor: pointer;
+    outline-offset: -2px;
+  }
+}
+
+.emailerCampaignDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  .followUpSequenceLabel {
+    display: flex;
+    align-items: baseline;
+    color: var(--color-text-labels);
+
+    span {
+      @include typography.subheader-2;
+    }
+  }
+}
+
+.dueDateMessage {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  column-gap: 16px;
+
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius-4);
+
+  .message {
+    @include typography.body-2;
+    color: var(--color-text-secondary);
+
+    b {
+      @include typography.subheader-1;
+    }
+  }
+}

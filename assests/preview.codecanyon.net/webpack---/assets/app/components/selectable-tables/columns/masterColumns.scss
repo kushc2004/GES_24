@@ -1,0 +1,568 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+/**
+ * Generic
+ */
+
+.sortableHeaderText {
+  @include typography.helper-1;
+  color: var(--color-text-secondary);
+}
+
+.left-align-wrap {
+  text-align: left;
+  white-space: normal;
+  width: 250px;
+  display: inline-block;
+}
+
+.light-text {
+  @include typography.subheader-2;
+  color: var(--color-text-light);
+}
+
+.align-left {
+  @include typography.body-2;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+
+.align-center {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+/**
+ * Specifc
+ */
+
+.createdByApolloTooltip {
+  width: 250px;
+
+  :global {
+    .tippy-content {
+      text-align: center;
+    }
+  }
+}
+
+.keywords {
+  max-width: 450px;
+}
+
+%settings {
+  font-size: 10px;
+  margin-right: 6px;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+
+  i {
+    font-size: 9px;
+    color: var(--color-neutral-40);
+  }
+
+  &:hover {
+    color: var(--color-primary-50);
+
+    i {
+      color: var(--color-primary-50);
+    }
+  }
+}
+
+.name-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .settings {
+    @extend %settings;
+  }
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .settings {
+    @extend %settings;
+  }
+}
+
+.lists {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+
+.company {
+  display: flex;
+  align-items: center;
+
+  .logo {
+    box-shadow: 1px 1px 1px 0 var(--color-neutral-30);
+    border-radius: var(--border-radius-4);
+    margin-right: 10px;
+  }
+}
+
+.unlock {
+  display: inline-block;
+  text-align: left;
+  white-space: nowrap;
+  width: 100%;
+
+  .unlock-txt {
+    margin-right: 5px;
+  }
+}
+
+.contact-avatar {
+  width: 100%;
+  padding: 14px 0;
+
+  .name {
+    @include typography.body-1-medium;
+    margin-left: 8px;
+    color: var(--color-text-secondary);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .iconContainer {
+    display: inline-flex;
+    margin-left: 8px;
+
+    .icon {
+      @include typography.body-1;
+      color: var(--color-neutral-40);
+    }
+  }
+}
+
+.company-align {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+
+  .companyText {
+    margin-left: 8px;
+
+    .company-name {
+      @include typography.body-1-medium;
+      color: var(--color-text-secondary);
+    }
+
+    .companyTitle {
+      @include typography.helper-1;
+      color: var(--color-text-secondary);
+    }
+  }
+}
+
+.stage {
+  background-color: var(--color-neutral-30);
+  border-radius: var(--border-radius-2);
+  font-size: 9px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+
+  > * {
+    width: 100%;
+    height: 100%;
+    padding: 3px;
+  }
+}
+
+span.stage {
+  padding: 3px;
+}
+
+.parent-account {
+  @include typography.body-2;
+  color: var(--color-text-links);
+  text-decoration: none;
+  text-overflow: ellipsis;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.actionsContainer {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.opportunityNameContainer {
+  max-width: 218px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.opportunityName {
+  @include typography.body-2-medium;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 218px;
+  @include text-overflow.ellipsis;
+
+  &:hover {
+    color: var(--color-primary-50);
+    text-decoration: underline;
+  }
+}
+
+.marginRight {
+  margin-right: 4px;
+}
+
+.text {
+  @include typography.body-2;
+  @include text-overflow.ellipsis;
+  width: 100%;
+  text-align: left;
+  display: inline-block;
+  color: var(--color-text-primary);
+
+  &.boldText {
+    @include typography.heading-3;
+    line-height: 22px;
+  }
+}
+
+.shouldOverflowTwoLines {
+  @include text-overflow.line-clamp;
+  white-space: initial;
+}
+
+.lightGrayText {
+  color: var(--color-text-secondary);
+}
+
+.flex {
+  display: flex;
+}
+
+.scoresContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.badgeContainer {
+  display: flex;
+
+  .primaryBadge {
+    background-color: #f2eeff;
+    color: var(--color-quaternary-50);
+
+    :global {
+      .zp-icon {
+        color: var(--color-quaternary-50) !important;
+      }
+    }
+  }
+
+  .mappedCRMBadge {
+    background-color: var(--color-positive-10);
+    color: var(--color-text-positive);
+  }
+
+  .disabledScoreBadge {
+    background-color: #ff8e38;
+    color: white;
+
+    :global {
+      .zp-icon {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.inlineEditWrapper {
+  line-height: 27px;
+  padding-right: 38px;
+}
+
+.recommendationAction {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  justify-content: flex-end;
+  max-width: 100% !important;
+
+  .actionsContainer {
+    padding-right: 0;
+  }
+
+  .align-left {
+    width: initial;
+  }
+}
+
+/*********** Tasks ************/
+.taskNameWrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.taskIcon {
+  margin-left: 9px;
+  margin-right: 12px;
+}
+
+.taskContactName {
+  @include body-2-medium;
+  max-width: 320px;
+  @include text-overflow.ellipsis;
+}
+
+.taskAssociationOpportunity {
+  text-align: left;
+}
+
+.taskAssociationAccount {
+  display: flex;
+  align-items: center;
+}
+
+.taskAssociationAccountAvatar {
+  margin-right: 12px;
+  width: 32px;
+  height: 32px;
+}
+
+.taskAssociationAccountLink {
+  color: var(
+    --blue-deprecating-blue-1-deprecating,
+    var(--color-base-primary-50, var(--color-primary-50))
+  );
+  @include typography.body-2-medium;
+  max-width: 200px;
+  @include text-overflow.ellipsis;
+}
+
+.taskAssociationContactTitle {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.taskAssociationContactTitleSeparator {
+  margin: 0px 4px;
+}
+
+.taskAssociationContactAccountLink {
+  display: block;
+  max-width: 150px;
+  @include text-overflow.ellipsis;
+}
+
+.taskAssociation {
+  padding-left: 10px;
+}
+
+.taskAssociationContact {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.taskAssociationContactAvatar {
+  margin-right: 12px;
+  width: 32px;
+  height: 32px;
+}
+
+.taskAssociationContactNameContainer {
+  flex: 1;
+}
+
+.taskNotValid {
+  .invalidIcon {
+    color: var(--color-text-negative);
+    font-size: 20px;
+  }
+}
+
+.tooltipClass {
+  width: 153px;
+}
+
+.taskDueAt {
+  text-align: left;
+
+  .past-due {
+    color: var(--color-negative-50);
+  }
+}
+
+.taskPriority {
+  text-align: left;
+
+  .taskLowPriority {
+    background-color: var(--color-primary-50);
+  }
+
+  .taskHighPriority {
+    background-color: var(--color-negative-40);
+  }
+
+  .taskNonePriority {
+    background-color: var(--grays-gray-5, #e8eef4);
+    color: var(--grays-gray-1, #242d3e);
+  }
+
+  .taskMedPriority {
+    background-color: var(--color-caution-50);
+  }
+}
+
+.taskOwner {
+  text-align: left;
+}
+
+.taskSubtitle {
+  display: flex;
+  margin-top: 4px;
+  align-items: center;
+}
+
+.taskSummary {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  .icon {
+    color: var(--grays-gray-2, #5d6a7e);
+    @include typography.body-3;
+  }
+
+  .text {
+    @include typography.body-3;
+    margin-left: 5px;
+    color: var(--grays-gray-2, #5d6a7e);
+    @include text-overflow.ellipsis;
+  }
+}
+
+.taskSequence {
+  :global {
+    .zp-link {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+    }
+  }
+
+  .icon {
+    color: var(--grays-gray-2, #5d6a7e);
+    @include typography.body-3;
+  }
+
+  .text {
+    @include typography.body-3;
+    color: var(--grays-gray-2, #5d6a7e);
+    margin-left: 5px;
+    max-width: 200px;
+    @include text-overflow.ellipsis;
+    display: inline-block;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.taskSequenceEllipse {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--ui-secondary-dark, #d3dae3);
+  margin: 0 10px;
+}
+
+.textRed {
+  color: var(--color-text-negative) !important;
+}
+
+.clientSecret {
+  @include typography.body-2;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-body);
+
+  .key {
+    margin-top: 2px;
+  }
+
+  :global(.zp-icon) {
+    margin: 8px;
+    color: var(--color-icon-normal);
+  }
+}
+
+.triggerBadgeContainer {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 154px;
+  gap: 6px;
+
+  .triggerBadge {
+    background: var(--color-bg-hover);
+  }
+}
+
+.activationStatus {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .status {
+    margin-left: 8px;
+    @include typography.helper-1;
+    color: var(--color-text-body);
+  }
+}
+
+.webhookDelete {
+  &:hover {
+    color: var(--color-text-reversed) !important;
+
+    i {
+      color: var(--color-text-reversed) !important;
+    }
+  }
+
+  color: var(--color-text-negative) !important;
+
+  i {
+    color: var(--color-text-negative) !important;
+  }
+}
+
+.webhookCreatedDate {
+  text-align: left;
+  @include typography.body-3;
+  color: var(--color-text-placeholder);
+}

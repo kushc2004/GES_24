@@ -1,0 +1,14 @@
+.progressBar {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  .bar {
+    background-color: var(--color-positive-50);
+    transition: 0.5s width;
+    height: 6px;
+    width: calc(var(--progress) * 100%);
+  }
+}

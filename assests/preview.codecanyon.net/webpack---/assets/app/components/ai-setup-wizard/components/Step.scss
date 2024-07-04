@@ -1,0 +1,19 @@
+@use 'typography';
+
+.step {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+
+  .iconAndTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 16px;
+    @include typography.subheader-1;
+  }
+
+  .children {
+    margin-left: 42px;
+  }
+}

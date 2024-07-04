@@ -1,0 +1,23 @@
+.focusRing24::after {
+  border-radius: 24px !important;
+}
+
+.focusRing20::after {
+  border-radius: 20px !important;
+}
+
+.focusRing8::after {
+  border-radius: var(--border-radius-8) !important;
+}
+
+.focusRing4::after {
+  border-radius: var(--border-radius-4) !important;
+}
+
+.focusRing2::after {
+  border-radius: var(--border-radius-2) !important;
+}
+
+.focusSecondary::after {
+  border-color: var(--color-primary-60);
+}

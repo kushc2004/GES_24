@@ -1,0 +1,51 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+
+.alertModal {
+  width: 420px;
+  min-width: 420px;
+}
+
+.alertBody {
+  @include typography.body-2-medium;
+  color: var(--color-text-primary);
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.alertIcon {
+  color: var(--color-caution-40);
+  line-height: normal;
+  margin-right: 12px;
+  font-size: 22px;
+}
+
+.modalHeader {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.modalTitle {
+  display: flex;
+  align-items: center;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  border-top: none;
+  padding: 10px 10px 10px 20px;
+}
+
+.alertLink {
+  color: inherit;
+}
+
+.bodyMessage {
+  @include typography.heading-3;
+  color: var(--color-text-secondary);
+}
+
+.supportText {
+  @include typography.body-2-medium;
+  color: var(--color-text-secondary);
+}

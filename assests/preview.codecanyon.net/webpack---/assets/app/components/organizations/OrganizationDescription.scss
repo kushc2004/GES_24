@@ -1,0 +1,25 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.container {
+  @include typography.body-2;
+  margin-bottom: 20px;
+  word-break: break-word;
+
+  // Apply to seoDescription if shortDescription exists
+  > div:not(:only-child):first-child {
+    margin-bottom: 20px;
+  }
+}
+
+.expandLink {
+  @include typography.body-2-medium;
+}
+
+.description {
+  & > * {
+    &:not(:first-child) {
+      margin-top: 4px;
+    }
+  }
+}

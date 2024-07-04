@@ -1,0 +1,36 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.secondaryButton {
+  margin-right: 10px;
+}
+
+.headLineContainer {
+  @include typography.body-2;
+  margin-bottom: 20px;
+  color: var(--color-text-body);
+}
+
+.footerLineContainer {
+  @include typography.body-2;
+  margin-top: 10px;
+  color: var(--color-text-body);
+  gap: 4px;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.footerButtonContainer {
+  padding: 10px 20px;
+
+  :global {
+    .zp-button {
+      margin-right: 10px;
+
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

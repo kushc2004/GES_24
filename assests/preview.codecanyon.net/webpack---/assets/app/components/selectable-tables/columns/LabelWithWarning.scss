@@ -1,0 +1,30 @@
+@use 'typography';
+@import 'assets/common/scss/mixins/text-overflow';
+@import 'assets/common/scss/variables';
+
+.container {
+  display: flex;
+  max-width: 100%;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.labelContainer {
+  @include text-overflow-ellipsis;
+  max-width: calc(100% - 30px);
+}
+
+.warningIcon {
+  margin-left: 6px;
+
+  &:global(.zp-icon) {
+    @include typography.body-2;
+    line-height: 14px;
+    color: var(--color-caution-40) !important;
+  }
+}
+
+.warningIconTooltipWrapper {
+  display: flex;
+  align-items: center;
+}

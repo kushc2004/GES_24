@@ -1,0 +1,119 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.onboardingContainer {
+  background-color: var(--color-bg-main) !important;
+
+  &.confetti {
+    background-image: url('common/images/confetti.svg');
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+
+  .customHeader {
+    text-align: right;
+    padding: 12px;
+  }
+
+  .progressBar {
+    padding: 16px 48px 0;
+    width: 100%;
+  }
+
+  .body {
+    padding: 16px 48px 48px;
+    text-align: center;
+
+    &.addPaddingTop {
+      padding-top: 48px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .heading {
+      @include typography.heading-1;
+      margin: 16px 0 8px;
+    }
+
+    .subheading {
+      @include typography.body-2;
+      color: var(--color-text-secondary);
+      margin: 0 auto;
+      max-width: 500px;
+    }
+
+    .personaNameContainer {
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    .filterLabel {
+      @include typography.subheader-1;
+      color: var(--color-text-labels);
+    }
+
+    .filterDescription {
+      @include typography.body-2;
+      color: var(--color-text-secondary);
+    }
+
+    .fieldWrapper {
+      margin: 4px 0 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .tipInfo {
+      display: flex;
+      align-items: center;
+
+      .bulb {
+        color: var(--color-primary-50);
+        background-color: var(--color-primary-10);
+        border-radius: 100%;
+        padding: 5px 10px;
+        margin-right: 16px;
+      }
+
+      .textContainer {
+        @include typography.helper-1-medium;
+
+        .tipText {
+          @include typography.helper-1;
+          color: var(--color-text-secondary);
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.alignRight {
+      justify-content: flex-end;
+    }
+
+    &.borderTop {
+      border-top: 1px solid var(--color-border-light);
+    }
+
+    .rightActions {
+      display: flex;
+
+      > button:first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.overrideOverflow {
+  overflow-y: unset;
+}

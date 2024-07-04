@@ -1,0 +1,7 @@
+@use 'typography';
+
+.label {
+  @include typography.body-2-medium;
+  color: var(--color-text-labels);
+  margin-right: 10px;
+}

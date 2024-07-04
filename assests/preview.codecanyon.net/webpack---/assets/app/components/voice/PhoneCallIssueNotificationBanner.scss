@@ -1,0 +1,15 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.bannersWrapper {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+}
+
+.bannerContainer {
+  max-width: max(700px, 75%);
+  margin: 10px auto;
+  padding: 8px 10px;
+  border-radius: var(--border-radius-8);
+}

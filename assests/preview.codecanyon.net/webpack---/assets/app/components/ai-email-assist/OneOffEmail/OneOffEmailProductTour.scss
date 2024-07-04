@@ -1,0 +1,24 @@
+@use 'typography';
+
+.badge {
+  display: flex;
+  padding: 5px 7px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 3px;
+  background: var(--color-quaternary-10);
+}
+
+.badge-text {
+  @include typography.helper-1-medium;
+  color: var(--color-quaternary-50);
+}
+
+.badge-icon {
+  color: var(--color-quaternary-50);
+
+  &:hover {
+    color: var(--color-quaternary-50);
+  }
+}

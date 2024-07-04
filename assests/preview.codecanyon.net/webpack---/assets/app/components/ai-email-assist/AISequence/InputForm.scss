@@ -1,0 +1,24 @@
+@use 'typography';
+@import 'common/scss/variables';
+
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+
+  .text {
+    @include typography.subheader-1;
+    color: var(--color-text-labels);
+  }
+
+  .additionalInfo {
+    color: var(--color-text-body);
+    @include typography.body-3;
+  }
+
+  .required {
+    color: var(--color-text-negative);
+  }
+}

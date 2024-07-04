@@ -1,0 +1,62 @@
+@use 'typography';
+
+.scoresAddTableLayoutModal {
+  width: 600px;
+}
+
+.modalHeader {
+  justify-content: flex-end;
+}
+
+.modalBody {
+  background: #fbfbfd;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.modalTextContainer {
+  padding: 20px 40px;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 120%;
+  margin-bottom: 8px !important;
+}
+
+.subHeading1 {
+  @include typography.body-2;
+  line-height: 21px;
+  margin-bottom: 24px !important;
+  color: var(--color-text-body);
+}
+
+.tableLayoutDescription {
+  background: var(--color-bg-main);
+  border-radius: var(--border-radius-4);
+  padding: 16px;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 10%);
+  margin-bottom: 10px;
+}
+
+.tableLayoutLabel {
+  color: var(--color-neutral-50);
+  @include typography.helper-1;
+}
+
+.tableLayoutName {
+  @include typography.body-2;
+  font-weight: 700;
+  color: #000;
+  margin-top: 5px;
+}
+
+.loadingSpinnerContainer {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.primaryButton {
+  padding: 14px 30px !important;
+}

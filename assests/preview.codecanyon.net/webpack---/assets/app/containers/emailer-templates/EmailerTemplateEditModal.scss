@@ -1,0 +1,35 @@
+@import '../../../common/scss/variables';
+
+.main {
+  display: flex;
+}
+
+.editor {
+  //flex-basis: 50%;
+  width: 50%;
+
+  //word-break: break-all;
+  word-wrap: break-word;
+
+  .fake-footer {
+    display: flex;
+    margin-top: 32px;
+    gap: 8px;
+  }
+
+  @media (max-width: $screen-md-max) {
+    flex-basis: 100%;
+  }
+}
+
+.preview {
+  //flex-basis: 50%;
+  width: 50%;
+
+  //word-break: break-all;
+  word-wrap: break-word;
+  padding-left: 32px;
+  @media (max-width: $screen-md-max) {
+    display: none;
+  }
+}

@@ -1,0 +1,101 @@
+@use 'typography';
+
+@import '../../../../common/scss/variables';
+
+.top-row {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+
+  .sort-link {
+    &,
+    a {
+      color: var(--color-primary-50);
+      font-size: 11px !important;
+      font-weight: 600 !important;
+    }
+
+    :global {
+      .zp-icon {
+        @include typography.subheader-2;
+        color: var(--color-primary-50);
+      }
+    }
+    margin-left: auto;
+  }
+
+  .configure {
+    margin-left: 4px;
+    color: var(--color-neutral-40);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.settings-icon {
+  margin-right: 3px;
+  color: var(--color-primary-50);
+
+  &:hover {
+    color: var(--color-text-links) !important;
+  }
+
+  &:active {
+    color: var(--color-primary-70) !important;
+  }
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .count {
+    @include typography.helper-1;
+    line-height: 1.3em;
+    color: var(--color-text-secondary);
+    margin-left: auto;
+    word-break: normal;
+  }
+}
+
+.simple-label {
+  label {
+    color: var(--color-text-labels);
+  }
+}
+
+.manage-link-and-icon {
+  display: flex;
+  align-items: stretch;
+  align-content: center;
+
+  cursor: pointer;
+
+  &:hover i,
+  &:hover a {
+    color: var(--color-primary-60) !important;
+  }
+
+  &:active i,
+  &:active a {
+    color: var(--color-primary-70) !important;
+  }
+}
+
+.manage-icon {
+  display: flex;
+  align-items: center;
+}
+
+.manage-link {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary-50);
+}
+
+.link-text {
+  @include typography.subheader-2;
+}

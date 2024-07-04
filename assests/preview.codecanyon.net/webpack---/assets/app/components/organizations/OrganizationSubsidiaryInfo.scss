@@ -1,0 +1,35 @@
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.organization-subsidiary-sidebar {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.organization-subsidiary {
+  cursor: pointer;
+  @include typography.helper-1;
+  line-height: 15px;
+
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 8px;
+
+  :global {
+    .zp-icon {
+      font-size: 16px;
+      margin-top: -2px;
+    }
+  }
+}
+
+.suborganizations {
+  padding-left: 28px;
+}
+
+.space {
+  margin-right: 4px;
+}

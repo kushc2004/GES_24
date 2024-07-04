@@ -1,0 +1,96 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+.industry-sidebar {
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.industryMedium {
+  @include typography.body-2;
+  color: var(--color-text-primary);
+  @include text-overflow.ellipsis;
+
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-text-links);
+    }
+  }
+}
+
+.industries {
+  @include typography.body-2;
+  color: var(--color-text-labels);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &:not(.no-padding) {
+    padding-bottom: 5px;
+  }
+
+  :global {
+    .zp-icon {
+      font-size: 16px;
+      margin-top: -2px;
+    }
+  }
+}
+
+.industriesMedium {
+  @include typography.body-2;
+  color: var(--color-text-primary);
+  @include text-overflow.ellipsis;
+}
+
+.industryLink {
+  @include typography.body-2-medium;
+  color: var(--color-text-links);
+  @include text-overflow.ellipsis;
+
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-text-links);
+    }
+  }
+}
+
+.industry {
+  @include typography.body-2;
+  color: var(--color-text-labels);
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-right: 10px;
+
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  :global {
+    .zp-icon {
+      font-size: 16px;
+      margin-top: -2px;
+    }
+  }
+}
+
+.space {
+  margin-right: 4px;
+}

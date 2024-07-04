@@ -1,0 +1,26 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.infoPopover {
+  width: 260px;
+  max-height: 150px;
+  overflow-y: auto;
+  border-radius: var(--border-radius-4);
+  padding: 0 15px 15px 20px;
+
+  p {
+    margin: 0;
+    font-family: var(--system-ui);
+  }
+
+  .description {
+    @include typography.helper-1;
+    color: var(--color-text-secondary);
+    padding: 7px 0 15px;
+  }
+
+  .link {
+    @include typography.subheader-2;
+    font-weight: $font-weight-semibold;
+  }
+}

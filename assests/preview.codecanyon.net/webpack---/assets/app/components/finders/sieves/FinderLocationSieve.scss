@@ -1,0 +1,82 @@
+@forward 'common-tab-style';
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import './FinderFilterHelpers';
+
+.modality-option {
+  margin-top: 8px;
+}
+
+.finder-tabs {
+  width: 250px;
+  height: 32px;
+  background-color: var(--color-bg-secondary);
+  margin-top: -11px;
+  margin-bottom: 14px;
+  margin-left: -16px;
+  margin-right: -16px;
+
+  &.clear-background {
+    background: none;
+  }
+}
+
+.finder-tab {
+  flex: 1;
+  margin: 0 !important;
+}
+
+.displayTypeWrapper {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.info {
+  display: flex;
+  padding: 12px;
+  border-radius: var(--border-radius-4);
+  background-color: var(--color-bg-secondary);
+
+  .infoIcon {
+    margin-right: 12px;
+    color: var(--color-neutral-40);
+  }
+
+  span {
+    @include typography.helper-1;
+    color: var(--color-text-secondary);
+    line-height: 16px;
+  }
+}
+
+.label {
+  @include typography.subheader-2;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.employeeContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 18px;
+
+  .label {
+    @include typography.subheader-2;
+    color: var(--color-text-primary);
+  }
+
+  .icon {
+    margin: -2px;
+  }
+}
+
+.tooltipContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.includeExcludeOptions {
+  padding: 13px 12px 13px 17px;
+}

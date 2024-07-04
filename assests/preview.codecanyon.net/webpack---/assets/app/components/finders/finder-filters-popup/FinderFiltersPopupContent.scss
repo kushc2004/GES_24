@@ -1,0 +1,129 @@
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+.mainContainer {
+  background: var(--color-bg-main);
+  max-width: 100%;
+  width: max-content;
+  max-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 20px 0px rgb(0 0 0 / 10%);
+  border-radius: var(--border-radius-8);
+}
+
+.header {
+  padding: 6px 16px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px -1px 0px 0px #e8eef4 inset;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.filtersTitleContainer {
+  display: flex;
+  align-items: center;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.headerTitle {
+  color: #242d3e;
+  @include typography.heading-3;
+  font-style: normal;
+  margin-right: 8px;
+}
+
+.controlsContainer {
+  padding: 4px 0 0 24px;
+  align-items: center;
+  display: flex;
+}
+
+.searchInput {
+  input {
+    margin: 0 !important;
+    height: 32px !important;
+    width: 264px !important;
+    border-radius: var(--border-radius-4) !important;
+  }
+}
+
+.previewCount {
+  color: var(--color-text-body);
+  @include typography.body-2-medium;
+  font-style: normal;
+  margin-right: 24px;
+}
+
+.mainContent {
+  display: flex;
+  overflow: auto;
+  flex-grow: 1;
+}
+
+.pinnedFiltersColumn {
+  padding: 16px;
+  overflow-y: scroll;
+  min-width: 332px;
+  border-right: 2px solid #e8eef4;
+}
+
+.filterSectionsContainer {
+  display: flex;
+  max-width: 100%;
+}
+
+.normalFiltersContainer {
+  overflow: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-shrink: 0;
+  padding-left: 12px;
+  width: 902px;
+}
+
+.normalSieveColumn {
+  width: 300px;
+}
+
+.filterSection {
+  display: inline-block;
+  padding: 16px 0 0;
+}
+
+.sectionName {
+  color: var(--color-neutral-50);
+  @include typography.body-2-medium;
+  font-style: normal;
+  margin-bottom: 4px;
+}
+
+.emptyPinnedFilters {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+.emptyNormalFilters {
+  display: inline-block;
+  margin-top: 54px;
+  margin-left: 16px;
+}
+
+.collapseButton {
+  margin-left: 12px;
+
+  &:global(.zp-icon) {
+    font-size: 18px;
+    color: var(--color-icon-hover);
+  }
+}

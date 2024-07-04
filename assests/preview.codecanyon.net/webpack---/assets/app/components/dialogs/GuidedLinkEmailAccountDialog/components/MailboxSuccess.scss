@@ -1,0 +1,58 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.mailboxWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mailboxActionButtons {
+  display: flex;
+  width: 100%;
+}
+
+.exitSetupWarningButton {
+  width: fit-content;
+  background-color: var(--color-negative-50);
+
+  &:hover {
+    background-color: var(--color-negative-60);
+  }
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.introBody {
+  margin-top: 6px;
+}
+
+.optionCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .optionCardTitle {
+    @include typography.body-2;
+    color: var(--color-text-body);
+    font-weight: 600;
+  }
+}
+
+.rightBtn {
+  margin-left: auto;
+}
+
+.creditsBadge {
+  margin-top: 6px;
+  width: fit-content;
+  padding: 2px 8px;
+  background: var(--color-base-secondary-20, var(--color-secondary-20));
+  border-radius: var(--border-radius-2);
+  @include typography.body-3;
+  font-weight: 500;
+}

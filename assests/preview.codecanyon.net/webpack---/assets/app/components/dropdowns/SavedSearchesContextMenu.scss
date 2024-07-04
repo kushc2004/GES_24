@@ -1,0 +1,55 @@
+@import 'assets/common/scss/variables';
+
+.contextMenuItem {
+  &.menuItemInfo {
+    i {
+      color: var(--color-icon-hover) !important;
+    }
+
+    &:hover {
+      i {
+        color: var(--color-text-reversed) !important;
+      }
+    }
+  }
+
+  &.menuItemWarning {
+    color: var(--color-negative-40) !important;
+
+    i {
+      color: var(--color-negative-40) !important;
+    }
+
+    &:hover {
+      color: var(--color-text-reversed) !important;
+
+      :global {
+        .apollo-icon-trash::before {
+          color: var(--color-icon-inverted) !important;
+        }
+      }
+    }
+  }
+
+  &.pinItemMenuOption {
+    :global {
+      .zp-icon {
+        position: relative;
+        top: 4px;
+        left: -2px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &.unpinItemMenuOption {
+    :global {
+      .zp-icon {
+        position: relative;
+        top: 4px;
+        left: -2px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use 'typography';
+
+.root {
+  position: relative;
+  max-width: 360px;
+  display: flex;
+  column-gap: 8px;
+  @include typography.helper-1; // TODO: line-height for helper-1 should be 18px?
+
+  color: #616161;
+  background-color: #fbfbfd;
+  border-radius: 12px;
+  padding: 12px;
+
+  margin-bottom: 24px;
+}
+
+.icon {
+  &:global(.zp-icon) {
+    color: #616161;
+  }
+}

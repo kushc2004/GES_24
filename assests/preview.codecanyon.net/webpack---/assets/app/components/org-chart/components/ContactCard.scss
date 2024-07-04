@@ -1,0 +1,363 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.cardBase {
+  display: flex;
+  flex-direction: column;
+
+  width: 390px;
+  height: 180px;
+  border-radius: var(--border-radius-8);
+  padding: 10px;
+  background: var(--color-bg-main);
+  border: 1px solid var(--color-neutral-20);
+  position: relative;
+
+  .contentContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .contentSection {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .contentContainer > .contentSection > *:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
+  .userAvatar {
+    @include typography.body-2;
+    color: #735d1a;
+    margin-bottom: 8px;
+  }
+
+  .flagged {
+    background-color: var(--color-negative-10);
+    border-radius: var(--border-radius-4);
+  }
+
+  .personName {
+    @include typography.body-1;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 22px;
+    text-transform: capitalize;
+    gap: 4px;
+
+    a {
+      overflow: hidden;
+
+      span {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: max-content;
+        display: block;
+      }
+    }
+  }
+
+  .linkedInLink {
+    height: 14px;
+    width: 14px;
+    background: var(--color-neutral-40);
+
+    &:hover,
+    &:active {
+      background: var(--color-neutral-50);
+    }
+
+    i {
+      font-size: 12px;
+    }
+  }
+
+  .personTitle {
+    @include typography.body-3;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: max-content;
+  }
+
+  .locationAndDepartment {
+    @include typography.helper-1;
+    font-size: 10px;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+
+    > span {
+      display: flex;
+      align-items: center;
+    }
+
+    i {
+      margin-right: 4px;
+
+      &:hover {
+        color: var(--color-icon-normal) !important;
+      }
+    }
+  }
+
+  .badgeContainer {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 3px;
+    row-gap: 3px;
+
+    .infoBadge {
+      &.green {
+        background-color: #ddf6e9;
+      }
+
+      &.blue {
+        background-color: var(--color-primary-10);
+      }
+
+      :global {
+        i.zp-icon {
+          color: var(--color-ui-primary) !important;
+        }
+      }
+    }
+  }
+
+  .ornamentBar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    .ornamentButton {
+      padding: 0;
+      border-radius: var(--border-radius-4);
+      background-color: var(--color-primary-10);
+    }
+
+    .ornamentIcon,
+    .ornamentButton > i {
+      width: 20px;
+      height: 20px;
+      border-radius: var(--border-radius-4);
+      background-color: var(--color-primary-10);
+      color: var(--color-primary-40);
+      font-size: 12px;
+    }
+
+    .ornamentBadge {
+      border: none;
+      font-size: 10px;
+    }
+  }
+
+  .actionBar {
+    display: none;
+
+    .actionSave {
+      margin-right: 5px;
+    }
+  }
+
+  .stageIndicator {
+    width: 8px;
+    height: 8px;
+    margin: 0;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .hoverContent {
+    display: none;
+  }
+
+  &:hover .hoverContent,
+  .hoverContent:hover {
+    display: flex;
+  }
+}
+
+.expandable {
+  width: 200px;
+  height: 130px;
+}
+
+.expanded {
+  width: 400px;
+  height: 248px;
+  padding: 26px 36px;
+
+  &:hover .actionBar,
+  .forceShowActionBar {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.noteExpanded {
+  height: 353px;
+}
+
+.addRoleButton {
+  border: none;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-neutral-60);
+
+  & i {
+    font-size: 12px !important;
+    color: var(--color-icon-hover) !important;
+  }
+
+  .addRoleButtonLabel {
+    font-size: 10px;
+  }
+
+  &:hover i,
+  &:focus i {
+    color: var(--button-icon-color) !important;
+  }
+}
+
+.addRoleButtonOpen {
+  background-color: var(--color-neutral-40);
+  color: var(--color-text-body);
+}
+
+.popoverWrapper {
+  width: 394px;
+  padding: 10px 0px 0px;
+  background-color: var(--color-bg-main);
+  border-radius: var(--border-radius-8);
+  box-shadow: 0px 5px 12px var(--color-neutral-40);
+
+  .popoverHeader,
+  .popoverFooter,
+  .popoverBody {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .popoverHeader {
+    border-bottom: 1px solid var(--color-neutral-10);
+    justify-content: space-between;
+
+    & > span {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    & > div {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      & > i {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  .popoverBody {
+    max-height: 235px;
+    overflow: scroll;
+    flex-direction: column;
+
+    .roleOption {
+      min-height: 32px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      & > span {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .popoverFooter {
+    border-top: 1px solid var(--color-neutral-10);
+    color: var(--color-neutral-50);
+    font-size: 12px;
+    justify-content: flex-end;
+    gap: 8px;
+
+    .savingTooltip {
+      width: 140px;
+    }
+  }
+}
+
+.signalDetailPopoverWrapper {
+  padding: 16px;
+
+  .signalDetailPopoverHeader {
+    padding: 0;
+    border: none;
+    font-size: 14px;
+  }
+
+  .signalDetailPopoverBody {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    & > div {
+      margin: 0;
+    }
+  }
+}
+
+.idPageLink {
+  display: block;
+  width: fit-content;
+  text-decoration: none !important;
+  color: var(--color-text-body);
+
+  &:hover {
+    text-decoration: underline !important;
+    color: var(--color-text-header);
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+.flaggedIndicatorWrapper {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 8px;
+}
+
+.flaggedDataIndicator {
+  color: var(--color-negative-40);
+  font-size: 16px;
+  cursor: default;
+
+  &:active,
+  &:hover {
+    color: var(--color-negative-40);
+  }
+}

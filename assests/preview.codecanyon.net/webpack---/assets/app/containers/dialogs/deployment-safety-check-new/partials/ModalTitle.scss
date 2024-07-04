@@ -1,0 +1,18 @@
+@import 'assets/common/scss/variables';
+
+.messageTitle {
+  display: flex;
+  white-space: nowrap;
+  max-width: min(87vw, 580px);
+
+  .warningIcon {
+    color: var(--color-caution-50);
+    margin-right: 12px;
+  }
+}
+
+.entityName {
+  flex: 0 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

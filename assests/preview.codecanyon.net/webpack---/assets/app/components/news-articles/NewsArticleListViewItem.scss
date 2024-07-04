@@ -1,0 +1,81 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.newsArticleListViewItem {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--color-border-light);
+
+  .title {
+    @include typography.body-1-medium;
+    color: var(--color-text-primary);
+  }
+
+  &:hover {
+    background-color: var(--color-bg-secondary);
+  }
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+}
+
+.linkButton {
+  padding: 0 !important;
+}
+
+.separator {
+  height: 16px;
+  width: 1px;
+  background-color: var(--color-neutral-20);
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.categories .category,
+.date {
+  color: var(--color-text-secondary);
+  @include typography.body-2-medium;
+}
+
+.categories {
+  .category {
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+  }
+}
+
+.extensionOverrides {
+  .title {
+    @include typography.body-2-medium;
+  }
+
+  .categories {
+    margin-top: 2px;
+    margin-bottom: 8px;
+  }
+
+  .linkButton {
+    height: 25px;
+  }
+
+  .bottom {
+    a {
+      max-width: 50%;
+      overflow: hidden;
+    }
+  }
+
+  .category {
+    color: #949fb1;
+    @include typography.body-2;
+  }
+
+  .date {
+    @include typography.body-2;
+    color: #949fb1;
+  }
+}

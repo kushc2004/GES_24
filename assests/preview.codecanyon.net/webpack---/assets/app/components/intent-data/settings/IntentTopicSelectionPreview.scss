@@ -1,0 +1,61 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.emptyStateContainer {
+  align-items: center;
+  color: var(--color-text-secondary);
+  display: flex;
+  height: 100%;
+
+  .icon {
+    color: var(--color-neutral-40);
+    margin-right: 8px;
+  }
+
+  .blurb {
+    @include typography.body-2;
+    width: 143px;
+  }
+}
+
+.selectionPreview {
+  padding: 0 !important;
+  height: 565px;
+  display: flex;
+  flex-direction: column;
+}
+
+.messageBlock {
+  padding: 8px 20px;
+
+  &.warning {
+    background-color: rgba($color-caution-30, 0.2);
+    color: var(--color-text-caution);
+  }
+
+  &.error {
+    background-color: rgba($color-negative-40, 0.07);
+    color: var(--color-ui-negative);
+
+    > a {
+      @include typography.body-2-medium;
+      text-decoration: underline;
+      color: var(--color-ui-negative);
+
+      &:hover {
+        color: var(--color-text-negative);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.topics {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+
+  .badge {
+    margin-bottom: 6px;
+  }
+}

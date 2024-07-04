@@ -1,0 +1,44 @@
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+.personaListViewItem {
+  padding: 0 20px !important;
+
+  .listViewItem {
+    padding: 8px 0 !important;
+  }
+}
+
+.contentContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .textContent {
+    margin-right: 4px;
+  }
+}
+
+.location {
+  display: flex;
+
+  .locationIcon {
+    margin-right: 4px;
+    @include typography.body-2;
+    color: var(--color-neutral-40);
+  }
+
+  .locationName {
+    @include typography.helper-1;
+  }
+}
+
+.personName {
+  @include typography.body-2-medium;
+}
+
+.personTitle {
+  @include typography.helper-1;
+}

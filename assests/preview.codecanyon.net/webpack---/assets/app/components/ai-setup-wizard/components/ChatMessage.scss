@@ -1,0 +1,54 @@
+@use 'typography';
+
+.message {
+  display: flex;
+  transition: 0.2s width, 0.2s height;
+
+  & + & {
+    margin-top: 32px;
+  }
+
+  &[data-message-type='system'] {
+    --bubble-color: var(--color-quaternary-10);
+  }
+
+  &[data-message-type='system-error'] {
+    --bubble-color: #fff4f4;
+  }
+
+  &[data-message-type='system'],
+  &[data-message-type='system-error'] {
+    .tail {
+      left: -7.5px;
+    }
+  }
+
+  &[data-message-type='user'] {
+    --bubble-color: var(--color-neutral-10);
+    justify-content: flex-end;
+
+    .tail {
+      right: -7.5px;
+      transform: scaleX(-1.5);
+    }
+  }
+}
+
+.bubble {
+  position: relative;
+  border-radius: var(--border-radius-16);
+  padding: 16px;
+  @include typography.body-2;
+  color: var(--color-text-header);
+  max-width: 360px;
+  background-color: var(--bubble-color);
+
+  .tail {
+    position: absolute;
+    bottom: 0;
+
+    .tailPath {
+      fill: var(--bubble-color);
+    }
+  }
+}

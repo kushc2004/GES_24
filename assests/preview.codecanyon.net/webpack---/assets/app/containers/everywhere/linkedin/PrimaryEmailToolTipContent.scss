@@ -1,0 +1,106 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.headerTextStyle {
+  color: var(--color-text-reversed);
+  font-style: normal;
+  @include typography.subheader-2;
+  line-height: 16px;
+}
+
+.normalTextStyle {
+  font-style: normal;
+  @include typography.helper-1;
+  line-height: 16px;
+  color: var(--color-neutral-30);
+}
+
+.kbLink:visited {
+  color: var(--color-primary-50);
+}
+
+.businessEmailHeader {
+  margin-bottom: 2px;
+  margin-top: 8px;
+  flex-basis: 100%;
+  justify-content: flex-start;
+  text-align: left;
+  height: 16px;
+  display: flex;
+}
+
+.toolTipWrapper {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.businessEmailText {
+  justify-content: flex-start;
+  flex-basis: 100%;
+  text-align: left;
+  margin-bottom: 2px;
+}
+
+.businessEmailExample {
+  flex-basis: 100%;
+  text-align: left;
+}
+
+.exampleEmail {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 4px;
+  gap: 8px;
+  height: 16px;
+  background: #4f5568;
+  border-radius: var(--border-radius-2);
+}
+
+.personalEmailHeader {
+  margin-top: 12px;
+  margin-bottom: 2px;
+  flex-basis: 100%;
+  justify-content: flex-start;
+  text-align: left;
+  height: 16px;
+  display: flex;
+}
+
+.personalEmailText {
+  justify-content: flex-start;
+  flex-basis: 100%;
+  text-align: left;
+  margin-bottom: 2px;
+}
+
+.personalEmailExample {
+  flex-basis: 100%;
+  text-align: left;
+}
+
+.customLink {
+  display: flex;
+  margin-top: 14px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+
+  :global {
+    .zp-link {
+      font-style: normal;
+      @include typography.helper-1-medium;
+      line-height: 16px;
+      display: flex;
+    }
+
+    .zp-icon {
+      color: var(--color-primary-50);
+      @include typography.body-1;
+      line-height: 8px;
+      padding-left: 5px;
+    }
+  }
+}

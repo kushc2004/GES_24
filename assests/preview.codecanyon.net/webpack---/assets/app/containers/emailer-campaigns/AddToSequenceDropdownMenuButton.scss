@@ -1,0 +1,9 @@
+@import 'assets/common/scss/variables';
+
+button.compactButton {
+  :global {
+    .zp-icon:not(:first-child) {
+      margin-left: 0;
+    }
+  }
+}

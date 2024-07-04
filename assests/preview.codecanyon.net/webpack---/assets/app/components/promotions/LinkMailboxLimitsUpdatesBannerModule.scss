@@ -1,0 +1,17 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.promotionCard {
+  left: unset;
+  right: 38px;
+  bottom: 38px;
+  z-index: 100;
+}
+
+.image {
+  margin-bottom: 16px;
+}
+
+.cta {
+  margin-top: 16px;
+}

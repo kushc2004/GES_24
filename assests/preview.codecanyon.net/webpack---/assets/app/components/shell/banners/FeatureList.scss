@@ -1,0 +1,26 @@
+@use 'typography';
+
+.featureList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  &.vertical {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.feature {
+  display: flex;
+  color: var(--feature-name-color, var(--color-text-body));
+  align-items: center;
+  @include typography.body-2;
+}
+
+.featureIcon {
+  margin-right: 4px;
+  color: var(--color-positive-50);
+  line-height: 20px;
+  pointer-events: none;
+}

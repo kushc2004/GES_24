@@ -1,0 +1,19 @@
+.section {
+  padding-top: 20px;
+}
+
+.section:first-child {
+  padding-top: 0;
+}
+
+.section:empty {
+  padding-top: 0;
+}
+
+.section:empty + .section:not(:empty) {
+  padding-top: 0;
+}
+
+.section:not(:empty) ~ .section:not(:empty) {
+  padding-top: 20px;
+}

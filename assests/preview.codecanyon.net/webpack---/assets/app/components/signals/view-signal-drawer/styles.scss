@@ -1,0 +1,203 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/text-overflow';
+@import 'assets/common/scss/mixins/loader';
+
+.drawer {
+  background: var(--color-bg-secondary);
+}
+
+.drawerContainer {
+  position: relative;
+  margin: 16px;
+  background-color: var(--color-bg-main);
+  box-shadow: var(--shadow-1);
+  height: calc(100% - 32px);
+
+  .signalsForm {
+    height: calc(100% - 65px);
+    overflow-y: auto;
+
+    > .section:not(:last-of-type) {
+      border-bottom: 1px solid var(--color-border-light);
+    }
+  }
+}
+
+footer.drawerActionsFooter {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  width: 100%;
+  border-top: 1px solid var(--color-border-light);
+
+  > a {
+    @include typography.body-2-medium;
+  }
+
+  > * {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.header {
+  padding: 18px 24px;
+
+  h1 {
+    margin: 0;
+    @include heading-2;
+  }
+}
+
+h2.title {
+  margin: 0;
+}
+
+.section {
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  &.signalTitle {
+    flex-direction: row;
+    margin-right: 16px;
+
+    border-top: 1px solid var(--color-border-light);
+
+    > i {
+      height: 48px;
+      width: 48px;
+      min-width: 48px;
+      color: #17b084;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--border-radius-4);
+      margin: 0 16px 0 0;
+
+      &::before {
+        line-height: 24px;
+        font-size: 24px;
+      }
+    }
+
+    .title {
+      margin-bottom: 4px !important;
+    }
+
+    &.centerTitle {
+      align-items: center;
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      @include heading-3;
+
+      > i {
+        font-size: 24px;
+        margin-right: 12px;
+      }
+    }
+
+    .description {
+      @include typography.body-2;
+
+      font-weight: 400;
+      line-height: 21px;
+      color: var(--color-text-secondary);
+    }
+
+    label {
+      @include typography.subheader-1;
+
+      display: block;
+      margin-bottom: 4px;
+      line-height: 21px;
+      color: var(--color-text-secondary);
+      white-space: pre;
+    }
+  }
+}
+
+.row:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.filterModalityBadgeContainer {
+  @include typography.helper-1-medium;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-secondary);
+
+  > .whereText {
+    @include typography.body-2-medium;
+  }
+}
+
+.snippet {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-4);
+  color: var(--color-text-light);
+  @include typography.body-2;
+
+  .loadingTip {
+    @include loading-bar(relative, 10px, 0, 10px);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  .snippetName {
+    color: var(--color-text-primary);
+    @include typography.subheader-1;
+    margin-bottom: 8px;
+  }
+
+  .snippetButtons {
+    margin-top: 16px;
+
+    i,
+    div {
+      color: var(--color-text-secondary);
+    }
+
+    > :first-child {
+      margin-left: -10px;
+    }
+
+    button:hover {
+      border-radius: var(--border-radius-2);
+    }
+
+    .emailGenButton {
+      display: flex;
+      align-items: center;
+
+      > :first-child {
+        margin-right: 6px;
+      }
+    }
+
+    :global(.zp-button:hover .zp-icon) {
+      color: var(--color-text-secondary) !important;
+    }
+  }
+
+  // Override invalid Dynamic Variable background color with lighter shade
+  span[style] {
+    background-color: #ffd7d6 !important;
+  }
+}

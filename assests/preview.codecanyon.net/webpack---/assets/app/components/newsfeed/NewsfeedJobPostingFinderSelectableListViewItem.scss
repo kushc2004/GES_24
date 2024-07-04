@@ -1,0 +1,56 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+@import '../../../common/scss/placeholders/svg';
+
+.self {
+  display: flex;
+
+  .icon {
+    margin-right: 8px;
+  }
+
+  .job-url {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+.linkedin-button {
+  margin-left: auto;
+
+  //display: none;
+}
+
+.card-self {
+  .card-meta {
+    @include typography.helper-1;
+    color: var(--color-text-secondary);
+    display: flex;
+
+    .card-publish-date {
+      margin-left: 10px;
+    }
+  }
+
+  &.largeHeading {
+    .card-title {
+      @include typography.heading-3;
+
+      color: var(--color-text-primary);
+
+      a {
+        @include typography.heading-3;
+
+        color: var(--color-text-primary);
+
+        &:hover {
+          color: var(--color-primary-50);
+        }
+      }
+    }
+
+    .card-meta {
+      @include typography.body-2;
+    }
+  }
+}

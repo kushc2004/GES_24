@@ -1,0 +1,14 @@
+.active {
+  color: var(--color-bg-main);
+  background-color: var(--color-primary-50);
+}
+
+.failed {
+  color: var(--color-bg-main);
+  background-color: var(--color-neutral-40);
+}
+
+.completed {
+  color: var(--color-bg-main);
+  background-color: var(--color-positive-50);
+}

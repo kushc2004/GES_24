@@ -1,0 +1,42 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.errorLink {
+  @include typography.helper-1;
+  color: var(--color-negative-40);
+
+  &:hover {
+    color: var(--color-negative-50);
+    cursor: pointer;
+  }
+}
+
+.errorAlert {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  margin: 0 10px 10px;
+  padding: 10px 10px 10px 20px;
+  background-color: lighten($color-negative-30, 20%);
+
+  > span {
+    @include typography.subheader-2;
+    color: var(--color-negative-40);
+    margin-right: auto;
+  }
+
+  .alertIcon {
+    margin-right: 10px;
+  }
+
+  .hubSpotIcon {
+    @extend .alertIcon;
+    filter: invert(38%) sepia(74%) saturate(5481%) hue-rotate(353deg) brightness(105%) contrast(81%);
+
+    // ^ Converts black img icon to color-sun
+  }
+
+  .noMargin {
+    margin: 0;
+  }
+}

@@ -1,0 +1,8 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.tip {
+  @include typography.helper-1-medium;
+  color: var(--color-text-secondary);
+  line-height: 16px;
+}

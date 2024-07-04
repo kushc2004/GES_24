@@ -1,0 +1,178 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+@import '../../../common/scss/placeholders/svg';
+
+.card-explorer-item {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  overflow-y: hidden;
+
+  .title-container {
+    display: flex;
+    align-items: center;
+
+    .title-wrapper {
+      max-width: 90%;
+      line-height: 0;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+
+      i {
+        margin-top: 2px;
+      }
+    }
+
+    .title-link {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .title-text {
+      @include typography.heading-3;
+      text-transform: capitalize;
+      color: var(--color-text-primary);
+      max-width: 95%;
+    }
+
+    .title-icon {
+      margin-left: 5px;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .title-count {
+      background: var(--color-neutral-40);
+      color: white;
+      white-space: nowrap;
+      border-radius: var(--border-radius-8);
+      padding: 0 10px;
+      margin-left: 8px;
+      text-transform: lowercase;
+    }
+
+    .badDataFlagButton {
+      margin-left: 5px;
+    }
+
+    &.modalView {
+      padding: 10px 25px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    min-height: 20px;
+
+    > :not(:first-child) {
+      margin-left: 5px;
+    }
+
+    .settings-icon {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .see-all {
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .seeAllIcon {
+        margin-left: 6px;
+        font-size: 12px;
+        color: var(--color-primary-50);
+      }
+    }
+
+    .settingsNewButton {
+      margin-right: -10px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+  }
+
+  :global {
+    .zp-card-body {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--color-bg-main);
+    }
+  }
+}
+
+:global {
+  /* stylelint-disable-next-line apollo-stylelint-plugin/no-global-classes */
+  .modalView {
+    .seeAll {
+      @include typography.body-2-medium;
+
+      text-transform: none;
+    }
+  }
+}
+
+.cardBaseContent {
+  flex: 1;
+  max-height: 100%;
+
+  &.hasBottom {
+    max-height: calc(100% - 40px);
+    overflow-y: auto;
+  }
+
+  &.noBorderBottom {
+    :global {
+      .zp-list-view-item:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &.stableScrollGutter {
+    scrollbar-gutter: stable;
+  }
+}
+
+.compactHeader {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border-light);
+
+  .title-icon {
+    @include typography.body-1;
+  }
+}
+
+.bottomAction {
+  @include typography.body-2-medium;
+
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  color: var(--color-primary-50);
+  border-top: 1px solid var(--color-border-light);
+  cursor: pointer;
+}
+
+.bottomSeeAll {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip {
+  margin-top: -5px !important;
+}

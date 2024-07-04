@@ -1,0 +1,19 @@
+.container {
+  &.hasMarginBottom {
+    margin-bottom: 25px;
+  }
+
+  &.stylesForNewPage {
+    padding-top: 19px;
+    padding-bottom: 19px;
+    margin-bottom: 16px;
+  }
+}
+
+.rounded {
+  border-radius: var(--border-radius-4);
+}
+
+.noPadding {
+  padding: 0;
+}

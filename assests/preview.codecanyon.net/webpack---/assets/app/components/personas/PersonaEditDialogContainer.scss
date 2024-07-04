@@ -1,0 +1,145 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.formFieldStack {
+  min-height: 60px;
+  padding: 8px 20px 16px;
+  background-color: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.modalBody {
+  background-color: var(--color-bg-secondary);
+
+  .personasMarketingInfo {
+    margin-top: 0;
+    padding: 10px 20px 0;
+  }
+}
+
+.modalHeader {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.modalFooter {
+  justify-content: flex-end;
+  border-top: 1px solid var(--color-border-light);
+  padding: 10px;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .footerRight {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.content {
+  display: flex;
+  flex: 1;
+
+  .filters {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    height: 600px;
+    overflow-y: auto;
+    border-right: 1px solid var(--color-border-light);
+
+    .filtersToolTip {
+      @include typography.subheader-1;
+      color: var(--color-text-secondary);
+      margin-bottom: 14px;
+
+      .infoTooltip {
+        color: var(--color-primary-50);
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .previewContainer {
+    flex: 1;
+    overflow-y: auto;
+    background-color: var(--color-bg-main);
+  }
+}
+
+.filterWrapper {
+  margin-bottom: 8px;
+}
+
+.filterAccordion {
+  border-radius: var(--border-radius-2);
+
+  &:hover {
+    border: 1px solid var(--color-primary-50);
+  }
+}
+
+.completionTop {
+  background-color: var(--color-bg-main);
+  border-radius: var(--border-radius-4);
+
+  .ii {
+    height: 300px;
+  }
+
+  .confettiImage {
+    width: 100%;
+  }
+
+  .icon {
+    color: var(--color-positive-50);
+    font-size: 60px;
+    position: absolute;
+    top: 130px;
+    left: 45%;
+  }
+
+  .closeIcon {
+    position: absolute;
+    right: 10px;
+    padding: 20px;
+    top: 0;
+    cursor: pointer;
+  }
+
+  .heading {
+    @include typography.heading-1;
+    color: var(--color-text-primary);
+    text-align: center;
+  }
+
+  .noPersona {
+    margin-top: 180px;
+  }
+
+  .subText {
+    @include typography.body-2;
+    text-align: center;
+    color: var(--color-text-secondary);
+    margin-top: 8px;
+  }
+
+  .padding {
+    padding: 0 48px 32px;
+  }
+}
+
+.recommendedPersonaInfo {
+  background: var(--color-secondary-20);
+
+  padding: 13px;
+  height: 70px;
+
+  span {
+    vertical-align: super;
+  }
+}

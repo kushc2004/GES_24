@@ -1,0 +1,11 @@
+@import 'assets/common/scss/variables';
+
+.header {
+  border-bottom: none;
+  justify-content: flex-end;
+}
+
+.footer {
+  padding: 12px 20px;
+  justify-content: space-between;
+}

@@ -1,0 +1,73 @@
+@use 'typography';
+@import 'common/scss/variables';
+@import 'common/scss/mixins/elevation';
+
+.emptyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyContent {
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.emptyTitle {
+  @include typography.heading-3;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.emptyText {
+  @include typography.body-2;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.button {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.flexContainer {
+  display: flex;
+  width: 100%;
+  @media (max-width: $screen-md-max) {
+    display: block;
+  }
+
+  &.tableView {
+    padding: 0;
+    display: block;
+
+    .splitContainer {
+      padding: 0;
+      width: 100%;
+    }
+  }
+}
+
+.splitContainer {
+  width: 50%;
+  padding-right: 20px;
+
+  &:first-child:last-child {
+    width: 100%;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  @media (max-width: $screen-md-max) {
+    width: 100%;
+    padding-right: 0;
+  }
+}

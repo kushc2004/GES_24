@@ -1,0 +1,41 @@
+@import '../../../common/scss/variables';
+@import '../../../common/scss/mixins/_elevation';
+
+.right-side-actions {
+  display: flex;
+  align-items: center;
+
+  &.toolbar {
+    justify-content: flex-end;
+  }
+
+  &.table-view {
+    margin-left: auto;
+
+    > div {
+      display: flex;
+    }
+  }
+
+  span.separator {
+    border-left: 1px solid rgb(127 143 164 / 18%);
+    height: 21px;
+
+    &.margin {
+      margin-left: 7px;
+      margin-right: 12px;
+    }
+  }
+
+  .paginator {
+    flex: 1 1 0;
+    @media (max-width: $screen-md-max) {
+      display: none;
+    }
+  }
+}
+
+.dropdownButton {
+  width: auto;
+  margin: 0 0 0 12px;
+}

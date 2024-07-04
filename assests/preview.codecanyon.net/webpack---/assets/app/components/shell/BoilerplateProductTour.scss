@@ -1,0 +1,22 @@
+.tour {
+  box-shadow: var(--shadow-3);
+
+  [data-tour-elem='subheading'] {
+    //max-width: 280px;
+    max-width: 100%;
+  }
+
+  [data-tour-elem='controls'] {
+    justify-content: center;
+  }
+}
+
+.customControls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  button {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,9 @@
+@use 'mixins/text-overflow' as text-overflow;
+
+.sievePopup {
+  :global {
+    .Select-option {
+      @include text-overflow.ellipsis;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'assets/common/scss/variables';
+
+.link {
+  @include typography.body-2-medium;
+}
+
+.titleAndCompany {
+  @include typography.body-2-medium;
+  display: inline;
+  color: var(--color-text-secondary);
+
+  &.hideOverflow {
+    display: flex;
+    @include text-overflow.ellipsis;
+
+    .titleComponent {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .accountComponent {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}

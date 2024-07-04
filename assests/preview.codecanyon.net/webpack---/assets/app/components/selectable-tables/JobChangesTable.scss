@@ -1,0 +1,13 @@
+@import '../../../common/scss/variables';
+
+.empty-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .empty-state-text {
+    margin-top: 50px;
+    font-weight: $font-weight-semibold;
+    color: var(--color-text-secondary);
+  }
+}

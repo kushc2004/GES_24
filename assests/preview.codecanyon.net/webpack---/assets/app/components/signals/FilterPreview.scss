@@ -1,0 +1,43 @@
+@use 'typography';
+
+.filterModalityBadgeContainer {
+  @include typography.helper-1-medium;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-secondary);
+
+  > .whereText {
+    @include typography.body-2-medium;
+  }
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.filterContainer {
+  &:not(:last-child) {
+    margin-bottom: 14px;
+  }
+}
+
+.filterName {
+  @include typography.subheader-1;
+  margin-bottom: 4px;
+}
+
+.filterValuesContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+  .filterValue {
+    padding: 0 8px;
+    border-radius: var(--border-radius-2);
+    background: var(--color-ui-secondary);
+    margin-bottom: 4px;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+}

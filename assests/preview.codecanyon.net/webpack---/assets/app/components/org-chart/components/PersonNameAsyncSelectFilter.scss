@@ -1,0 +1,117 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.menuItemContainer {
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  position: relative;
+
+  #userAvatar {
+    @include typography.body-2;
+    min-width: 40px;
+    color: #735d1a;
+
+    & > div {
+      color: #735d1a !important;
+    }
+  }
+
+  .detailsWrapper {
+    display: flex;
+    flex-direction: column;
+
+    .personName {
+      @include typography.body-1;
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    .personTitleWrapper {
+      max-width: 305px;
+      min-width: 305px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4px;
+
+      .personTitle {
+        @include typography.body-3;
+        color: var(--color-text-secondary);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .locationAndDepartment {
+      @include typography.helper-1;
+      font-size: 10px;
+      color: var(--color-text-secondary);
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+
+      > span {
+        display: flex;
+        align-items: center;
+      }
+
+      i {
+        margin-right: 4px;
+
+        &:hover {
+          color: var(--color-icon-normal) !important;
+        }
+      }
+    }
+  }
+}
+
+.selectContainer {
+  width: 260px;
+}
+
+.selectControl {
+  border-radius: 20px !important;
+
+  & > i {
+    width: 15px;
+    height: 15px;
+    color: var(--color-text-placeholder) !important;
+  }
+}
+
+.selectPlaceholder {
+  padding-left: 10px !important;
+}
+
+.selectDropdownMenu {
+  width: 387px !important;
+}
+
+.idPageLink {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  text-decoration: none !important;
+  color: var(--color-text-body);
+
+  i {
+    display: none;
+  }
+
+  &:hover {
+    .personName {
+      padding-right: 4px;
+      text-decoration: underline !important;
+      color: var(--color-text-header);
+    }
+
+    i {
+      display: block;
+    }
+  }
+}

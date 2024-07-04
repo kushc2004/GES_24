@@ -1,0 +1,67 @@
+@use 'typography';
+@import 'common/scss/variables';
+@import 'common/scss/mixins/elevation';
+
+.statusCard {
+  margin-bottom: 20px;
+}
+
+.statusContainer {
+  padding: 8px 0;
+}
+
+.listView {
+  color: var(--color-text-primary);
+  width: 100%;
+}
+
+.emptyState {
+  padding-bottom: 95px;
+
+  hr {
+    margin: 48px 0;
+    border-color: var(--color-border-light);
+  }
+}
+
+.emptyStateImage {
+  height: 70px !important;
+  padding-bottom: 0 !important;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.emptyStateContent {
+  text-align: center;
+
+  img {
+    display: block;
+    margin: 23px auto 40px;
+
+    width: 90%;
+    max-width: 380px;
+    height: auto;
+  }
+
+  h3 {
+    @include typography.heading-3;
+  }
+
+  p {
+    @include typography.body-2;
+
+    max-width: 300px;
+    margin: 6px auto 20px;
+  }
+}
+
+.emptyStateEducation {
+  --description-margin: 0 auto 24px;
+  --description-max-width: 300px;
+  --buttons-max-width: calc((249px * 2) + var(--buttons-gap));
+
+  text-align: center;
+}

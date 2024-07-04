@@ -1,0 +1,50 @@
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.highlighted {
+  background-color: var(--color-positive-50);
+  color: var(--color-text-reversed);
+  text-align: center;
+  min-height: 35px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+
+  &.failed {
+    background-color: var(--color-negative-40);
+  }
+
+  .failedMessageWrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 130%;
+  }
+}
+
+.not-sent-banner {
+  display: flex;
+  width: 100%;
+  padding-left: 8px;
+
+  .fail-reason {
+    margin-left: 8px;
+  }
+}
+
+.due-at {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-text-reversed);
+  @include typography.body-2-medium;
+
+  :global(.zp-icon) {
+    position: relative;
+    top: 1px;
+    color: var(--color-icon-inverted) !important;
+    @include typography.body-2;
+  }
+}

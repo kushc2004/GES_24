@@ -1,0 +1,6 @@
+@import 'assets/common/scss/variables';
+
+.control {
+  filter: drop-shadow($box-shadow-medium);
+  border: none;
+}

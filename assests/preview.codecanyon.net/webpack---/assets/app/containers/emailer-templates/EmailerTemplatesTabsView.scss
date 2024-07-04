@@ -1,0 +1,129 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/text-overflow';
+
+.tabsWrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  flex-direction: column;
+
+  .tabs {
+    border-bottom: 1px solid var(--color-border-normal);
+
+    & > * {
+      flex: 0 !important;
+      padding-inline: 12px !important;
+      margin-bottom: -1px;
+    }
+  }
+
+  .tabContent {
+    flex: 1 1 0;
+    overflow: hidden;
+
+    & > :first-child {
+      height: 100%;
+    }
+  }
+
+  .emptyMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include typography.body-2-medium;
+    color: var(--color-text-secondary);
+  }
+}
+
+.list[data-list] {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  [data-list-item] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    box-sizing: content-box;
+    max-height: 97px;
+    padding: 12px 16px;
+    cursor: pointer;
+
+    .titleContainer {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &:hover {
+      background-color: var(--color-bg-secondary);
+
+      .btns {
+        display: flex;
+
+        button {
+          display: block;
+
+          i {
+            height: 18px;
+          }
+        }
+      }
+
+      [data-list-title] {
+        color: var(--color-primary-50);
+      }
+
+      [data-list-title] {
+        color: var(--color-primary-50);
+      }
+    }
+
+    [data-list-title] {
+      @include text-overflow-ellipsis;
+      @include typography.subheader-1;
+      color: var(--color-text-primary);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    [data-list-sub-title] {
+      @include typography.subheader-2;
+      @include text-overflow-ellipsis;
+      color: var(--color-text-secondary);
+    }
+
+    [data-list-body] {
+      @include typography.helper-1;
+      color: var(--color-text-secondary);
+
+      @include line-clamp(2);
+    }
+
+    button:hover {
+      background-color: var(--color-neutral-20);
+      border: 1px solid var(--color-border-light);
+    }
+  }
+}
+
+.btns {
+  width: 56px;
+  height: 24px;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: inherit;
+
+  button {
+    display: none;
+  }
+}
+
+.starred {
+  i {
+    color: var(--color-primary-50) !important;
+  }
+}

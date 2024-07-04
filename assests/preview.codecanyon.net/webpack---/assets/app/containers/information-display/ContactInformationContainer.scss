@@ -1,0 +1,163 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+@import 'assets/common/scss/variables';
+@import 'assets/common/scss/mixins/elevation';
+
+.item {
+  margin: 0 0 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .showOnHover {
+    display: none;
+  }
+
+  &:hover {
+    .showOnHover {
+      display: inline-block;
+    }
+
+    .removeOnHover {
+      display: none;
+    }
+  }
+}
+
+.fieldContainer {
+  display: flex;
+  align-items: center;
+
+  :global {
+    .zp-info-row {
+      width: 100%;
+    }
+
+    .zp-info-row-value {
+      width: 100%;
+    }
+
+    .zp-contact-email-envelope-container {
+      @include text-overflow.ellipsis;
+    }
+  }
+}
+
+.status {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: 50%;
+  color: var(--color-text-secondary);
+}
+
+.label {
+  width: calc(100% - 40px);
+  display: flex;
+
+  & > * {
+    max-width: 100%;
+  }
+}
+
+.text {
+  @include typography.body-2-medium;
+  @include text-overflow.ellipsis;
+  color: var(--color-text-secondary);
+}
+
+.link {
+  @include typography.body-2-medium;
+}
+
+.email {
+  @include typography.body-2-medium;
+  color: var(--color-primary-50);
+}
+
+.flexField {
+  flex: 1;
+
+  input {
+    width: 100%;
+  }
+}
+
+.popover {
+  width: 300px;
+  box-shadow: var(--shadow-3);
+}
+
+.addDetailContainer {
+  padding: 8px 12px;
+}
+
+.addDetail {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
+}
+
+.addDetailFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--color-bg-secondary);
+  width: 100%;
+  padding: 8px 12px;
+  border-top: 1px solid var(--color-border-normal);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.addPhoneNumberWrapper {
+  margin: 0 0 0 -10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  z-index: 200;
+}
+
+.contactInformationContainer {
+  padding: 16px 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  .phoneNumbersList {
+    padding-bottom: 10px;
+
+    &:first-child:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--color-neutral-20);
+  margin: 2px 0 12px;
+}
+
+.flaggedContainer {
+  background-color: var(--color-negative-10);
+  border-radius: var(--border-radius-4);
+
+  .status {
+    background-color: var(--color-negative-10);
+    color: var(--color-text-secondary);
+  }
+}
+
+.ds2Class {
+  padding: 0;
+}

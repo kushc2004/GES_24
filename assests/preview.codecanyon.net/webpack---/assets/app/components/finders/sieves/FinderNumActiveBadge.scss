@@ -1,0 +1,50 @@
+@import '../../../../common/scss/variables';
+
+.self {
+  border-radius: 26px !important;
+  margin-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  min-width: 43px;
+  height: 20px !important;
+  box-shadow: none !important;
+
+  &:hover {
+    .numActive {
+      color: var(--color-primary-50);
+    }
+
+    :global {
+      .zp-icon {
+        color: var(--color-primary-50) !important;
+      }
+    }
+  }
+
+  &:active {
+    .numActive {
+      color: var(--color-text-links);
+    }
+
+    :global {
+      .zp-icon {
+        color: var(--color-primary-60) !important;
+      }
+    }
+  }
+
+  :global {
+    .zp-icon {
+      font-size: 16px !important;
+      color: var(--color-icon-normal) !important;
+    }
+  }
+}
+
+.numActive {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 14px;
+  color: var(--color-text-secondary);
+}

@@ -1,0 +1,40 @@
+@import 'assets/common/scss/variables';
+
+.cardContainer {
+  margin-bottom: 16px;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.padded {
+  padding: 20px 16px 25px 10px;
+
+  @media (max-width: $screen-sm-max) {
+    padding: 20px 16px 25px;
+  }
+}
+
+.newTableSidebar {
+  padding: 20px 0 0;
+
+  .cardContainer {
+    margin: 0;
+    padding: 0 16px 16px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &.cardTableView {
+    .cardContainer {
+      padding: 0 0 25px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

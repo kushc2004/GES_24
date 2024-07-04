@@ -1,0 +1,9 @@
+@use 'typography';
+
+.contactName {
+  @include typography.subheader-1;
+}
+
+.links {
+  line-height: unset !important;
+}

@@ -1,0 +1,32 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.mailwarmingStatus {
+  display: flex;
+  padding: 16px;
+  gap: 8px;
+  border-radius: var(--border-radius-4);
+  background-color: var(--color-bg-secondary);
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .statusIcon {
+    &:global(.apollo-icon) {
+      font-size: 24px;
+    }
+    font-size: 24px !important;
+  }
+
+  .statusName {
+    @include typography.subheader-1;
+    color: var(--color-text-primary);
+  }
+
+  .statusDescription {
+    @include typography.helper-1;
+  }
+}

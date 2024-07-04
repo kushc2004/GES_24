@@ -1,0 +1,42 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.modal {
+  .modalBody {
+    background-color: var(--color-bg-main);
+
+    .bodyHeader {
+      .bodyTitle,
+      .bodySubtitle,
+      .error {
+        margin: 0;
+        padding: 0;
+      }
+
+      .bodyTitle {
+        @include typography.body-2;
+        color: var(--color-text-primary);
+      }
+
+      .bodySubtitle {
+        @include typography.helper-1;
+        color: var(--color-text-secondary);
+      }
+
+      .error {
+        @include typography.helper-1;
+        color: var(--color-negative-40);
+      }
+    }
+  }
+
+  .modalFooter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .goBackBtn {
+      margin-right: auto;
+    }
+  }
+}

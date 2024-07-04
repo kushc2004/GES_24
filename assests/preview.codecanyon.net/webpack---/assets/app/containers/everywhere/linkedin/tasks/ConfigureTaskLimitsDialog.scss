@@ -1,0 +1,31 @@
+@use 'typography';
+
+.modal {
+  .body {
+    background-color: var(--color-bg-secondary);
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    .limits {
+      display: flex;
+      flex-direction: column;
+
+      .header {
+        @include typography.subheader-1;
+      }
+    }
+
+    .fieldContainer {
+      display: flex;
+      gap: 12px;
+
+      label {
+        margin-top: 8px;
+      }
+    }
+  }
+}

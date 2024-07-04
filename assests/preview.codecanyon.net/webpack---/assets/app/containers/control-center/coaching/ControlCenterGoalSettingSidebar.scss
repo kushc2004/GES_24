@@ -1,0 +1,423 @@
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+$padding: 16px;
+$form-offset: 12px;
+$width-small: 100px;
+$form-height: 135px;
+
+.leftSidebar {
+  height: 100vh;
+  padding: $padding $padding 0;
+}
+
+.body {
+  box-shadow: $box-shadow-medium;
+  background: var(--color-bg-main);
+}
+
+.formBlock,
+.panelBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 0px;
+}
+
+.formBlock {
+  height: calc(100vh - $form-height);
+  padding: 20px $padding 0px;
+  border-bottom: 1px solid var(--color-border-light);
+  border-top: 1px solid var(--color-border-light);
+  overflow-y: auto;
+
+  :global(.zp-field) > label,
+  :global(.input-container) {
+    @include typography.subheader-1;
+    line-height: 21px;
+  }
+}
+
+.panel {
+  border-radius: var(--border-radius-4);
+  box-shadow: $box-shadow-medium;
+}
+
+.panelContent {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  display: flex;
+  gap: 3px;
+  @include typography.heading-2;
+  color: var(--color-text-header);
+  align-items: center;
+}
+
+.warningIcon {
+  font-size: 24px;
+  color: var(--color-text-caution);
+}
+
+.banner {
+  @include typography.body-2;
+  display: flex;
+  padding: 10px 16px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-radius: var(--border-radius-4);
+  background: var(--color-neutral-30);
+  margin-bottom: 20px;
+  cursor: default;
+}
+
+.leftBanner {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.bannerIcon {
+  color: var(--color-primary-60);
+}
+
+.closeButton {
+  :global {
+    .zp-icon {
+      --button-icon-color: var(--color-icon-light);
+    }
+  }
+}
+
+.refreshContainer {
+  display: flex;
+  gap: 3px;
+  padding-left: 8px;
+  @include typography.body-2;
+}
+
+.refreshIcon {
+  font-size: 18px;
+  color: var(--color-ui-primary);
+}
+
+.subtitle {
+  @include typography.heading-3;
+  line-height: 22px;
+  color: var(--color-text-header);
+  align-items: center;
+}
+
+.subtitleBox {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.panelTitle {
+  display: flex;
+  justify-content: left;
+}
+
+.infoIcon {
+  font-size: 24px;
+  height: 24px;
+  color: var(--color-text-header);
+}
+
+.infoContainer {
+  padding-left: 8px;
+  display: flex;
+  align-self: flex-end;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  background: var(--color-bg-main);
+  box-shadow: var(--shadow-1);
+  width: 96.5%;
+  margin-bottom: 16px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.editGoalFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.setGoalFooter {
+  justify-content: right;
+}
+
+.footerButtons {
+  gap: 6px;
+  padding: 12px 24px 0;
+}
+
+.action,
+.nextAction {
+  display: flex;
+  justify-content: right;
+  border-radius: var(--border-radius-4);
+
+  > button {
+    gap: 6px;
+    height: 32px;
+    margin-bottom: 12px;
+  }
+}
+
+.nextButton {
+  > button {
+    width: 57px;
+  }
+}
+
+.updateButton {
+  > button {
+    width: 73px;
+  }
+}
+
+.nextAction {
+  padding-bottom: 0px;
+  padding-top: 20px;
+  justify-content: left;
+  padding-left: 0;
+  margin: 0px;
+
+  > button {
+    margin-bottom: 0px;
+  }
+}
+
+.arrowIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.fieldRow {
+  display: flex;
+}
+
+.goalDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.goalName {
+  width: 700px;
+}
+
+.userList,
+.cadence {
+  padding-right: $padding;
+}
+
+.userList {
+  width: 400px;
+}
+
+.cadence {
+  width: 200px;
+}
+
+.goal {
+  padding-top: 4px;
+  padding-bottom: 24px;
+  margin-bottom: 0;
+}
+
+.meetingSetText {
+  padding-top: 2px;
+  @include typography.body-2;
+  line-height: 21px;
+  color: var(--color-text-body);
+}
+
+.lastGoal {
+  padding-bottom: 20px;
+}
+
+.meetingSet,
+.emails {
+  padding-top: 4px;
+  width: 300px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: row;
+}
+
+.fieldLabel {
+  :global(.zp-field) > label,
+  :global(.input-container) {
+    @include typography.body-2-medium;
+    color: var(--color-text-secondary);
+  }
+}
+
+.fieldLabelDisabled {
+  color: var(--color-neutral-40) !important;
+}
+
+.progressLabel {
+  @include typography.body-2;
+}
+
+.emailStatTitleContainer {
+  display: flex;
+  gap: 25px;
+}
+
+.metricField {
+  display: flex;
+  padding-bottom: 12px;
+  gap: 80px;
+}
+
+.stackedItem {
+  margin-bottom: 0px;
+}
+
+.stats {
+  :global(.zp-field) > label {
+    @include typography.body-1;
+    color: var(--color-text-header);
+    width: 250px;
+    margin-right: 67px;
+  }
+
+  :last-child {
+    padding-bottom: 0px;
+  }
+
+  :global(.input-container) {
+    width: 100px;
+  }
+}
+
+.message {
+  @include typography.body-2-medium;
+  line-height: 35px;
+  color: var(--color-text-secondary);
+}
+
+.detail {
+  background-color: var(--color-neutral-30);
+  padding: 5px 7px;
+  border-radius: var(--border-radius-2);
+}
+
+.goalTipText {
+  display: flex;
+}
+
+.goalInfoText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  @include typography.body-2;
+  color: var(--color-text-body);
+}
+
+.progressNotification,
+.historicalDataContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.historicalDataContainer {
+  padding-top: 4px;
+}
+
+.historicalDataText {
+  @include typography.body-2;
+
+  .data {
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.benchmarksLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 20px;
+  color: var(--color-text-body);
+  @include typography.body-2;
+}
+
+.benchmarkToggle {
+  padding: 8px;
+}
+
+.benchmarksHeader {
+  @include typography.body-1-medium;
+  display: flex;
+  gap: 44px;
+  padding-left: 182px;
+  padding-bottom: 8px;
+}
+
+.benchmarksFooter {
+  @include typography.body-3;
+  padding-top: 20px;
+}
+
+.benchmarksStatsLabel {
+  @include typography.body-1;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.historicValue {
+  text-align: center;
+  width: 40px;
+}
+
+.para {
+  margin: 0px;
+}
+
+.intervalDropdown {
+  &.small {
+    width: $width-small;
+    height: 30px;
+    padding: 4.5px 8px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.menuItemSmall {
+  width: $width-small;
+}

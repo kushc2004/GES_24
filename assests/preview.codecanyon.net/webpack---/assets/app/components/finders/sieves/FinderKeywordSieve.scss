@@ -1,0 +1,66 @@
+@use 'typography';
+@import '../../../../common/scss/variables';
+@import './FinderFilterHelpers';
+
+.advanced-options {
+  .topText {
+    @include typography.body-2-medium;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    color: var(--color-text-secondary);
+  }
+
+  .tooltipQuestionMark {
+    display: inline-block;
+  }
+}
+
+.advancedOptionsLink {
+  & > div:first-child {
+    margin-top: 2px;
+    padding: 0;
+  }
+}
+
+.checkbox {
+  margin-bottom: 8px;
+
+  &.checkboxContainer {
+    margin-bottom: 4px;
+  }
+
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.noInputMargin {
+  margin: 0 !important;
+}
+
+.infoIcon {
+  margin-left: 5px;
+  font-size: 18px;
+  color: var(--color-neutral-40);
+}
+
+.infoTooltip {
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  max-width: 260px;
+}
+
+.extraToggle {
+  @include typography.body-2-medium;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.info {
+  @include typography.helper-1;
+  color: var(--color-text-secondary);
+}

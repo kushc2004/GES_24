@@ -1,0 +1,91 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+
+.option {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+
+.option-name {
+  @include typography.helper-1-medium;
+  color: var(--color-text-primary);
+}
+
+.optionWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.option-number {
+  @include typography.helper-1;
+  color: var(--color-text-secondary);
+}
+
+:global {
+  /* stylelint-disable-next-line apollo-stylelint-plugin/no-global-classes */
+  .zp .Select-option.is-focused {
+    :local {
+      .option-name {
+        color: white;
+      }
+
+      .option-number {
+        color: var(--color-primary-40);
+      }
+    }
+  }
+}
+
+.labelContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  :global {
+    .Select-clear {
+      margin-left: 8px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.dropDownMenuItemWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: var(--color-bg-main);
+  position: relative;
+  width: 100%;
+  padding: 5px 10px;
+
+  &:hover {
+    background-color: var(--color-bg-secondary);
+
+    .menuItemRemoveBtn {
+      display: flex;
+      margin-right: 16px;
+      height: 24px;
+      width: 34px !important;
+    }
+  }
+
+  .menuName {
+    @include typography.subheader-1;
+    color: var(--color-text-primary);
+  }
+
+  .menuEmail {
+    @include typography.helper-1;
+    color: var(--color-text-secondary);
+  }
+
+  .menuItemRemoveBtn {
+    position: absolute;
+    right: 0;
+    display: none;
+    padding: 12px 7px;
+  }
+}

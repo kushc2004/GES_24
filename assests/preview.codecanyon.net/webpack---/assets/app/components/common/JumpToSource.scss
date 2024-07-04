@@ -1,0 +1,38 @@
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+.sourceInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  position: fixed;
+  z-index: 2147483647;
+  background-color: black;
+  border: 1px solid lightgray;
+  border-radius: var(--border-radius-4);
+  box-shadow: var(--shadow-3);
+  color: lightgray;
+  padding: 8px;
+  pointer-events: none;
+  @include typography.body-2;
+}
+
+.sourceElementType {
+  @include typography.subheader-1;
+  color: lightsalmon;
+}
+
+.sourceLocation {
+  @include typography.helper-1;
+}
+
+.highlight {
+  position: fixed;
+  z-index: 2147483647;
+  opacity: 0.2;
+  background-color: greenyellow;
+  border: 1px dashed black;
+  pointer-events: none;
+}

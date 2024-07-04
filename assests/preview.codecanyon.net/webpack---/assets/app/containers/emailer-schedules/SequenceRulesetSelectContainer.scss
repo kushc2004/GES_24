@@ -1,0 +1,13 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.tipText {
+  @include typography.helper-1;
+
+  color: var(--color-text-secondary);
+
+  :global(.zp-link) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}

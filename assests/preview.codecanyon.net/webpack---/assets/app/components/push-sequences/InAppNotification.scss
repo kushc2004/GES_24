@@ -1,0 +1,73 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+
+.modal {
+  isolation: isolate;
+  min-height: 411px;
+  max-width: 738px !important;
+}
+
+.header {
+  border-bottom: none;
+  padding-bottom: 11px;
+  align-self: end;
+  background-color: transparent;
+}
+
+.title {
+  @include typography.heading-0;
+  white-space: pre-line;
+  line-height: 40px;
+  color: var(--color-text-primary);
+  margin-left: 40px;
+}
+
+.titleIcon {
+  color: var(--color-positive-50);
+  display: inline;
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+.body {
+  @include typography.body-1;
+  white-space: break-spaces;
+  z-index: -2;
+  padding: 0;
+  margin-top: 16px;
+  margin-left: 40px;
+}
+
+.description {
+  @include typography.body-2;
+}
+
+.subDescription {
+  @include typography.body-2-medium;
+}
+
+.button {
+  margin-top: 24px;
+  margin-left: 40px;
+  width: max-content !important;
+}
+
+.vector {
+  right: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+.dots {
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  position: absolute;
+}
+
+.illustration {
+  right: 15px;
+  z-index: 1;
+  position: absolute;
+  padding-top: 60px;
+}

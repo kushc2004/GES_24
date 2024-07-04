@@ -1,0 +1,177 @@
+@use 'typography';
+@import '../../../../common/scss/variables';
+@import './FinderFilterHelpers';
+
+.toggle-engagement-filters-link {
+  @include typography.heading-3;
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 10px;
+
+  .engagement-toggle-icon {
+    margin-left: auto;
+  }
+}
+
+.toggle label {
+  font-weight: 500 !important;
+}
+
+.manage-link-and-icon {
+  display: flex;
+  align-items: stretch;
+  align-content: center;
+  cursor: pointer;
+
+  &:hover .settings-icon,
+  &:hover .manage-link {
+    color: var(--color-primary-60) !important;
+  }
+
+  &:active .settings-icon,
+  &:active .manage-link {
+    color: var(--color-primary-70) !important;
+  }
+}
+
+.settings-icon {
+  margin-right: 3px;
+  cursor: pointer;
+  color: var(--color-primary-50);
+
+  &:hover {
+    color: var(--color-primary-60);
+  }
+
+  &:active {
+    color: var(--color-primary-70);
+  }
+}
+
+.manage-icon {
+  display: flex;
+  align-items: center;
+}
+
+.manage-link {
+  display: flex;
+  align-items: center;
+}
+
+.manage-link a {
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.no-result {
+  // overwrite the default margin top/bottom of 100. Top necessary to counteract the padding bottom on text
+  margin-top: 0px !important;
+  margin-bottom: 0 !important;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0 !important;
+
+    > img {
+      max-width: 100%;
+    }
+  }
+}
+
+.emptyStateHeader {
+  @include typography.body-2-bold;
+  color: var(--color-text-primary);
+  margin: 12px 0 4px;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.emptyStateCopy {
+  @include typography.body-2;
+  margin: 4px 0;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.emptyStateButton {
+  margin-top: 16px;
+}
+
+.popoverContainer {
+  background-color: var(--color-bg-main) !important;
+  color: black !important;
+  width: 320px;
+  max-height: 500px;
+  overflow-y: overlay;
+
+  :global {
+    .popover-content {
+      padding: 10px;
+      margin-top: 0;
+    }
+
+    .zp-link {
+      text-decoration: underline;
+    }
+  }
+
+  .cannotEditTerritory {
+    background-color: var(--color-ui-electric-blue-10);
+    @include typography.helper-1;
+    color: var(--color-text-primary);
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius-4);
+  }
+
+  .filterTitle {
+    @include typography.body-2-bold;
+    color: var(--color-text-primary);
+  }
+
+  .filterContainer {
+    border: 1px solid #e8eef4;
+    border-radius: var(--border-radius-2);
+    padding: 12px;
+
+    &.exludedFiltersContainer {
+      margin-top: 8px;
+    }
+  }
+
+  .territoryList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    > span {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      row-gap: 5px;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .breadcrumbLabel {
+      margin-right: 10px;
+    }
+  }
+}
+
+:global(.territoriesFilter) {
+  .zp-badge {
+    .apollo-icon-info-circle {
+      padding: 2px 2px 0 4px;
+      margin-left: 4px;
+      font-size: 12px !important;
+      line-height: 1;
+      margin-right: -5px;
+      display: block !important;
+    }
+  }
+}

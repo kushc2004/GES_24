@@ -1,0 +1,16 @@
+.icon {
+  cursor: pointer;
+  min-height: unset !important;
+  height: unset !important;
+  padding: 0 !important;
+  margin: 0;
+
+  svg {
+    display: block;
+  }
+}
+
+.newIcon {
+  height: 8px !important;
+  cursor: pointer;
+}

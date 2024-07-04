@@ -1,0 +1,14 @@
+@import '../../../common/scss/variables';
+
+.current-title {
+  color: var(--color-text-secondary);
+  font-weight: $font-weight-semibold;
+}
+
+.current-subtitle {
+  margin-left: 4px;
+}
+
+.select-box {
+  margin-top: 8px;
+}

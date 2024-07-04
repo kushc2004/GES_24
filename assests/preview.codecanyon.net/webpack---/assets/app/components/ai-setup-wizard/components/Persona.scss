@@ -1,0 +1,40 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+
+@import 'variables';
+
+.persona {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--color-bg-main);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-4);
+
+  &[data-variant='compact'] {
+    padding: 4px 6px 4px 16px;
+
+    .name {
+      @include typography.helper-1-medium;
+    }
+  }
+
+  &[data-variant='comfortable'] {
+    padding: 16px;
+
+    .name {
+      @include typography.body-2-medium;
+    }
+  }
+
+  .name {
+    @include text-overflow.ellipsis;
+    color: var(--color-text-header);
+  }
+
+  .actions {
+    display: flex;
+    gap: 8px;
+  }
+}

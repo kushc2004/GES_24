@@ -1,0 +1,44 @@
+@use 'typography';
+
+.message {
+  display: flex;
+  transition: 0.2s width, 0.2s height;
+
+  --bubble-color: var(--color-primary-70);
+}
+
+.bubble {
+  position: relative;
+  margin-left: 18px;
+  border-radius: var(--border-radius-16);
+  padding: 16px;
+  @include typography.body-2;
+  color: var(--color-text-reversed);
+  max-width: 360px;
+  background-color: var(--bubble-color);
+
+  .tail {
+    position: absolute;
+    bottom: 0;
+    left: -7.5px;
+
+    .tailPath {
+      fill: var(--bubble-color);
+    }
+  }
+
+  .dashes {
+    position: absolute;
+    left: -25px;
+    top: -25px;
+  }
+
+  a {
+    color: white;
+    border-bottom: 1px solid white;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+}

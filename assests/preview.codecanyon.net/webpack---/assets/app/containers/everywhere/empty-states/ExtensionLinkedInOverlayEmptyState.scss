@@ -1,0 +1,31 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.linkedinSearch {
+  background-image: url(chrome-extension/assets/img/empty-states/linkedin_search.svg);
+  background-repeat: no-repeat;
+  height: 110px;
+  width: 160px;
+}
+
+.heading {
+  @include typography.heading-1;
+  margin-top: 30px;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.subheading {
+  @include typography.body-2;
+  margin-top: 10px;
+  padding: 0 40px;
+  text-align: center;
+}

@@ -1,0 +1,61 @@
+@use 'typography';
+
+@import '../../../common/scss/variables';
+
+.self {
+  background-color: var(--color-bg-secondary);
+
+  &.white {
+    background-color: var(--color-bg-main);
+  }
+
+  &.logActivityTabPadding {
+    padding-top: 20px;
+  }
+
+  :global {
+    .noResults {
+      padding: 5px 25px 25px;
+      text-align: center;
+    }
+  }
+}
+
+.card-snow-dark {
+  background-color: var(--color-neutral-20);
+
+  :global {
+    .zp-card-body {
+      background-color: var(--color-neutral-20);
+    }
+  }
+}
+
+.card-header-white,
+.tabs {
+  background-color: white;
+}
+
+.activityCardBase {
+  .tabs {
+    position: relative;
+    box-shadow: none;
+    border-bottom: 1px solid var(--color-border-light);
+
+    .tabItem {
+      :global {
+        .zp-icon {
+          @include typography.body-2;
+        }
+      }
+    }
+  }
+}
+
+.cardWrapper {
+  height: 100%;
+
+  .showActivitiesButton {
+    margin-right: -12px;
+  }
+}

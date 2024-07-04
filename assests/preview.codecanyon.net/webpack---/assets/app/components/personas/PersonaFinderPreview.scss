@@ -1,0 +1,92 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.previewContainer {
+  overflow-y: auto;
+
+  .recordsFoundContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: var(--color-bg-main);
+
+    .heading {
+      @include typography.subheader-1;
+      color: var(--color-text-body);
+    }
+
+    .recordsFoundText {
+      @include typography.body-2-medium;
+      color: var(--color-text-secondary);
+    }
+  }
+
+  .pager {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: flex-end;
+    padding: 8px 16px;
+    width: 100%;
+    background-color: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border-normal);
+  }
+
+  .listContainer {
+    border-top: 1px solid var(--color-border-light);
+    margin-bottom: 0;
+  }
+
+  .noRecord {
+    font-weight: $font-weight-semibold;
+    color: var(--color-text-labels);
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.filterPreview {
+  max-height: 600px;
+  overflow-y: scroll;
+}
+
+.previewDiv {
+  width: 100%;
+}
+
+@media (max-width: $screen-lg-min) {
+  .previewContainer {
+    display: flex;
+
+    .filterPreview {
+      flex: 0 0 250px;
+      overflow-y: scroll;
+    }
+  }
+}
+
+.noRecordFound {
+  display: flex;
+  padding: 10px 20px;
+  color: var(--color-text-secondary);
+  @include typography.body-2-medium;
+
+  .arrowLeft {
+    color: var(--color-neutral-40) !important;
+    margin-right: 4px;
+  }
+}
+
+.resultsCountWithIcon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  @include typography.body-2-medium;
+  color: var(--color-icon-hover);
+}
+
+.iconClassses {
+  color: var(--color-text-body);
+}

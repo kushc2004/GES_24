@@ -1,0 +1,63 @@
+@use 'typography';
+
+.flagButton {
+  background-color: var(--color-neutral-40);
+
+  &:hover,
+  &:active {
+    background-color: var(--color-neutral-40);
+  }
+
+  i {
+    color: var(--color-icon-hover) !important;
+  }
+
+  &.flagged {
+    i {
+      color: var(--color-negative-40) !important;
+    }
+  }
+}
+
+.heading {
+  &:not(:first-child) {
+    margin-top: 28px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  margin-bottom: 8px;
+
+  color: var(--color-text-header);
+
+  :nth-child(1) {
+    @include typography.subheader-2;
+  }
+
+  :nth-child(2) {
+    @include typography.subheader-2;
+    color: var(--color-neutral-60);
+  }
+}
+
+.modalBody {
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border-light);
+  max-height: 640px;
+  overflow-y: scroll;
+}
+
+.modalFooter {
+  flex-direction: row-reverse !important;
+
+  button {
+    margin-right: 10px;
+
+    &:first-child {
+      margin-right: 0px !important; // remove margin-right from submit button
+    }
+  }
+}
+
+.followupQuestionContainer {
+  margin-left: 24px;
+}

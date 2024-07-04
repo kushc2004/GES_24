@@ -1,0 +1,20 @@
+@use 'typography';
+
+.contactSelect {
+  width: 100%;
+}
+
+.contactSelectContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+
+  :global(.Select) {
+    margin-bottom: 0 !important;
+  }
+}
+
+.contactPreviewMessage {
+  @include typography.body-2;
+  color: var(--color-text-secondary);
+}

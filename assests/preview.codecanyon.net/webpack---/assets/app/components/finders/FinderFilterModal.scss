@@ -1,0 +1,43 @@
+@use 'typography';
+@import '../../../common/scss/variables';
+@import '../../../common/scss/mixins/elevation';
+
+.shadow {
+  box-shadow: var(--shadow-2);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: space-between;
+
+  :global {
+    .zp-button {
+      margin: 0 10px;
+    }
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+  }
+
+  .filter {
+    display: flex;
+    align-items: center;
+
+    .totalEntries {
+      @include typography.subheader-2;
+      color: var(--color-text-secondary);
+    }
+  }
+}
+
+.modalBody {
+  flex: auto;
+  display: flex;
+  padding: 0;
+}

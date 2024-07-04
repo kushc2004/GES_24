@@ -1,0 +1,10 @@
+@import '../../../../common/scss/variables';
+
+.no-results-message {
+  margin-top: 23px;
+  margin-bottom: 0;
+}
+
+.accordion {
+  --accordion-icon-color: var(--color-icon-normal);
+}

@@ -1,0 +1,414 @@
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+@import 'assets/common/scss/mixins/clear-all';
+
+.avatar {
+  margin-right: 10px;
+}
+
+:not(.has-right-sidebar) .avatar {
+  @media (max-width: $screen-md-max) {
+    display: none;
+  }
+}
+
+.has-right-sidebar .avatar {
+  @media (max-width: $screen-md-max + $screen-extension-sidebar) {
+    display: none;
+  }
+}
+
+.person-name {
+  @include typography.body-1-medium;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--color-text-links);
+  line-height: 15px;
+
+  &.condensed-name {
+    width: 150px;
+  }
+
+  > span {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.prospect-title-text {
+  @include typography.body-2;
+  color: var(--color-text-labels);
+  padding-top: 6px;
+}
+
+.titlename {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.titlename-badge {
+  margin-right: 7px;
+}
+
+.engagement-graph-alignment {
+  display: flex;
+  width: 144px;
+}
+
+:not(.has-right-sidebar) .engagement-graph-alignment {
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.has-right-sidebar .engagement-graph-alignment {
+  @media (max-width: $screen-sm-max + $screen-extension-sidebar) {
+    display: none;
+  }
+}
+
+.badge-location {
+  display: flex;
+}
+
+:not(.has-right-sidebar) .badge-location {
+  @media (max-width: $screen-sm-min) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.has-right-sidebar .badge-location {
+  @media (max-width: $screen-sm-min + $screen-extension-sidebar) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.owner-avatar-alignment {
+  display: flex;
+  width: 45px;
+}
+
+:not(.has-right-sidebar) .owner-avatar-alignment {
+  @media (max-width: $screen-sm-min) {
+    display: none;
+  }
+}
+
+.has-right-sidebar .owner-avatar-alignment {
+  @media (max-width: $screen-sm-min + $screen-extension-sidebar) {
+    display: none;
+  }
+}
+
+.empty-user-icon {
+  margin-left: 10px;
+}
+
+.person-location {
+  @include typography.helper-1;
+  line-height: 12px;
+  padding-top: 2px;
+  color: var(--color-text-labels);
+  display: inline-block;
+
+  &.prospect-mode {
+    font-weight: 400;
+  }
+}
+
+.prospectRightSide {
+  display: flex;
+  align-items: center;
+}
+
+.stageActions {
+  min-width: 275px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge {
+  margin: 0 0 15px 2px;
+}
+
+.actions {
+  min-width: 175px;
+  width: 175px;
+  margin-left: 10px;
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  &.prospect-mode {
+    width: 154px;
+    min-width: 154px;
+  }
+
+  > div {
+    display: inline-block !important;
+  }
+}
+
+:not(.has-right-sidebar) .actions {
+  @media (max-width: $screen-sm-min) {
+    min-width: 115px;
+  }
+}
+
+.has-right-sidebar .actions {
+  @media (max-width: $screen-sm-min + $screen-extension-sidebar) {
+    min-width: 115px;
+  }
+}
+
+.card-component {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  flex-wrap: wrap;
+
+  .card-person-info {
+    margin-right: 8px;
+    flex: 1;
+  }
+
+  .card-email-info:not(.showListViewItemActionsToRight) {
+    width: 60%;
+  }
+
+  .contactActionButtonsContainer {
+    overflow-x: auto;
+  }
+}
+
+.extensionItemContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px 0 12px;
+
+  .name {
+    @include typography.body-1-medium;
+    color: var(--color-text-header);
+  }
+
+  .title {
+    @include typography.body-2;
+    color: var(--color-text-body);
+    margin-bottom: 14px;
+  }
+
+  .actionButton {
+    @include typography.body-2;
+    color: var(--color-neutral-60);
+  }
+}
+
+.greyed-out-leadgen {
+  opacity: 0.2 !important;
+}
+
+.message {
+  font-weight: 300;
+  @include typography.body-2;
+  font-style: italic;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.linkedin-button-override {
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  height: auto !important;
+
+  &:hover {
+    :global {
+      .zp-icon {
+        color: var(--color-primary-50) !important;
+      }
+    }
+  }
+}
+
+:not(.has-right-sidebar) .linkedin-button-override {
+  @media (max-width: $screen-lg-min) {
+    margin: 0;
+    padding-top: 3px !important;
+  }
+}
+
+.has-right-sidebar .linkedin-button-override {
+  @media (max-width: $screen-lg-min + $screen-extension-sidebar) {
+    margin: 0;
+    padding-top: 3px !important;
+  }
+}
+
+.prospect-snippet {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  margin-right: 10px;
+  padding-left: 15px;
+  min-height: 45px;
+  align-items: center;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--color-text-secondary);
+}
+
+:not(.has-right-sidebar) .prospect-snippet {
+  @media (max-width: $screen-md-max) {
+    display: none;
+  }
+}
+
+.has-right-sidebar .prospect-snippet {
+  @media (max-width: $screen-md-max + $screen-extension-sidebar) {
+    display: none;
+  }
+}
+
+.prospect-badge {
+  width: 110px;
+  min-width: 110px;
+  margin-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.prospectBadgeUpdates {
+  margin-left: unset;
+  margin-top: 10px;
+}
+
+.newScoreLayout {
+  padding: 4px !important;
+  height: 20px;
+  border-radius: var(--border-radius-2) !important;
+  display: flex;
+  align-items: center;
+}
+
+.person-location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include typography.helper-1;
+  line-height: 12px;
+  padding-top: 6px;
+  color: var(--color-text-secondary);
+
+  &.prospect-mode {
+    font-weight: 400;
+  }
+
+  > div {
+    display: inline-block;
+  }
+
+  .location-icon {
+    font-size: 13px !important;
+    line-height: 13px !important;
+    margin-left: -2px;
+    padding-right: 2px;
+  }
+}
+
+.actionButtonsLg {
+  margin-left: -2px;
+}
+
+.largeHeading {
+  .cardTitle {
+    @include typography.heading-3;
+
+    color: var(--color-text-primary);
+  }
+
+  .cardMeta {
+    @include typography.body-2;
+  }
+}
+
+.waterText {
+  color: var(--color-primary-50);
+
+  &:hover {
+    color: var(--color-primary-70);
+  }
+}
+
+.showListViewItemActionsToRight {
+  :global {
+    .zp-button-group {
+      margin: 4px 0;
+    }
+  }
+}
+
+.contentContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .textContent {
+    margin-right: 4px;
+  }
+}
+
+.location {
+  display: flex;
+
+  .locationIcon {
+    margin-right: 4px;
+    @include typography.body-2;
+    color: var(--color-neutral-40);
+  }
+
+  .locationName {
+    @include typography.helper-1;
+  }
+}
+
+.personName {
+  @include typography.body-2-medium;
+}
+
+.personTitle {
+  @include typography.helper-1;
+}
+
+.personaListViewItem {
+  padding: 0 14px !important;
+
+  .listViewItem {
+    padding: 8px 0 !important;
+  }
+}

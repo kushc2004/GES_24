@@ -1,0 +1,18 @@
+@use 'typography';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.subtext {
+  color: var(--color-neutral-50);
+  @include typography.subheader-3;
+}
+
+.personaList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}

@@ -1,0 +1,32 @@
+@import 'assets/common/scss/variables';
+
+.name {
+  margin-left: 16px;
+  flex: 1;
+  max-width: 25%;
+}
+
+.status {
+  margin-left: 24px;
+  flex: 1;
+  max-width: 25%;
+}
+
+.user {
+  margin-left: auto;
+  width: 40px;
+}
+
+.time {
+  width: 40px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.action {
+  width: 40px;
+}
+
+.row {
+  height: 59px;
+}

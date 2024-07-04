@@ -1,0 +1,35 @@
+.settingsWrapper,
+.settingsHeading {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.settingsHeading,
+.settingsExplanation {
+  box-sizing: border-box;
+  padding: 10px 16px;
+  margin: 0;
+}
+
+.settingsHeading {
+  color: var(--color-text-primary);
+  font-size: 16px;
+}
+
+.settingsExplanation {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.settingsForm {
+  padding-bottom: 16px;
+}
+
+.settingsBottomActions {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.settingsBottomActions > *:not(:first-child) {
+  margin-left: 16px;
+}

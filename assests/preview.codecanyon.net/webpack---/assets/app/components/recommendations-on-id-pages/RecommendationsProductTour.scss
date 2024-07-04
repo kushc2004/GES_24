@@ -1,0 +1,26 @@
+.tour {
+  z-index: 19999;
+}
+
+.tourSubHeading {
+  color: var(--color-text-body);
+}
+
+.customFocusRing {
+  position: relative;
+
+  --offset: -1px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: calc(100% + var(--offset) * 2);
+    height: calc(100% + var(--offset) * 2);
+    margin: calc(-1 * var(--offset));
+    border: 3px solid var(--color-text-links);
+    border-radius: var(--border-radius-8);
+    z-index: 100;
+  }
+}

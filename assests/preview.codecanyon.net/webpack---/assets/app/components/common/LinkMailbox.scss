@@ -1,0 +1,58 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.informationArea {
+  margin-bottom: 16px;
+  color: var(--color-text-labels);
+}
+
+.linkGmailButton {
+  width: 100%;
+}
+
+.linkCustomEmailArea {
+  display: flex;
+  align-items: center;
+
+  > * {
+    flex-grow: 1;
+  }
+
+  > *:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.or {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 13px;
+  color: var(--color-text-labels);
+  margin: 16px 0;
+  user-select: none;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    width: calc((50% - 30px));
+    height: 1px;
+    background-color: var(--color-neutral-30);
+    top: 6px;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+.bodyExtraLargeText {
+  @include typography.body-1;
+  font-weight: normal;
+}

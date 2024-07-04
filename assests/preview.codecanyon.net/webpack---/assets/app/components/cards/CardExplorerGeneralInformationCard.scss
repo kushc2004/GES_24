@@ -1,0 +1,377 @@
+@use 'typography';
+
+@import 'assets/common/scss/variables';
+
+.generalInformationCard {
+  .largePadding {
+    padding: 40px 20px;
+  }
+
+  .mediumPadding {
+    padding: 24px 20px 18px;
+  }
+
+  .generalInformationSection {
+    position: relative;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .heading {
+    @include typography.heading-2;
+
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.3;
+
+    .additionalContent {
+      display: flex;
+      align-items: center;
+
+      .score {
+        position: initial;
+        margin-left: 8px;
+      }
+
+      .badDataFlagButton {
+        position: initial;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .subHeading {
+    @include typography.body-2-medium;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+
+    .companyName {
+      @include typography.body-2-medium;
+    }
+  }
+
+  .fullwidth {
+    width: 100% !important;
+    display: block;
+  }
+
+  .alignCenter {
+    display: flex;
+    justify-content: center;
+  }
+
+  .generalInformationActions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 14px;
+    row-gap: 6px;
+    column-gap: 4px;
+
+    &.person {
+      width: auto;
+    }
+
+    .viewFullProfileButton {
+      width: 200px;
+    }
+
+    > * {
+      width: auto;
+    }
+
+    .divider {
+      width: 1px;
+      height: 18px;
+      background-color: var(--color-border-light);
+    }
+  }
+
+  .title {
+    text-align: center;
+
+    .personTitle {
+      margin-right: 4px;
+    }
+
+    .flaggedField {
+      border-right: 1px solid var(--color-border-light);
+      background-color: var(--color-negative-10);
+      border-radius: var(--border-radius-4);
+      padding: 5px;
+    }
+  }
+
+  .accountContent {
+    display: inline-flex;
+    align-items: center;
+    z-index: 10;
+
+    &::before {
+      margin: 0 4px 0 0;
+      display: block;
+      content: 'at';
+    }
+  }
+
+  .score {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+  }
+
+  .badDataFlagButton {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    line-height: 1;
+
+    .flag {
+      @include typography.body-2;
+    }
+  }
+
+  &.person {
+    .heading {
+      .score {
+        margin-right: 2px;
+      }
+    }
+  }
+
+  &.contact,
+  &.person {
+    .generalInformationSection {
+      padding: 0;
+    }
+
+    .generalInformationContainer {
+      padding: 16px 16px 14px;
+    }
+
+    .heading,
+    .subHeading,
+    .generalInformationActions {
+      justify-content: left;
+    }
+
+    .generalInformationActions {
+      padding: 6px 16px;
+      border-top: 1px solid var(--color-border-light);
+
+      &:empty {
+        padding: 0;
+        border-top: none;
+      }
+    }
+
+    .title {
+      text-align: left;
+    }
+
+    .addToSequenceButton {
+      margin-top: 14px;
+
+      & > button {
+        width: 100%;
+      }
+
+      &:empty {
+        margin: 0;
+      }
+    }
+
+    .viewFullProfileButton {
+      width: auto;
+
+      --button-foreground-color: var(--color-neutral-60);
+      --button-foreground-hover-color: var(--color-primary-50);
+    }
+
+    .accessEmailAndPhoneSection {
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      @media (max-width: $screen-md-min) {
+        padding: 0 20px;
+      }
+    }
+
+    .listSection {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &.contact {
+    .generalInformationContainer {
+      .heading {
+        align-items: center;
+
+        .popupTrigger {
+          z-index: 1;
+        }
+
+        .linkedInSocialMediaLink {
+          width: auto;
+          margin-left: 4px;
+        }
+
+        .additionalContent {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  &.tableView.contact,
+  &.tableView.person {
+    .heading,
+    .subHeading,
+    .generalInformationActions {
+      justify-content: center;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .row {
+      display: block;
+
+      .col {
+        width: 100%;
+
+        &:first-child {
+          border-right: none;
+          border-bottom: 1px solid var(--color-border-light);
+        }
+      }
+    }
+  }
+
+  &.tableView.contact {
+    .generalInformationContainer {
+      .heading {
+        .additionalContent {
+          margin-left: initial;
+        }
+      }
+    }
+  }
+
+  .contactOverview {
+    .generalInformationContainer {
+      padding: 16px 16px 10px;
+      @media (min-width: $screen-md-max) {
+        border-bottom: 1px solid var(--color-border-light);
+      }
+
+      .subHeading {
+        .popupTrigger {
+          width: fit-content;
+        }
+      }
+    }
+
+    .addToSequenceButton {
+      margin-top: 0px;
+    }
+
+    .generalInformationActions {
+      justify-content: center;
+      padding: 8px 16px;
+      border-top: none;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .listSection {
+      padding: 16px 20px 12px;
+    }
+
+    .addToSequenceButtonContainer {
+      padding: 16px 16px 0px;
+      @media (max-width: $screen-md-max) {
+        padding: 8px 16px 0px;
+      }
+    }
+
+    .informationListContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}
+
+.listSection {
+  padding: 10px 20px;
+}
+
+.popupTrigger {
+  width: auto;
+}
+
+.tableView {
+  .generalInformationSection {
+    padding: 24px 16px 16px;
+  }
+
+  .listSection {
+    padding: 8px 16px;
+  }
+}
+
+.avatar {
+  margin-right: 6px;
+  border: none;
+}
+
+.row {
+  display: flex;
+
+  .col {
+    position: relative;
+    width: 50%;
+
+    &:first-child {
+      border-right: 1px solid var(--color-border-light);
+    }
+
+    &:first-child:last-child {
+      width: 100%;
+      border: none !important;
+    }
+  }
+
+  @media (max-width: $screen-md-max) {
+    display: block;
+
+    .col {
+      width: 100%;
+
+      &:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border-light);
+      }
+    }
+  }
+}
+
+.wifiBarsContainer {
+  margin-left: 8px;
+}
+
+.accountHierarchy {
+  --button-foreground-color: var(--color-neutral-60) !important;
+  --button-foreground-hover-color: var(--color-primary-50) !important;
+}

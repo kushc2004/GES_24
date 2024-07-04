@@ -1,0 +1,160 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.card {
+  background-color: var(--color-bg-main) !important;
+
+  :global {
+    .zp-card-body {
+      padding: 20px;
+    }
+  }
+
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    .title {
+      @include typography.subheader-1;
+      color: var(--color-text-labels);
+    }
+
+    button.closeButton {
+      --button-foreground-color: var(--color-neutral-60);
+    }
+  }
+
+  .heading {
+    @include typography.heading-2;
+    text-align: center;
+    white-space: pre-wrap;
+    margin-bottom: 0;
+    color: var(--color-text-primary);
+  }
+
+  .subHeading {
+    @include typography.body-2;
+    text-align: center;
+    margin: 4px 0 16px;
+    color: var(--color-text-secondary);
+  }
+
+  .description {
+    @include typography.helper-1;
+    font-style: italic;
+    text-align: center;
+    margin: -8px 0 16px 4px;
+    color: var(--color-text-labels);
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.fixed {
+  position: fixed;
+  z-index: 1;
+  bottom: 20px;
+  left: 20px;
+  max-width: 350px;
+
+  :global {
+    .zp-card-body {
+      box-shadow: var(--shadow-3) !important;
+    }
+  }
+}
+
+.closeContainer {
+  position: relative;
+  isolation: isolate;
+}
+
+.ringContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+// http://www.clba.nl/experiments/pie-timer/
+.ring {
+  border-radius: 50%;
+  background-image: linear-gradient(90deg, white 50%, var(--color-primary-50) 50%);
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  --duration: 20s;
+
+  &::after {
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    content: '';
+    background: white;
+    transform-origin: 0 50%;
+    animation: ringAfter var(--duration) linear forwards;
+  }
+
+  &::before {
+    --width: 10%;
+    --twice-width: calc(var(--width) * 2);
+
+    position: absolute;
+    top: var(--width);
+    left: var(--width);
+    height: calc(100% - var(--twice-width));
+    width: calc(100% - var(--twice-width));
+    content: '';
+    background: white;
+    border-radius: 50%;
+    z-index: 2;
+  }
+}
+
+:global(body.blurred),
+.paused,
+.card:hover {
+  .ring::after {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes ringAfter {
+  0% {
+    transform: rotate(0deg);
+    background: white;
+  }
+
+  49.99% {
+    transform: rotate(180deg);
+    background: white;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    background: var(--color-primary-50);
+  }
+
+  100% {
+    transform: rotate(180deg);
+    background: var(--color-primary-50);
+  }
+}

@@ -1,0 +1,28 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.pinnedFilterItemContainer {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-4);
+  margin-bottom: 4px;
+  width: 300px;
+
+  &.expanded {
+    border: 1px solid var(--color-ui-primary);
+
+    .dragIconContainer {
+      display: none;
+    }
+  }
+}
+
+.dragIconContainer {
+  cursor: grab;
+  padding: 6px 0;
+
+  &:active {
+    cursor: grabbing;
+  }
+}

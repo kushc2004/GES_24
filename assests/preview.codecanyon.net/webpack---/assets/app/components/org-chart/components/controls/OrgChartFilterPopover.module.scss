@@ -1,0 +1,90 @@
+.container {
+  z-index: 10;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.menu {
+  background: var(--color-bg-main);
+  box-shadow: var(--shadow-4);
+  max-width: 240px;
+  min-width: 240px;
+  border-radius: var(--border-radius-8);
+  padding: 16px;
+  margin-top: 6px;
+}
+
+.menuOptionsWrapper {
+  max-height: 235px;
+  overflow: scroll;
+}
+
+.menuButton {
+  border: none !important;
+
+  i {
+    color: var(--color-text-primary) !important;
+  }
+
+  &.filterActive {
+    border: 1px solid var(--color-border-focused) !important;
+    box-shadow: 0px 0px 3px var(--color-primary-40);
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: none;
+
+    i {
+      color: var(--color-primary-50) !important;
+    }
+  }
+
+  &:disabled > i {
+    color: var(--color-icon-light) !important;
+  }
+}
+
+.selectAll {
+  padding: 0;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.checkboxItem {
+  height: 24px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.countIndicator {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--color-primary-50);
+  color: white;
+  font-size: 12px;
+  border-radius: 5.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  color: var(--color-neutral-50);
+}
+
+.selectInput {
+  margin-bottom: 4px;
+}
+
+.selectInputMenuWrapper {
+  max-width: 208px;
+  position: relative !important;
+}

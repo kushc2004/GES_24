@@ -1,0 +1,53 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.dialog {
+  overflow: unset;
+}
+
+.body {
+  background-color: var(--color-bg-secondary);
+
+  .block:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+}
+
+.fieldLabel {
+  display: inline-flex;
+
+  .labelTip {
+    margin-left: 4px;
+
+    &:hover {
+      color: var(--color-primary-50);
+    }
+  }
+}
+
+.tip {
+  @include typography.helper-1;
+  color: var(--color-text-secondary);
+}
+
+.footer {
+  padding: 12px 20px;
+}
+
+.warn {
+  color: var(--color-ui-negative);
+}
+
+.autoProspectingWarning {
+  @include typography.helper-1;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-neutral-20);
+  padding: 8px 16px;
+  border-radius: var(--border-radius-4);
+
+  .icon {
+    color: var(--color-caution-50);
+    margin-right: 16px;
+  }
+}

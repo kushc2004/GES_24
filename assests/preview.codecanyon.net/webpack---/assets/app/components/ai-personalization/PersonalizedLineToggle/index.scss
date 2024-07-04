@@ -1,0 +1,105 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.toggle {
+  margin-top: 16px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto 1fr;
+  grid-row-gap: 5px;
+}
+
+.personalizationComingsoon {
+  grid-column: 2 / 4;
+  grid-row: 2;
+  color: var(--color-neutral-50);
+  @include subheader-1;
+  margin-left: 12px;
+}
+
+.toggleLabel {
+  margin-left: 12px;
+  @include subheader-1;
+  color: var(--color-text-primary);
+}
+
+.tooltipIcon {
+  margin-left: 12px;
+  color: var(--color-primary-50);
+}
+
+.featureDetailsContainer {
+  padding: 20px;
+}
+
+.userPlusIconContainer {
+  background-color: var(--color-quaternary-50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 40px;
+}
+
+.userPlusIcon {
+  color: var(--color-text-reversed);
+}
+
+.featureDetailsTopContainer {
+  display: flex;
+  align-items: center;
+}
+
+.featureDetailsRightContainer {
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin: 0;
+  }
+}
+
+.titleAutoPersonalization {
+  display: flex;
+  align-items: center;
+  @include typography.heading-3;
+}
+
+.featureDetailsTooltip {
+  border-radius: 12px;
+  padding: 0;
+
+  :global {
+    .tippy-content {
+      padding: 0;
+    }
+  }
+}
+
+.takeTourBtn {
+  margin-top: 12px;
+}
+
+.comingSoonLabel {
+  padding-left: 12px;
+  margin: 0;
+  @include typography.body-2-bold;
+  color: var(--color-neutral-50);
+}
+
+.tooltipLink {
+  margin-top: 10px;
+  color: var(--color-primary-50);
+  @include typography.helper-1-medium;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  cursor: pointer;
+}
+
+.illustration {
+  margin-top: 12px;
+  width: 100%;
+  height: auto;
+}

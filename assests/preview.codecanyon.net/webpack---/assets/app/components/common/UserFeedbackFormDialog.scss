@@ -1,0 +1,13 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.fieldLabel {
+  @include typography.body-2;
+  padding-bottom: 4px;
+  padding-left: 24px;
+}
+
+.fieldTextArea,
+.accordionHeader {
+  width: 100% !important;
+}

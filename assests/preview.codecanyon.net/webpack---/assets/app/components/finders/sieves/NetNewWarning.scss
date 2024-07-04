@@ -1,0 +1,6 @@
+@use 'typography';
+
+.container {
+  @include typography.helper-1;
+  margin-bottom: 14px;
+}

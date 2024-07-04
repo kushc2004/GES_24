@@ -1,0 +1,105 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.tabs {
+  border-bottom: 1px solid var(--color-border-light);
+  height: 30px;
+}
+
+.filterBar {
+  display: flex;
+  padding: 10px 14px;
+  align-items: center;
+  gap: 8px;
+
+  .filterButton {
+    margin: 0 !important;
+    padding: 5px 10px;
+  }
+
+  .filterButtonLabel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.searchFieldForm {
+  flex: 1;
+}
+
+.searchField {
+  input {
+    margin: 0;
+    box-shadow: none !important;
+  }
+}
+
+.searchField.newSearchIcon {
+  input {
+    background-image: url('common/images/chrome/magnify-4.svg') !important;
+    padding-left: 32px !important;
+    margin: 0 !important;
+  }
+}
+
+.personaField {
+  padding: 0 20px 12px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.personaExtensionFooterBlock {
+  border-top: 1px solid var(--color-border-light);
+  width: 100%;
+  min-width: 278px;
+  background: white;
+  padding: 0.5em 0;
+}
+
+.personasActionsBlock {
+  @include typography.body-2-medium;
+  padding: 0.5em 1em;
+  color: var(--color-primary-50);
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+
+  & i {
+    color: var(--color-primary-50);
+  }
+
+  &:hover {
+    background-color: var(--color-bg-secondary);
+  }
+}
+
+.personaPlaceholder {
+  float: left;
+  padding-left: 5px;
+  color: var(--color-neutral-60);
+}
+
+.menuBoxClassPersona {
+  max-height: 184px;
+  width: 278px;
+  overflow: auto;
+  border-radius: 0;
+}
+
+.noPersonaTextContainer {
+  @include typography.body-2-medium;
+  padding: 12px 16px;
+  color: var(--color-text-secondary);
+}
+
+.personaName {
+  color: var(--color-text-primary);
+  line-height: 1.25;
+  margin-top: 3px;
+}
+
+.personaCount {
+  padding-left: 8px;
+  color: var(--color-text-secondary);
+}

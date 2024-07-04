@@ -1,0 +1,14 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+@import 'assets/common/scss/placeholders/svg';
+
+.self {
+  @include typography.body-2;
+  color: var(--color-text-labels);
+  line-height: 1.3em;
+  padding-left: 2.4em;
+  margin-bottom: 1em;
+  @extend %phone-small;
+  background-repeat: no-repeat;
+}

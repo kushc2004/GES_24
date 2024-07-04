@@ -1,0 +1,19 @@
+.content {
+  display: flex;
+
+  .name {
+    flex: 0.1 0 500px;
+  }
+
+  .type-badge {
+    flex: 1 0 100px;
+  }
+
+  .buttons {
+    display: flex;
+
+    * + * {
+      margin-left: 4px;
+    }
+  }
+}

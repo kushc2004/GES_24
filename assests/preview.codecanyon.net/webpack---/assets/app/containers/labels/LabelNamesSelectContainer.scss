@@ -1,0 +1,7 @@
+@use 'typography';
+
+.labelOption {
+  color: var(--color-text-body);
+  @include typography.body-2-medium;
+  padding: 8px;
+}

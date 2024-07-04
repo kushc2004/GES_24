@@ -1,0 +1,37 @@
+@use 'typography';
+@use 'mixins/text-overflow' as text-overflow;
+@import 'assets/common/scss/variables';
+
+.tableDetailsWrapper {
+  padding: 0;
+  border: none;
+}
+
+.contactCheckboxWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+
+  :global(.apollo-icon) {
+    display: flex !important;
+    color: var(--color-icon-inverted) !important;
+    margin: 0 !important;
+  }
+}
+
+.accordion {
+  summary {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    span {
+      @include text-overflow.ellipsis;
+    }
+  }
+
+  &[open] .caretIcon {
+    transform: rotate(180deg);
+  }
+}

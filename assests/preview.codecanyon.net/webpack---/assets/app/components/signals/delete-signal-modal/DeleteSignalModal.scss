@@ -1,0 +1,46 @@
+@use 'typography';
+@import 'assets/common/scss/variables';
+
+.iconTitle {
+  display: flex;
+  align-items: center;
+
+  i {
+    color: darkorange;
+    margin-right: 10px;
+
+    &:hover {
+      color: darkorange;
+    }
+  }
+}
+
+.confirmationPrompt {
+  @include typography.body-2-medium;
+
+  .signalName {
+    @include typography.subheader-1;
+  }
+}
+
+.signalsUsageGrid {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-row-gap: 8px;
+
+  > :nth-child(odd) {
+    @include typography.subheader-2;
+    color: var(--color-text-primary);
+  }
+
+  > :nth-child(even) {
+    @include typography.helper-1-medium;
+  }
+
+  .link {
+    @include typography.helper-1-medium;
+    color: var(--color-text-links);
+    text-decoration: underline;
+  }
+}

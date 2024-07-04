@@ -1,0 +1,40 @@
+@import 'assets/common/scss/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  background-color: white;
+}
+
+.backdrop,
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.backdrop {
+  background: var(--color-neutral-60);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+
+  /** if we ever need something on the left side, create left and right containers and use space-between **/
+  justify-content: flex-end;
+  height: 40px;
+  padding: 8px;
+
+  .icon {
+    z-index: 1;
+
+    &:not(:hover) {
+      --button-foreground-color: var(--color-neutral-60) !important;
+    }
+  }
+}

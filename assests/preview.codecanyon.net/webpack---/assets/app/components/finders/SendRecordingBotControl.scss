@@ -1,0 +1,32 @@
+@import '../../../common/scss/variables';
+
+.button {
+  margin: 0 5px 0 10px;
+}
+
+.modalHeader {
+  @include heading-3;
+  border-bottom: 1px solid var(--color-border-light) !important;
+}
+
+.description,
+.meetingUrl {
+  @include body-2;
+}
+
+.meetingUrl {
+  margin-top: 16px;
+}
+
+.error {
+  color: var(--color-text-negative);
+  @include helper-1;
+}
+
+.helper {
+  @include helper-1;
+}
+
+.contacts {
+  margin-top: 16px;
+}
